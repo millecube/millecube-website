@@ -1,26 +1,80 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Brand palette */
+  --color-honeydew: #EBFFF3;
+  --color-cultured: #F5F5F5;
+  --color-dg: #07503c;
+  --color-pg: #32cd32;
+  --color-sg: #6bc71f;
+  --color-gold: #FFD600;
+
+  --font-display: var(--font-bebas);
+  --font-body: var(--font-montserrat);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #EBFFF3;
+  color: #07503c;
+  font-family: var(--font-montserrat), 'Plus Jakarta Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: #32cd32;
+  color: #ffffff;
+}
+
+.font-display {
+  font-family: var(--font-bebas), 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.03em;
+}
+
+/* Reusable interactive states for Server Component pages */
+.btn-primary {
+  background-color: #32cd32;
+  color: #ffffff;
+  transition: background-color 0.2s, transform 0.2s;
+}
+.btn-primary:hover {
+  background-color: #28b028;
+  transform: translateY(-1px);
+}
+.btn-outline-dark {
+  border: 1px solid rgba(7,80,60,0.2);
+  color: #07503c;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+.btn-outline-dark:hover {
+  background-color: rgba(7,80,60,0.05);
+  border-color: rgba(7,80,60,0.4);
+}
+.link-green {
+  color: #32cd32;
+  transition: color 0.2s;
+}
+.link-green:hover {
+  color: #07503c;
+}
+.link-dark {
+  color: #07503c;
+  transition: color 0.2s;
+}
+.link-dark:hover {
+  color: #32cd32;
+}
+.service-row {
+  transition: background-color 0.2s;
+}
+.service-row:hover {
+  background-color: #EBFFF3;
 }
