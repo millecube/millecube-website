@@ -12,9 +12,9 @@ export default function Home() {
     <main>
       <Hero />
       <Stats />
-      <WhoWeAre />
-      <NumberStats />
       <Services />
+      <NumberStats />
+      <WhoWeAre />
       <WhyMillecube />
       <Portfolio />
       <CtaStrip />
