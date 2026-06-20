@@ -2,8 +2,8 @@ import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
 import NumberStats from "@/components/NumberStats";
 import WhoWeAre from "@/components/WhoWeAre";
+import TrustCarousel from "@/components/TrustCarousel";
 import Services from "@/components/Services";
-import WhyMillecube from "@/components/WhyMillecube";
 import Portfolio from "@/components/Portfolio";
 import CtaStrip from "@/components/CtaStrip";
 
@@ -13,9 +13,9 @@ export default function Home() {
       <Hero />
       <Stats />
       <Services />
-      <NumberStats />
       <WhoWeAre />
-      <WhyMillecube />
+      <TrustCarousel />
+      <NumberStats />
       <Portfolio />
       <CtaStrip />
     </main>
