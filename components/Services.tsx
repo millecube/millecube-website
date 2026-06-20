@@ -3,14 +3,15 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
+const featured = {
+  num: "01",
+  name: "Social Media Marketing",
+  desc: "Build your brand voice, keep your channels active, and turn followers into customers with content built for each platform.",
+  platforms: ["Meta", "TikTok", "LinkedIn", "Xiaohongshu"],
+  href: "/services/social-media",
+};
+
 const services = [
-  {
-    num: "01",
-    name: "Social Media Marketing",
-    desc: "Build your brand voice, keep your channels active, and turn followers into customers with content built for each platform.",
-    platforms: "Meta · TikTok · LinkedIn · Xiaohongshu",
-    href: "/services/social-media",
-  },
   {
     num: "02",
     name: "Media Advertisement",
@@ -106,8 +107,88 @@ export default function Services() {
           </Link>
         </motion.div>
 
-        {/* Card grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Featured card 01 — spans full width */}
+          <motion.div
+            className="md:col-span-2"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            whileHover={{ y: -4, boxShadow: "0 20px 56px rgba(7,80,60,0.12)" }}
+          >
+            <Link
+              href={featured.href}
+              className="group flex flex-col md:flex-row md:items-center gap-6 md:gap-12 p-7 md:p-9 rounded-xl transition-colors duration-200"
+              style={{ backgroundColor: "#ffffff", border: "1px solid rgba(7,80,60,0.1)" }}
+              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "#32cd32"; }}
+              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(7,80,60,0.1)"; }}
+            >
+              {/* Left: number + name */}
+              <div className="md:w-64 shrink-0 flex flex-col gap-3">
+                <span
+                  className="text-xs font-bold"
+                  style={{ color: "#32cd32", fontFamily: "var(--font-montserrat)" }}
+                >
+                  {featured.num}
+                </span>
+                <h3
+                  style={{
+                    fontFamily: "var(--font-bebas)",
+                    fontWeight: 800,
+                    fontSize: "clamp(22px, 2.5vw, 32px)",
+                    lineHeight: 1.1,
+                    letterSpacing: "-0.03em",
+                    color: "#07503c",
+                  }}
+                >
+                  {featured.name}
+                </h3>
+                {/* Platform tags */}
+                <div className="flex flex-wrap gap-2 mt-1">
+                  {featured.platforms.map((p) => (
+                    <span
+                      key={p}
+                      className="text-xs px-2.5 py-1 rounded-md font-medium"
+                      style={{
+                        backgroundColor: "#EBFFF3",
+                        color: "#07503c",
+                        fontFamily: "var(--font-montserrat)",
+                      }}
+                    >
+                      {p}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Divider */}
+              <div className="hidden md:block h-16 w-px" style={{ backgroundColor: "rgba(7,80,60,0.08)" }} />
+
+              {/* Right: description + arrow */}
+              <div className="flex-1 flex items-center justify-between gap-6">
+                <p
+                  className="text-sm"
+                  style={{
+                    color: "rgba(7,80,60,0.6)",
+                    fontFamily: "var(--font-montserrat)",
+                    lineHeight: 1.8,
+                    maxWidth: "480px",
+                  }}
+                >
+                  {featured.desc}
+                </p>
+                <span
+                  className="text-xl shrink-0 transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1"
+                  style={{ color: "rgba(7,80,60,0.2)" }}
+                >
+                  ↗
+                </span>
+              </div>
+            </Link>
+          </motion.div>
+
+          {/* Service cards 02–07 */}
           {services.map((service, i) => (
             <motion.div
               key={service.num}
@@ -115,25 +196,14 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
-              whileHover={{
-                y: -4,
-                boxShadow: "0 16px 48px rgba(7,80,60,0.1)",
-              }}
-              style={{ transition: "box-shadow 0.2s" }}
+              whileHover={{ y: -4, boxShadow: "0 16px 48px rgba(7,80,60,0.1)" }}
             >
               <Link
                 href={service.href}
                 className="group flex flex-col gap-4 p-7 rounded-xl h-full transition-colors duration-200"
-                style={{
-                  backgroundColor: "#ffffff",
-                  border: "1px solid rgba(7,80,60,0.1)",
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "#32cd32";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(7,80,60,0.1)";
-                }}
+                style={{ backgroundColor: "#ffffff", border: "1px solid rgba(7,80,60,0.1)" }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "#32cd32"; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(7,80,60,0.1)"; }}
               >
                 <div className="flex items-start justify-between">
                   <span
@@ -144,7 +214,7 @@ export default function Services() {
                   </span>
                   <span
                     className="text-lg transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1"
-                    style={{ color: "rgba(7,80,60,0.25)" }}
+                    style={{ color: "rgba(7,80,60,0.2)" }}
                   >
                     ↗
                   </span>
@@ -182,40 +252,43 @@ export default function Services() {
             </motion.div>
           ))}
 
-          {/* 8th card — CTA */}
+          {/* CTA card — spans full width */}
           <motion.div
-            className="rounded-xl overflow-hidden"
+            className="md:col-span-2 rounded-xl overflow-hidden"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 7 * 0.06, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.5, delay: 0.36, ease: [0.22, 1, 0.36, 1] }}
             whileHover={{ y: -4, boxShadow: "0 16px 48px rgba(7,80,60,0.15)" }}
-            style={{ backgroundColor: "#07503c", minHeight: "200px" }}
+            style={{ backgroundColor: "#07503c" }}
           >
             <Link
               href="/contact"
-              className="group flex flex-col justify-between gap-6 p-7"
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                height: "100%",
-                minHeight: "200px",
-              }}
+              className="group flex flex-col md:flex-row md:items-center md:justify-between gap-6 p-8 md:p-9"
+              style={{ display: "flex" }}
             >
-              <p
-                className="text-xs font-bold tracking-[0.22em]"
-                style={{ color: "rgba(255,255,255,0.4)", fontFamily: "var(--font-montserrat)" }}
-              >
-                NOT SURE WHERE TO START?
-              </p>
-              <h3
-                className="text-xl font-bold leading-snug"
-                style={{ color: "#ffffff", fontFamily: "var(--font-montserrat)" }}
-              >
-                Let&apos;s talk about what your business needs.
-              </h3>
+              <div>
+                <p
+                  className="text-xs font-bold tracking-[0.22em] mb-3"
+                  style={{ color: "rgba(255,255,255,0.4)", fontFamily: "var(--font-montserrat)" }}
+                >
+                  NOT SURE WHERE TO START?
+                </p>
+                <h3
+                  style={{
+                    fontFamily: "var(--font-bebas)",
+                    fontWeight: 800,
+                    fontSize: "clamp(22px, 2.5vw, 32px)",
+                    lineHeight: 1.1,
+                    letterSpacing: "-0.02em",
+                    color: "#ffffff",
+                  }}
+                >
+                  Let&apos;s talk about what your business needs.
+                </h3>
+              </div>
               <span
-                className="inline-flex items-center gap-2 text-sm font-bold transition-colors duration-200"
+                className="inline-flex items-center gap-2 text-sm font-bold shrink-0 transition-colors duration-200"
                 style={{ color: "#32cd32" }}
               >
                 Start a conversation →

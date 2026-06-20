@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
+import NumberStats from "@/components/NumberStats";
 import WhoWeAre from "@/components/WhoWeAre";
 import Services from "@/components/Services";
 import WhyMillecube from "@/components/WhyMillecube";
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <Stats />
       <WhoWeAre />
+      <NumberStats />
       <Services />
       <WhyMillecube />
       <Portfolio />
