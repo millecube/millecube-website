@@ -73,7 +73,7 @@ export default function AboutContent() {
                 }}
               >
                 <img
-                  src="/aboutus-bg1.png"
+                  src="/aboutus-card1.png"
                   alt="Millecube Digital office and team"
                   style={{
                     width: "100%",
