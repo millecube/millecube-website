@@ -77,7 +77,7 @@ export default function WhyMillecube() {
         </motion.div>
 
         {/* Comparison table */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-px" style={{ borderRadius: "18px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.07)" }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-px" style={{ borderRadius: "18px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.07)" }}>
 
           {/* Left — others column */}
           <motion.div
@@ -268,7 +268,7 @@ export default function WhyMillecube() {
         </div>
 
         <style>{`
-          @media (min-width: 1024px) {
+          @media (min-width: 768px) {
             .millecube-col {
               border-left: 1px solid rgba(50,205,50,0.08);
             }

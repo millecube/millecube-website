@@ -74,7 +74,7 @@ export default function TrustCarousel() {
   return (
     <section
       aria-label="Why brands trust Millecube"
-      style={{ backgroundColor: "#FFFFFF", position: "relative" }}
+      style={{ backgroundColor: "#FFFFFF", position: "relative", overflow: "hidden" }}
     >
       <div
         className="max-w-7xl mx-auto px-6 lg:px-10"

@@ -65,11 +65,11 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* Columns */}
         <div
-          className="grid grid-cols-1 lg:grid-cols-12 gap-12 py-16"
+          className="grid grid-cols-2 lg:grid-cols-12 gap-12 py-16"
           style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
         >
           {/* Brand */}
-          <div className="lg:col-span-4 flex flex-col gap-5">
+          <div className="col-span-2 lg:col-span-4 flex flex-col gap-5">
             <Image
               src="/logo-horizontal-white.png"
               alt="Millecube Digital"
@@ -174,7 +174,7 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div className="lg:col-span-3">
+          <div className="col-span-2 lg:col-span-3">
             <p
               className="text-xs font-bold tracking-widest mb-5"
               style={{ color: "#32cd32", fontFamily: "var(--font-montserrat)" }}

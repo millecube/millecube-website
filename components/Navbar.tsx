@@ -122,7 +122,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-6 xl:gap-8">
 
           {/* Services — dropdown trigger */}
           <div
@@ -365,7 +365,7 @@ export default function Navbar() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden flex flex-col gap-1.5 p-2"
+          className="lg:hidden flex flex-col gap-1.5 p-2"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -391,7 +391,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {menuOpen && (
         <div
-          className="md:hidden px-6 pb-6 pt-3 flex flex-col gap-1"
+          className="lg:hidden px-6 pb-6 pt-3 flex flex-col gap-1"
           style={{
             backgroundColor: "rgba(7,80,60,0.98)",
             borderTop: "1px solid rgba(255,255,255,0.07)",
