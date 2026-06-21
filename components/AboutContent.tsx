@@ -68,13 +68,13 @@ export default function AboutContent() {
                 style={{
                   borderRadius: "17.5px",
                   overflow: "hidden",
-                  aspectRatio: "4 / 5",
+                  aspectRatio: "3 / 2",
                   position: "relative",
                 }}
               >
                 <img
-                  src="/whoweare-card.png"
-                  alt="The Millecube Digital team"
+                  src="/aboutus-bg1.png"
+                  alt="Millecube Digital office and team"
                   style={{
                     width: "100%",
                     height: "100%",
@@ -223,7 +223,7 @@ export default function AboutContent() {
       <section
         style={{
           backgroundColor: "#f4f9f6",
-          padding: "clamp(52px, 6.5vw, 88px) clamp(20px, 3vw, 40px)",
+          padding: "clamp(36px, 4.5vw, 56px) clamp(20px, 3vw, 40px)",
         }}
       >
         <div className="max-w-7xl mx-auto">
@@ -291,8 +291,8 @@ export default function AboutContent() {
                     borderRadius: "17.5px",
                     background:
                       "linear-gradient(145deg, #07503c 0%, #064232 60%, #073d2e 100%)",
-                    padding: "clamp(28px, 3.2vw, 44px)",
-                    minHeight: "300px",
+                    padding: "clamp(24px, 3vw, 40px)",
+                    minHeight: "260px",
                     position: "relative",
                     overflow: "hidden",
                     display: "flex",
@@ -368,17 +368,15 @@ export default function AboutContent() {
                     <h3
                       style={{
                         fontFamily: "var(--font-bebas)",
-                        fontSize: "clamp(26px, 2.8vw, 38px)",
+                        fontSize: "clamp(34px, 3.6vw, 52px)",
                         fontWeight: 800,
-                        lineHeight: 1.06,
+                        lineHeight: 1.04,
                         letterSpacing: "-0.02em",
                         color: "#ffffff",
                         margin: 0,
                       }}
                     >
-                      To lead with{" "}
-                      <span style={{ color: "#32cd32" }}>data,</span>
-                      <br />
+                      To lead with data,<br />
                       not assumptions.
                     </h3>
                     <p
@@ -437,14 +435,14 @@ export default function AboutContent() {
                 <div
                   style={{
                     borderRadius: "17.5px",
-                    minHeight: "300px",
+                    minHeight: "260px",
                     position: "relative",
                     overflow: "hidden",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "space-between",
                     gap: "24px",
-                    padding: "clamp(28px, 3.2vw, 44px)",
+                    padding: "clamp(24px, 3vw, 40px)",
                     boxShadow: "inset 0 1px 1px rgba(255,255,255,0.07)",
                   }}
                 >
@@ -521,17 +519,15 @@ export default function AboutContent() {
                     <h3
                       style={{
                         fontFamily: "var(--font-bebas)",
-                        fontSize: "clamp(26px, 2.8vw, 38px)",
+                        fontSize: "clamp(34px, 3.6vw, 52px)",
                         fontWeight: 800,
-                        lineHeight: 1.06,
+                        lineHeight: 1.04,
                         letterSpacing: "-0.02em",
                         color: "#ffffff",
                         margin: 0,
                       }}
                     >
-                      Marketing that{" "}
-                      <span style={{ color: "#FFD600" }}>works.</span>
-                      <br />
+                      Marketing that works.<br />
                       Every ringgit.
                     </h3>
                     <p

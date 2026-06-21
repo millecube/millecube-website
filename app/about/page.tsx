@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import InnerHero from "@/components/InnerHero";
 import AboutContent from "@/components/AboutContent";
+import Portfolio from "@/components/Portfolio";
 import CtaStrip from "@/components/CtaStrip";
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export default function AboutPage() {
         bgImage="/aboutus-bg1.png"
       />
       <AboutContent />
+      <Portfolio />
       <CtaStrip />
     </main>
   );
