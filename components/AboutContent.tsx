@@ -42,36 +42,41 @@ export default function AboutContent() {
           className="max-w-7xl mx-auto about-story-grid"
           style={{
             display: "grid",
-            gridTemplateColumns: "5fr 7fr",
+            gridTemplateColumns: "4fr 8fr",
             gap: "clamp(40px, 5vw, 80px)",
             alignItems: "center",
           }}
         >
-          {/* Left: image in double-bezel */}
+          {/* Left: image card — vertical with decorated edges */}
           <motion.div
             initial={{ opacity: 0, x: -28, filter: "blur(8px)" }}
             whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.92, ease }}
+            style={{ position: "relative" }}
           >
+            {/* Outer shell */}
             <div
               style={{
                 borderRadius: "20px",
                 padding: "3px",
-                background: "rgba(7,80,60,0.03)",
-                border: "1px solid rgba(7,80,60,0.10)",
+                background: "rgba(7,80,60,0.04)",
+                border: "1px solid rgba(7,80,60,0.12)",
                 boxShadow:
-                  "0 4px 24px rgba(7,80,60,0.08), 0 20px 56px rgba(7,80,60,0.13)",
+                  "0 4px 24px rgba(7,80,60,0.10), 0 24px 64px rgba(7,80,60,0.18), 0 0 0 1px rgba(50,205,50,0.05)",
+                position: "relative",
               }}
             >
+              {/* Inner core */}
               <div
                 style={{
                   borderRadius: "17.5px",
                   overflow: "hidden",
-                  aspectRatio: "3 / 2",
+                  aspectRatio: "3 / 4",
                   position: "relative",
                 }}
               >
+                {/* Photo */}
                 <img
                   src="/aboutus-card1.png"
                   alt="Millecube Digital office and team"
@@ -79,21 +84,105 @@ export default function AboutContent() {
                     width: "100%",
                     height: "100%",
                     objectFit: "cover",
-                    objectPosition: "center",
+                    objectPosition: "center top",
                     display: "block",
                   }}
                 />
+
+                {/* Green tint */}
                 <div
                   aria-hidden
                   style={{
                     position: "absolute",
                     inset: 0,
-                    backgroundColor: "rgba(7,80,60,0.06)",
+                    backgroundColor: "rgba(7,80,60,0.08)",
                     mixBlendMode: "multiply",
                     pointerEvents: "none",
                   }}
                 />
+
+                {/* Bottom gradient for label */}
+                <div
+                  aria-hidden
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    background:
+                      "linear-gradient(to top, rgba(6,31,23,0.80) 0%, rgba(6,31,23,0.20) 38%, transparent 60%)",
+                    pointerEvents: "none",
+                  }}
+                />
+
+                {/* ── Corner accents ── */}
+                {/* Top-left */}
+                <div aria-hidden style={{ position: "absolute", top: "14px", left: "14px", zIndex: 3, pointerEvents: "none" }}>
+                  <div style={{ position: "absolute", top: 0, left: 0, width: "22px", height: "2px", backgroundColor: "#32cd32", opacity: 0.7 }} />
+                  <div style={{ position: "absolute", top: 0, left: 0, width: "2px", height: "22px", backgroundColor: "#32cd32", opacity: 0.7 }} />
+                </div>
+                {/* Top-right */}
+                <div aria-hidden style={{ position: "absolute", top: "14px", right: "14px", zIndex: 3, pointerEvents: "none" }}>
+                  <div style={{ position: "absolute", top: 0, right: 0, width: "22px", height: "2px", backgroundColor: "#32cd32", opacity: 0.7 }} />
+                  <div style={{ position: "absolute", top: 0, right: 0, width: "2px", height: "22px", backgroundColor: "#32cd32", opacity: 0.7 }} />
+                </div>
+                {/* Bottom-left */}
+                <div aria-hidden style={{ position: "absolute", bottom: "14px", left: "14px", zIndex: 3, pointerEvents: "none" }}>
+                  <div style={{ position: "absolute", bottom: 0, left: 0, width: "22px", height: "2px", backgroundColor: "#32cd32", opacity: 0.7 }} />
+                  <div style={{ position: "absolute", bottom: 0, left: 0, width: "2px", height: "22px", backgroundColor: "#32cd32", opacity: 0.7 }} />
+                </div>
+                {/* Bottom-right */}
+                <div aria-hidden style={{ position: "absolute", bottom: "14px", right: "14px", zIndex: 3, pointerEvents: "none" }}>
+                  <div style={{ position: "absolute", bottom: 0, right: 0, width: "22px", height: "2px", backgroundColor: "#32cd32", opacity: 0.7 }} />
+                  <div style={{ position: "absolute", bottom: 0, right: 0, width: "2px", height: "22px", backgroundColor: "#32cd32", opacity: 0.7 }} />
+                </div>
+
+                {/* Bottom label */}
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: "18px",
+                    left: "44px",
+                    right: "44px",
+                    zIndex: 4,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "8px",
+                  }}
+                >
+                  <div style={{ flex: 1, height: "1px", backgroundColor: "rgba(255,255,255,0.18)" }} />
+                  <p
+                    style={{
+                      fontFamily: "var(--font-montserrat)",
+                      fontSize: "8px",
+                      fontWeight: 700,
+                      letterSpacing: "0.22em",
+                      textTransform: "uppercase",
+                      color: "rgba(255,255,255,0.50)",
+                      margin: 0,
+                      whiteSpace: "nowrap",
+                    }}
+                  >
+                    Est. 2024 · Penang
+                  </p>
+                  <div style={{ flex: 1, height: "1px", backgroundColor: "rgba(255,255,255,0.18)" }} />
+                </div>
               </div>
+
+              {/* Lime accent dot — top-right of outer shell */}
+              <div
+                aria-hidden
+                style={{
+                  position: "absolute",
+                  top: "-5px",
+                  right: "22%",
+                  width: "9px",
+                  height: "9px",
+                  borderRadius: "50%",
+                  backgroundColor: "#32cd32",
+                  boxShadow: "0 0 14px rgba(50,205,50,0.65)",
+                  zIndex: 5,
+                }}
+              />
             </div>
           </motion.div>
 
