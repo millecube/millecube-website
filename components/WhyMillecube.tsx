@@ -178,10 +178,10 @@ export default function WhyMillecube() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.08, ease }}
-            style={{
+            className="millecube-col"
+          style={{
               backgroundColor: "rgba(50,205,50,0.04)",
               padding: "clamp(28px, 4vw, 48px)",
-              borderLeft: "1px solid rgba(50,205,50,0.08)",
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "28px" }}>
@@ -266,6 +266,14 @@ export default function WhyMillecube() {
             </div>
           </motion.div>
         </div>
+
+        <style>{`
+          @media (min-width: 1024px) {
+            .millecube-col {
+              border-left: 1px solid rgba(50,205,50,0.08);
+            }
+          }
+        `}</style>
 
         {/* Bottom strip */}
         <motion.div

@@ -111,7 +111,7 @@ export default function ContactForm() {
   const inputStyle: React.CSSProperties = {
     width: "100%",
     fontFamily: "var(--font-montserrat)",
-    fontSize: "13px",
+    fontSize: "16px", // 16px minimum prevents iOS Safari auto-zoom on focus
     color: "#07503c",
     backgroundColor: "#f7fbf8",
     border: "1px solid rgba(7,80,60,0.15)",
@@ -331,7 +331,7 @@ export default function ContactForm() {
                 rows={4}
                 onFocus={(e) => (e.target.style.borderColor = "#07503c")}
                 onBlur={(e) => (e.target.style.borderColor = "rgba(7,80,60,0.15)")}
-                style={{ ...inputStyle, resize: "none", lineHeight: 1.7 }}
+                style={{ ...inputStyle, fontSize: "16px", resize: "none", lineHeight: 1.7 }}
               />
             </div>
           </motion.div>

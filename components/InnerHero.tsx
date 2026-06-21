@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 interface Breadcrumb {
   label: string;
@@ -30,18 +31,16 @@ export default function InnerHero({ label, title, subtitle, breadcrumbs, bgImage
       {/* ── Background photo layer (only when bgImage is provided) ── */}
       {bgImage && (
         <>
-          <img
+          <Image
             src={bgImage}
             alt=""
+            fill
+            priority
+            quality={85}
             aria-hidden
             style={{
-              position: "absolute",
-              inset: 0,
-              width: "100%",
-              height: "100%",
               objectFit: "cover",
               objectPosition: "center 40%",
-              display: "block",
             }}
           />
           {/* Left-heavy overlay: deep dark on text side, fades out to let image breathe on the right */}
