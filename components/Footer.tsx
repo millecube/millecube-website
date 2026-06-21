@@ -71,9 +71,9 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-4 flex flex-col gap-5">
             <Image
-              src="/logo-white.png"
+              src="/logo-horizontal-white.png"
               alt="Millecube Digital"
-              width={150}
+              width={180}
               height={40}
               className="h-8 w-auto object-contain"
             />
