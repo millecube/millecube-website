@@ -1,159 +1,100 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import InnerHero from "@/components/InnerHero";
+import ServiceContent from "@/components/ServiceContent";
 import CtaStrip from "@/components/CtaStrip";
 
 export const metadata: Metadata = {
   title: "Social Media Marketing — Millecube Digital",
   description:
-    "Social media management for Malaysian businesses. Meta, TikTok, LinkedIn, Xiaohongshu — content strategy, creative, and community management.",
+    "Social media management for Malaysian businesses. Meta, TikTok, LinkedIn, Xiaohongshu — content strategy, creative, and community management handled every month.",
 };
-
-const platforms = [
-  { name: "Meta (Facebook & Instagram)", desc: "Feed posts, Stories, and Reels — planned, created, and posted consistently. Community management and comment replies included." },
-  { name: "TikTok", desc: "Short-form video strategy and content calendar. We brief and coordinate video production, or work with content you supply." },
-  { name: "LinkedIn", desc: "For B2B brands and professional services. Thought leadership content, company page management, and lead-generating posts." },
-  { name: "Xiaohongshu (RED)", desc: "For brands targeting Chinese-Malaysian audiences. Authentic lifestyle content and community engagement." },
-];
-
-const deliverables = [
-  "Monthly content calendar",
-  "Caption copywriting (English / BM / Mandarin)",
-  "Graphic and creative direction",
-  "Posting and scheduling",
-  "Community management and replies",
-  "Monthly analytics report",
-  "Competitor benchmarking",
-];
 
 export default function SocialMediaPage() {
   return (
     <main>
       <InnerHero
-        label="SOCIAL MEDIA MARKETING"
-        title="Consistent presence. Content that connects."
-        subtitle="We manage your social channels so you don't have to — strategy, creative, copy, and posting, handled every month."
+        bgImage="/hero-bg.png"
+        label="SOCIAL MEDIA"
+        title="A feed that works while you sleep."
+        subtitle="We manage your brand's presence across Meta, TikTok, LinkedIn, and Xiaohongshu — consistent, on-brand, and strategically directed every month."
       />
-
-      <section
-        className="py-24 lg:py-32"
-        style={{ backgroundColor: "#EBFFF3", borderBottom: "1px solid rgba(7,80,60,0.08)" }}
-      >
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
-            <div className="lg:col-span-5">
-              <p
-                className="text-xs font-bold tracking-[0.28em] mb-5"
-                style={{ color: "#32cd32", fontFamily: "var(--font-montserrat)" }}
-              >
-                CHANNELS WE MANAGE
-              </p>
-              <h2
-                style={{
-                  fontFamily: "var(--font-bebas)",
-                  fontSize: "clamp(34px, 4vw, 52px)",
-                  lineHeight: 1.05,
-                  color: "#07503c",
-                }}
-              >
-                Posting once a week is not a social media strategy.
-              </h2>
-              <p
-                className="mt-5 text-sm"
-                style={{ color: "rgba(7,80,60,0.6)", fontFamily: "var(--font-montserrat)", lineHeight: 1.85 }}
-              >
-                Inconsistency kills trust. Audiences don't follow brands that disappear for weeks. We keep your channels active, on-brand, and strategically directed — so your social presence works even when you're not looking at it.
-              </p>
-            </div>
-            <div className="lg:col-span-7 flex flex-col gap-6">
-              {platforms.map((p) => (
-                <div
-                  key={p.name}
-                  className="p-7 rounded-lg"
-                  style={{ backgroundColor: "#ffffff", border: "1px solid rgba(7,80,60,0.08)" }}
-                >
-                  <h3
-                    className="text-sm font-bold mb-2"
-                    style={{ color: "#07503c", fontFamily: "var(--font-montserrat)" }}
-                  >
-                    {p.name}
-                  </h3>
-                  <p
-                    className="text-sm"
-                    style={{ color: "rgba(7,80,60,0.6)", fontFamily: "var(--font-montserrat)", lineHeight: 1.8 }}
-                  >
-                    {p.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        className="py-24 lg:py-32"
-        style={{ backgroundColor: "#F5F5F5", borderBottom: "1px solid rgba(7,80,60,0.08)" }}
-      >
-        <div className="max-w-7xl mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            <div className="lg:col-span-5">
-              <p
-                className="text-xs font-bold tracking-[0.28em] mb-5"
-                style={{ color: "#32cd32", fontFamily: "var(--font-montserrat)" }}
-              >
-                WHAT YOU GET
-              </p>
-              <h2
-                style={{
-                  fontFamily: "var(--font-bebas)",
-                  fontSize: "clamp(34px, 4vw, 52px)",
-                  lineHeight: 1.05,
-                  color: "#07503c",
-                }}
-              >
-                Done-for-you. Every month.
-              </h2>
-              <p
-                className="mt-5 text-sm"
-                style={{ color: "rgba(7,80,60,0.6)", fontFamily: "var(--font-montserrat)", lineHeight: 1.85 }}
-              >
-                Month-to-month retainer. No lock-in.
-              </p>
-              <div className="mt-8">
-                <Link
-                  href="/contact"
-                  className="btn-primary inline-flex items-center px-7 py-3.5 text-sm font-bold rounded"
-                  style={{ fontFamily: "var(--font-montserrat)" }}
-                >
-                  Talk to us →
-                </Link>
-              </div>
-            </div>
-            <div className="lg:col-span-7">
-              <div className="flex flex-col">
-                {deliverables.map((item, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center gap-4 py-4"
-                    style={{ borderTop: "1px solid rgba(7,80,60,0.1)" }}
-                  >
-                    <span style={{ color: "#32cd32", fontSize: "16px", lineHeight: 1 }}>✓</span>
-                    <span
-                      className="text-sm font-medium"
-                      style={{ color: "#07503c", fontFamily: "var(--font-montserrat)" }}
-                    >
-                      {item}
-                    </span>
-                  </div>
-                ))}
-                <div style={{ borderBottom: "1px solid rgba(7,80,60,0.1)" }} />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      <ServiceContent
+        slug="social-media"
+        stats={[
+          { value: "4×", label: "Avg organic reach growth" },
+          { value: "4", label: "Platforms we manage" },
+          { value: "30", label: "Day content calendar" },
+        ]}
+        featuresLabel="WHAT WE DO"
+        featuresHeadline="Social media that builds equity, not just posts."
+        featuresBody="Consistent, strategic content across every channel your audience uses — planned a month ahead, designed to your brand, and tracked to real business outcomes. Not random posts. A managed presence."
+        features={[
+          {
+            name: "Content strategy & calendar",
+            desc: "Monthly editorial calendar planned around your promotions, product launches, and seasonal moments — approved before anything is posted.",
+          },
+          {
+            name: "Copywriting & caption writing",
+            desc: "Platform-native copy — Instagram captions, TikTok hooks, LinkedIn thought leadership, and Xiaohongshu review-style posts.",
+          },
+          {
+            name: "Creative direction",
+            desc: "Visual brief, moodboard, and design templates that keep your feed consistent and recognisable across all platforms.",
+          },
+          {
+            name: "Community management",
+            desc: "DMs, comments, and story replies handled so your audience gets responses — not silence.",
+          },
+          {
+            name: "Analytics & reporting",
+            desc: "Monthly breakdown of reach, engagement, follower growth, and content performance with next-month strategy adjustments.",
+          },
+          {
+            name: "Xiaohongshu (RED) management",
+            desc: "RED platform content strategy for brands targeting the Chinese-speaking demographic in Malaysia and regionally.",
+          },
+        ]}
+        process={[
+          {
+            num: "01",
+            title: "Platform audit",
+            body: "We audit your existing profiles, audience data, and content history to understand what's working and what's been missing.",
+          },
+          {
+            num: "02",
+            title: "Brand tone & content pillars",
+            body: "We define your voice, visual direction, and content mix across all managed platforms before Month 1 begins.",
+          },
+          {
+            num: "03",
+            title: "Monthly content calendar",
+            body: "A 30-day calendar submitted for your approval before the first post goes live. No surprises.",
+          },
+          {
+            num: "04",
+            title: "Creation & scheduling",
+            body: "Design, copy, and scheduling handled. You review drafts; we post on time, every time.",
+          },
+          {
+            num: "05",
+            title: "Review & optimise",
+            body: "Monthly performance review with content adjustments based on what's driving reach, saves, and engagement.",
+          },
+        ]}
+        deliverablesLabel="WHAT'S INCLUDED"
+        deliverablesHeadline="A full social media operation, handled."
+        deliverablesBody="Consistent output, on-brand design, and a strategy that evolves as your brand grows — not a template recycled from another client."
+        deliverables={[
+          "30-day content calendar",
+          "Caption copywriting",
+          "Graphic design (static + reel covers)",
+          "Post scheduling",
+          "Community management",
+          "Monthly analytics report",
+          "Platform profile optimisation",
+        ]}
+        ctaText="Manage my social"
+      />
       <CtaStrip />
     </main>
   );
