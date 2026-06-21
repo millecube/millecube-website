@@ -73,9 +73,10 @@ export default function Footer() {
             <Image
               src="/logo-horizontal-white.png"
               alt="Millecube Digital"
-              width={180}
-              height={40}
-              className="h-8 w-auto object-contain"
+              width={280}
+              height={63}
+              className="object-contain"
+              style={{ width: "100%", maxWidth: "280px", height: "auto" }}
             />
             <p
               className="text-sm max-w-xs"
