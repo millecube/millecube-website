@@ -36,7 +36,6 @@ interface ServiceContentProps {
   ctaText: string;
 }
 
-/* Matches Homepage ease in Services.tsx / WhyMillecube.tsx */
 const EASE_SHARP: [number, number, number, number] = [0.32, 0.72, 0, 1];
 const EASE_SMOOTH: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
@@ -58,17 +57,17 @@ export default function ServiceContent({
     <>
       {/* ─────────────────────────────────────────────
           SECTION 1 — FEATURES ("What we do")
-          Dark #061f17 — matches homepage WhyMillecube
+          White background
       ───────────────────────────────────────────── */}
       <section
         style={{
-          background: "#061f17",
+          background: "#ffffff",
           position: "relative" as const,
           overflow: "hidden",
-          borderTop: "1px solid rgba(255,255,255,0.04)",
+          borderTop: "1px solid rgba(7,80,60,0.08)",
         }}
       >
-        {/* Atmospheric radial glow — top centre */}
+        {/* Subtle top glow — very light */}
         <div
           aria-hidden="true"
           style={{
@@ -77,23 +76,9 @@ export default function ServiceContent({
             left: "50%",
             transform: "translateX(-50%)",
             width: "780px",
-            height: "480px",
+            height: "360px",
             background:
-              "radial-gradient(ellipse, rgba(50,205,50,0.055) 0%, transparent 65%)",
-            pointerEvents: "none",
-          }}
-        />
-        {/* Right edge glow */}
-        <div
-          aria-hidden="true"
-          style={{
-            position: "absolute" as const,
-            top: "20%",
-            right: 0,
-            width: "500px",
-            height: "500px",
-            background:
-              "radial-gradient(circle at right, rgba(7,80,60,0.22) 0%, transparent 65%)",
+              "radial-gradient(ellipse, rgba(7,80,60,0.04) 0%, transparent 65%)",
             pointerEvents: "none",
           }}
         />
@@ -120,7 +105,7 @@ export default function ServiceContent({
                   fontSize: "9.5px",
                   fontWeight: 700,
                   letterSpacing: "0.28em",
-                  color: "#32cd32",
+                  color: "#07503c",
                   textTransform: "uppercase" as const,
                   marginBottom: 18,
                 }}
@@ -136,7 +121,7 @@ export default function ServiceContent({
                 style={{
                   fontFamily: "var(--font-bebas)",
                   fontSize: "clamp(34px,4.2vw,56px)",
-                  color: "#ffffff",
+                  color: "#061f17",
                   lineHeight: 1.05,
                   letterSpacing: "-0.03em",
                   margin: "0 0 20px 0",
@@ -153,7 +138,7 @@ export default function ServiceContent({
                 style={{
                   fontFamily: "var(--font-montserrat)",
                   fontSize: "13.5px",
-                  color: "rgba(255,255,255,0.50)",
+                  color: "rgba(6,31,23,0.52)",
                   lineHeight: 1.82,
                   margin: 0,
                   maxWidth: "420px",
@@ -175,7 +160,7 @@ export default function ServiceContent({
                     gap: "28px 36px",
                     paddingTop: 24,
                     marginTop: 28,
-                    borderTop: "1px solid rgba(255,255,255,0.07)",
+                    borderTop: "1px solid rgba(7,80,60,0.10)",
                   }}
                 >
                   {stats.map((stat, i) => (
@@ -194,7 +179,7 @@ export default function ServiceContent({
                         style={{
                           fontFamily: "var(--font-bebas)",
                           fontSize: "clamp(28px,3vw,42px)",
-                          color: "#FFD600",
+                          color: "#07503c",
                           lineHeight: 1,
                           letterSpacing: "-0.02em",
                         }}
@@ -205,7 +190,7 @@ export default function ServiceContent({
                         style={{
                           fontFamily: "var(--font-montserrat)",
                           fontSize: "10px",
-                          color: "rgba(255,255,255,0.35)",
+                          color: "rgba(6,31,23,0.38)",
                           textTransform: "uppercase" as const,
                           letterSpacing: "0.10em",
                           marginTop: 5,
@@ -219,7 +204,7 @@ export default function ServiceContent({
               )}
             </div>
 
-            {/* RIGHT COL — dark glass feature cards, matching Services.tsx */}
+            {/* RIGHT COL — light feature cards */}
             <div style={{ display: "flex", flexDirection: "column" as const, gap: 10 }}>
               {features.map((feature, i) => (
                 <motion.div
@@ -232,15 +217,14 @@ export default function ServiceContent({
                     ease: EASE_SHARP,
                     delay: i * 0.07,
                   }}
-                  /* Double-bezel outer shell */
                   className="svc-feat-outer"
                   style={{
                     borderRadius: "18px",
                     padding: "3px",
-                    background: "rgba(255,255,255,0.02)",
-                    border: "1px solid rgba(255,255,255,0.07)",
+                    background: "rgba(7,80,60,0.02)",
+                    border: "1px solid rgba(7,80,60,0.10)",
                     boxShadow:
-                      "0 2px 8px rgba(0,0,0,0.14), 0 8px 24px rgba(0,0,0,0.10)",
+                      "0 2px 8px rgba(7,80,60,0.05), 0 8px 24px rgba(7,80,60,0.03)",
                     transition:
                       "border-color 240ms cubic-bezier(0.32,0.72,0,1), box-shadow 240ms cubic-bezier(0.32,0.72,0,1)",
                   }}
@@ -249,15 +233,14 @@ export default function ServiceContent({
                   <div
                     className="svc-feat-inner"
                     style={{
-                      backgroundColor: "rgba(255,255,255,0.025)",
+                      backgroundColor: "#ffffff",
                       borderRadius: "14px",
                       padding: "clamp(18px,2.2vw,26px)",
-                      boxShadow: "inset 0 1px 1px rgba(255,255,255,0.05)",
+                      boxShadow: "inset 0 1px 1px rgba(7,80,60,0.04)",
                       transition:
                         "background-color 240ms cubic-bezier(0.32,0.72,0,1)",
                     }}
                   >
-                    {/* Feature name row */}
                     <div
                       style={{
                         display: "flex",
@@ -273,7 +256,7 @@ export default function ServiceContent({
                           height: 8,
                           borderRadius: "50%",
                           backgroundColor: "#32cd32",
-                          opacity: 0.75,
+                          opacity: 0.85,
                           flexShrink: 0,
                         }}
                       />
@@ -282,7 +265,7 @@ export default function ServiceContent({
                           fontFamily: "var(--font-montserrat)",
                           fontSize: "14px",
                           fontWeight: 700,
-                          color: "#ffffff",
+                          color: "#061f17",
                         }}
                       >
                         {feature.name}
@@ -292,7 +275,7 @@ export default function ServiceContent({
                       style={{
                         fontFamily: "var(--font-montserrat)",
                         fontSize: "13px",
-                        color: "rgba(255,255,255,0.46)",
+                        color: "rgba(6,31,23,0.50)",
                         lineHeight: 1.78,
                         margin: 0,
                       }}
@@ -309,17 +292,17 @@ export default function ServiceContent({
 
       {/* ─────────────────────────────────────────────
           SECTION 2 — PROCESS ("How it works")
-          Dark #07503c with service-bg1.png
+          Light mint background
       ───────────────────────────────────────────── */}
       <section
         style={{
-          background: "#07503c",
+          background: "#f4f9f6",
           position: "relative" as const,
           overflow: "hidden",
-          borderTop: "1px solid rgba(255,255,255,0.05)",
+          borderTop: "1px solid rgba(7,80,60,0.08)",
         }}
       >
-        {/* Background image */}
+        {/* Subtle background image */}
         <div
           style={{
             position: "absolute" as const,
@@ -331,34 +314,10 @@ export default function ServiceContent({
             src="/service-bg1.png"
             alt=""
             fill
-            style={{ objectFit: "cover", opacity: 0.15 }}
+            style={{ objectFit: "cover", opacity: 0.04 }}
             aria-hidden="true"
           />
         </div>
-        {/* Overlay to darken the bg image */}
-        <div
-          style={{
-            position: "absolute" as const,
-            inset: 0,
-            background: "rgba(7,80,60,0.84)",
-            pointerEvents: "none",
-          }}
-        />
-        {/* Lime glow */}
-        <div
-          aria-hidden="true"
-          style={{
-            position: "absolute" as const,
-            top: 0,
-            left: "50%",
-            transform: "translateX(-50%)",
-            width: "700px",
-            height: "420px",
-            background:
-              "radial-gradient(ellipse, rgba(50,205,50,0.07) 0%, transparent 65%)",
-            pointerEvents: "none",
-          }}
-        />
 
         <div
           className="max-w-7xl mx-auto"
@@ -380,7 +339,7 @@ export default function ServiceContent({
               style={{
                 fontFamily: "var(--font-bebas)",
                 fontSize: "clamp(32px,4vw,50px)",
-                color: "#ffffff",
+                color: "#061f17",
                 lineHeight: 1.05,
                 letterSpacing: "-0.03em",
                 margin: 0,
@@ -395,7 +354,7 @@ export default function ServiceContent({
           <div
             className="svc-process-grid"
             style={{
-              borderTop: "1px solid rgba(255,255,255,0.08)",
+              borderTop: "1px solid rgba(7,80,60,0.10)",
             }}
           >
             {process.map((step, i) => (
@@ -411,10 +370,10 @@ export default function ServiceContent({
                 }}
                 style={{
                   padding: "clamp(24px,3vw,40px)",
-                  borderBottom: "1px solid rgba(255,255,255,0.08)",
+                  borderBottom: "1px solid rgba(7,80,60,0.10)",
                   borderLeft:
                     i % 2 === 1
-                      ? "1px solid rgba(255,255,255,0.08)"
+                      ? "1px solid rgba(7,80,60,0.10)"
                       : undefined,
                   display: "flex",
                   flexDirection: "column" as const,
@@ -425,7 +384,7 @@ export default function ServiceContent({
                   style={{
                     fontFamily: "var(--font-bebas)",
                     fontSize: "clamp(52px,5.5vw,72px)",
-                    color: "rgba(50,205,50,0.28)",
+                    color: "rgba(7,80,60,0.15)",
                     lineHeight: 1,
                     letterSpacing: "-0.04em",
                   }}
@@ -436,7 +395,7 @@ export default function ServiceContent({
                   style={{
                     fontFamily: "var(--font-bebas)",
                     fontSize: "clamp(20px,2.2vw,28px)",
-                    color: "#ffffff",
+                    color: "#061f17",
                     marginTop: 4,
                     lineHeight: 1.1,
                     letterSpacing: "-0.01em",
@@ -448,7 +407,7 @@ export default function ServiceContent({
                   style={{
                     fontFamily: "var(--font-montserrat)",
                     fontSize: "13.5px",
-                    color: "rgba(255,255,255,0.50)",
+                    color: "rgba(6,31,23,0.50)",
                     lineHeight: 1.8,
                     margin: 0,
                   }}
@@ -463,17 +422,17 @@ export default function ServiceContent({
 
       {/* ─────────────────────────────────────────────
           SECTION 3 — DELIVERABLES
-          Dark #061f17 — same base as features section
+          White background
       ───────────────────────────────────────────── */}
       <section
         style={{
-          background: "#061f17",
+          background: "#ffffff",
           position: "relative" as const,
           overflow: "hidden",
-          borderTop: "1px solid rgba(255,255,255,0.04)",
+          borderTop: "1px solid rgba(7,80,60,0.08)",
         }}
       >
-        {/* Logo watermark */}
+        {/* Logo watermark — subtle */}
         <div
           style={{
             position: "absolute" as const,
@@ -481,7 +440,7 @@ export default function ServiceContent({
             right: "-4%",
             width: "clamp(200px,22vw,320px)",
             height: "clamp(200px,22vw,320px)",
-            opacity: 0.04,
+            opacity: 0.03,
             transform: "translateY(-50%)",
             pointerEvents: "none",
           }}
@@ -494,20 +453,6 @@ export default function ServiceContent({
             aria-hidden="true"
           />
         </div>
-        {/* Glow */}
-        <div
-          aria-hidden="true"
-          style={{
-            position: "absolute" as const,
-            bottom: 0,
-            left: "30%",
-            width: "600px",
-            height: "400px",
-            background:
-              "radial-gradient(ellipse, rgba(50,205,50,0.04) 0%, transparent 65%)",
-            pointerEvents: "none",
-          }}
-        />
 
         <div
           className="max-w-7xl mx-auto"
@@ -528,7 +473,7 @@ export default function ServiceContent({
                 style={{
                   fontFamily: "var(--font-bebas)",
                   fontSize: "clamp(32px,4vw,50px)",
-                  color: "#ffffff",
+                  color: "#061f17",
                   letterSpacing: "-0.03em",
                   lineHeight: 1.05,
                   margin: "0 0 20px 0",
@@ -545,7 +490,7 @@ export default function ServiceContent({
                 style={{
                   fontFamily: "var(--font-montserrat)",
                   fontSize: "13.5px",
-                  color: "rgba(255,255,255,0.50)",
+                  color: "rgba(6,31,23,0.52)",
                   lineHeight: 1.82,
                   margin: "0 0 32px 0",
                   maxWidth: "380px",
@@ -554,7 +499,7 @@ export default function ServiceContent({
                 {deliverablesBody}
               </motion.p>
 
-              {/* Gold CTA button */}
+              {/* CTA button */}
               <motion.div
                 initial={{ opacity: 0, y: 14 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -568,8 +513,8 @@ export default function ServiceContent({
                       display: "inline-flex",
                       alignItems: "center",
                       gap: 10,
-                      background: "#FFD600",
-                      color: "#061f17",
+                      background: "#07503c",
+                      color: "#FFD600",
                       fontFamily: "var(--font-montserrat)",
                       fontSize: "13px",
                       fontWeight: 700,
@@ -587,7 +532,7 @@ export default function ServiceContent({
                         width: 32,
                         height: 32,
                         borderRadius: "50%",
-                        background: "rgba(6,31,23,0.14)",
+                        background: "rgba(255,214,0,0.15)",
                         display: "inline-flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -602,7 +547,7 @@ export default function ServiceContent({
               </motion.div>
             </div>
 
-            {/* RIGHT COL — deliverable pills on dark */}
+            {/* RIGHT COL — deliverable pills on white */}
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -630,15 +575,14 @@ export default function ServiceContent({
                     display: "inline-flex",
                     alignItems: "center",
                     gap: 8,
-                    backgroundColor: "rgba(255,255,255,0.06)",
-                    border: "1px solid rgba(255,255,255,0.11)",
+                    backgroundColor: "rgba(7,80,60,0.05)",
+                    border: "1px solid rgba(7,80,60,0.12)",
                     borderRadius: 100,
                     padding: "9px 16px",
                     fontFamily: "var(--font-montserrat)",
                     fontSize: "12px",
                     fontWeight: 600,
-                    color: "rgba(255,255,255,0.82)",
-                    boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)",
+                    color: "#07503c",
                   }}
                 >
                   {/* Lime checkmark */}
@@ -673,9 +617,7 @@ export default function ServiceContent({
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────
-          SERVICE CAROUSEL — light contrast break
-      ───────────────────────────────────────────── */}
+      {/* SERVICE CAROUSEL */}
       <ServiceCarousel currentSlug={slug} />
 
       <style>{`
@@ -697,16 +639,16 @@ export default function ServiceContent({
           align-items: start;
         }
         .svc-feat-outer:hover {
-          border-color: rgba(50,205,50,0.22) !important;
-          box-shadow: 0 4px 16px rgba(0,0,0,0.18), 0 16px 40px rgba(7,80,60,0.22) !important;
+          border-color: rgba(7,80,60,0.25) !important;
+          box-shadow: 0 4px 16px rgba(7,80,60,0.08), 0 16px 40px rgba(7,80,60,0.06) !important;
         }
         .svc-feat-outer:hover .svc-feat-inner {
-          background-color: rgba(255,255,255,0.05) !important;
+          background-color: rgba(7,80,60,0.02) !important;
         }
         .svc-cta-btn:hover {
           transform: translateY(-2px);
-          background-color: #e6c200 !important;
-          box-shadow: 0 12px 32px rgba(255,214,0,0.28);
+          background-color: #064232 !important;
+          box-shadow: 0 12px 32px rgba(7,80,60,0.22);
         }
         @media (max-width: 1023px) {
           .svc-features-grid {

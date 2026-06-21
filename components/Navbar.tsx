@@ -130,15 +130,13 @@ export default function Navbar() {
             onMouseEnter={() => setServicesOpen(true)}
             onMouseLeave={() => setServicesOpen(false)}
           >
-            <button
+            <Link
+              href="/services"
               className="flex items-center gap-1.5 text-sm font-semibold transition-colors duration-200"
               style={{
                 color: isServicesActive || servicesOpen ? "#FFD600" : "rgba(255,255,255,0.65)",
                 fontFamily: "var(--font-montserrat)",
-                background: "none",
-                border: "none",
-                cursor: "pointer",
-                padding: 0,
+                textDecoration: "none",
               }}
             >
               Services
@@ -159,7 +157,7 @@ export default function Navbar() {
               >
                 <polyline points="6 9 12 15 18 9" />
               </svg>
-            </button>
+            </Link>
 
             {/* Dropdown panel */}
             <div
@@ -399,75 +397,20 @@ export default function Navbar() {
             borderTop: "1px solid rgba(255,255,255,0.07)",
           }}
         >
-          {/* Services expandable */}
-          <button
-            className="flex items-center justify-between w-full text-sm font-semibold py-3"
+          {/* Services — direct link on mobile */}
+          <Link
+            href="/services"
+            className="text-sm font-semibold py-3"
             style={{
               color: isServicesActive ? "#FFD600" : "rgba(255,255,255,0.65)",
               fontFamily: "var(--font-montserrat)",
-              background: "none",
-              border: "none",
-              cursor: "pointer",
+              textDecoration: "none",
+              display: "block",
             }}
-            onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+            onClick={() => setMenuOpen(false)}
           >
             Services
-            <svg
-              width="12"
-              height="12"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              style={{
-                transform: mobileServicesOpen ? "rotate(180deg)" : "rotate(0deg)",
-                transition: "transform 220ms",
-                opacity: 0.6,
-              }}
-            >
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-
-          {mobileServicesOpen && (
-            <div style={{ paddingLeft: "12px", paddingBottom: "8px", display: "flex", flexDirection: "column", gap: "0" }}>
-              {serviceCategories.map((cat) => (
-                <div key={cat.heading} style={{ marginBottom: "12px" }}>
-                  <p
-                    style={{
-                      fontFamily: "var(--font-montserrat)",
-                      fontSize: "9px",
-                      fontWeight: 700,
-                      letterSpacing: "0.18em",
-                      textTransform: "uppercase",
-                      color: "#32cd32",
-                      margin: "0 0 6px 0",
-                    }}
-                  >
-                    {cat.heading}
-                  </p>
-                  {cat.items.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="block py-2 text-sm"
-                      style={{
-                        color: "rgba(255,255,255,0.55)",
-                        fontFamily: "var(--font-montserrat)",
-                        fontWeight: 500,
-                        textDecoration: "none",
-                      }}
-                      onClick={() => { setMenuOpen(false); setMobileServicesOpen(false); }}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-              ))}
-            </div>
-          )}
+          </Link>
 
           {otherLinks.map((link) => (
             <Link
