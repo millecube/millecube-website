@@ -1,0 +1,73 @@
+# Millecube Digital — AI Discovery File
+# https://millecube.com
+# Last updated: 2026-06-21
+
+Millecube Digital is a technical-first digital marketing agency based in Penang, Malaysia.
+Legal entity: Cadoo Venture Sdn. Bhd.
+
+We specialise in paid media, marketplace management, and measurable digital marketing for
+Malaysian SMEs and growing brands. All work is tracked to revenue, not just impressions.
+
+## Services
+
+- Meta Ads (Facebook & Instagram): full-funnel campaign strategy, creative, and reporting
+- Google Ads: search, display, Performance Max, and Shopping campaigns
+- Marketplace Management: Shopee, Lazada, and TikTok Shop — listings, ads, and chat
+- Social Media Marketing: organic strategy, content calendar, and community management
+- SEO: technical SEO, on-page optimisation, and local search (Google Business Profile)
+- Website & Landing Pages: Next.js, WordPress, and Webflow — built for conversion
+- Content & Creative: ad creatives, copywriting, short-form video, and campaign concepts
+- Branding & Strategy: brand positioning, identity design, and 90-day marketing strategy
+
+## Who We Serve
+
+Malaysian SMEs who are serious about measurable growth. Typical clients:
+- Retail and e-commerce brands selling on Shopee and Lazada
+- Service businesses using Meta Ads for lead generation
+- Growing brands that want to understand where their ad spend is going
+
+## Key Differentiators
+
+- No lock-in contracts — clients stay because results work
+- All conversions tracked to a specific action (lead, sale, WhatsApp click)
+- Transparent reporting — clients see actual performance, not vanity metrics
+- Server-side conversion tracking (Meta CAPI) to protect attribution accuracy
+
+## Pricing Signals
+
+- Paid media management: from RM2,000/mo
+- Marketplace management: from RM2,000/mo per platform
+- Website builds: project-based pricing
+- Content production: monthly retainer or per-sprint
+
+## Location
+
+2-5-9, Gat Lebuh Macallum
+10300 George Town, Pulau Pinang, Malaysia
+
+## Contact
+
+Email: hello@millecube.com
+WhatsApp: +60 16-496 3875
+Web: https://millecube.com/contact
+
+## Frequently Asked Questions
+
+Q: How much does digital marketing cost in Malaysia?
+A: Paid media management at Millecube starts from RM2,000 per month per channel.
+   Ad spend is separate and budgeted based on client goals and platform minimums.
+
+Q: Does Millecube work with small businesses?
+A: Yes. We work with Malaysian SMEs at all growth stages, from early-stage brands
+   to established businesses scaling their digital presence.
+
+Q: What platforms does Millecube manage?
+A: Meta (Facebook + Instagram), Google Ads, Shopee, Lazada, and TikTok Shop.
+   We also build websites and manage SEO for clients who need a full-stack approach.
+
+Q: How long does it take to see results from Meta Ads?
+A: Most clients see meaningful data within 30 days and peak performance within 90 days
+   as the algorithm learns from real conversion signals.
+
+Q: Does Millecube require a long-term contract?
+A: No. There is no lock-in contract. Clients are retained month-to-month.

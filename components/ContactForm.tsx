@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -47,6 +47,17 @@ export default function ContactForm() {
   });
   const [done, setDone] = useState(false);
 
+  // Capture click IDs on mount (supports ?gclid= and ?fbclid= on any landing page)
+  const clickIds = useRef({ gclid: "", fbclid: "" });
+  useEffect(() => {
+    const p = new URLSearchParams(window.location.search);
+    const gclid = p.get("gclid") ?? sessionStorage.getItem("_gclid") ?? "";
+    const fbclid = p.get("fbclid") ?? sessionStorage.getItem("_fbclid") ?? "";
+    if (gclid) sessionStorage.setItem("_gclid", gclid);
+    if (fbclid) sessionStorage.setItem("_fbclid", fbclid);
+    clickIds.current = { gclid, fbclid };
+  }, []);
+
   const setF = (f: keyof FormState, v: string) =>
     setForm((p) => ({ ...p, [f]: v }));
 
@@ -62,7 +73,7 @@ export default function ContactForm() {
     step === 1 ? form.name.trim() !== "" && form.email.trim() !== "" :
     step === 2 ? form.services.length > 0 : true;
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const lines = [
       "Hi Millecube! I'd like to explore working together.",
       "",
@@ -77,6 +88,19 @@ export default function ContactForm() {
       form.budget ? `*Monthly budget:* ${form.budget}` : "",
       form.message ? `\n*About my goals:*\n${form.message}` : "",
     ].filter((l) => l !== "");
+
+    // Fire conversion events (non-blocking — WhatsApp opens regardless)
+    fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        ...form,
+        gclid: clickIds.current.gclid || null,
+        fbclid: clickIds.current.fbclid || null,
+        event_id: `lead_${Date.now()}`,
+      }),
+    }).catch(() => { /* silently ignore — WhatsApp submit is the source of truth */ });
+
     window.open(
       `https://wa.me/60164963875?text=${encodeURIComponent(lines.join("\n"))}`,
       "_blank"
