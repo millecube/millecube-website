@@ -219,6 +219,342 @@ export default function AboutContent() {
         </div>
       </section>
 
+      {/* ── VISION & MISSION SECTION ── */}
+      <section
+        style={{
+          backgroundColor: "#f4f9f6",
+          padding: "clamp(52px, 6.5vw, 88px) clamp(20px, 3vw, 40px)",
+        }}
+      >
+        <div className="max-w-7xl mx-auto">
+          {/* Section eyebrow */}
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease }}
+            style={{
+              fontFamily: "var(--font-montserrat)",
+              fontSize: "9.5px",
+              fontWeight: 700,
+              letterSpacing: "0.28em",
+              textTransform: "uppercase",
+              color: "#32cd32",
+              marginBottom: "clamp(24px, 3vw, 36px)",
+            }}
+          >
+            Our Direction
+          </motion.p>
+
+          {/* Two cards */}
+          <div
+            className="vm-grid"
+            style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}
+          >
+            {/* ── VISION card ── */}
+            <motion.div
+              initial={{ opacity: 0, y: 28, filter: "blur(6px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.88, delay: 0, ease }}
+              style={{ display: "flex" }}
+            >
+              {/* Outer shell */}
+              <div
+                style={{
+                  flex: 1,
+                  borderRadius: "20px",
+                  padding: "2.5px",
+                  background: "rgba(7,80,60,0.06)",
+                  border: "1px solid rgba(7,80,60,0.14)",
+                  boxShadow:
+                    "0 2px 10px rgba(7,80,60,0.08), 0 8px 28px rgba(7,80,60,0.12)",
+                  transition:
+                    "border-color 260ms cubic-bezier(0.32,0.72,0,1), transform 260ms cubic-bezier(0.32,0.72,0,1)",
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor =
+                    "rgba(50,205,50,0.35)";
+                  (e.currentTarget as HTMLElement).style.transform =
+                    "translateY(-4px)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor =
+                    "rgba(7,80,60,0.14)";
+                  (e.currentTarget as HTMLElement).style.transform =
+                    "translateY(0)";
+                }}
+              >
+                {/* Inner core */}
+                <div
+                  style={{
+                    borderRadius: "17.5px",
+                    background:
+                      "linear-gradient(145deg, #07503c 0%, #064232 60%, #073d2e 100%)",
+                    padding: "clamp(28px, 3.2vw, 44px)",
+                    minHeight: "300px",
+                    position: "relative",
+                    overflow: "hidden",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    gap: "24px",
+                    boxShadow: "inset 0 1px 1px rgba(255,255,255,0.07)",
+                  }}
+                >
+                  {/* Radial glow top-left */}
+                  <div
+                    aria-hidden
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "260px",
+                      height: "260px",
+                      borderRadius: "50%",
+                      background:
+                        "radial-gradient(circle, rgba(50,205,50,0.10) 0%, transparent 70%)",
+                      pointerEvents: "none",
+                    }}
+                  />
+                  {/* Logo watermark */}
+                  <img
+                    src="/logo-3d.png"
+                    alt=""
+                    aria-hidden
+                    style={{
+                      position: "absolute",
+                      bottom: "-14%",
+                      right: "-5%",
+                      width: "clamp(130px, 16vw, 200px)",
+                      opacity: 0.065,
+                      pointerEvents: "none",
+                      userSelect: "none",
+                    }}
+                  />
+
+                  {/* Top: badge */}
+                  <span
+                    style={{
+                      display: "inline-flex",
+                      alignSelf: "flex-start",
+                      fontFamily: "var(--font-montserrat)",
+                      fontSize: "8.5px",
+                      fontWeight: 700,
+                      letterSpacing: "0.20em",
+                      textTransform: "uppercase",
+                      color: "rgba(255,255,255,0.55)",
+                      backgroundColor: "rgba(255,255,255,0.07)",
+                      border: "1px solid rgba(255,255,255,0.12)",
+                      padding: "4px 12px",
+                      borderRadius: "100px",
+                      position: "relative",
+                      zIndex: 1,
+                    }}
+                  >
+                    Our Vision
+                  </span>
+
+                  {/* Bottom: headline + body */}
+                  <div
+                    style={{
+                      position: "relative",
+                      zIndex: 1,
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "12px",
+                    }}
+                  >
+                    <h3
+                      style={{
+                        fontFamily: "var(--font-bebas)",
+                        fontSize: "clamp(26px, 2.8vw, 38px)",
+                        fontWeight: 800,
+                        lineHeight: 1.06,
+                        letterSpacing: "-0.02em",
+                        color: "#ffffff",
+                        margin: 0,
+                      }}
+                    >
+                      To lead with{" "}
+                      <span style={{ color: "#32cd32" }}>data,</span>
+                      <br />
+                      not assumptions.
+                    </h3>
+                    <p
+                      style={{
+                        fontFamily: "var(--font-montserrat)",
+                        fontSize: "13px",
+                        lineHeight: 1.8,
+                        color: "rgba(255,255,255,0.50)",
+                        margin: 0,
+                      }}
+                    >
+                      To be the most accountable digital agency in Malaysia —
+                      where every ringgit is tracked, every campaign is honest,
+                      and every result is real.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* ── MISSION card ── */}
+            <motion.div
+              initial={{ opacity: 0, y: 28, filter: "blur(6px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.88, delay: 0.1, ease }}
+              style={{ display: "flex" }}
+            >
+              {/* Outer shell */}
+              <div
+                style={{
+                  flex: 1,
+                  borderRadius: "20px",
+                  padding: "2.5px",
+                  background: "rgba(7,80,60,0.06)",
+                  border: "1px solid rgba(7,80,60,0.14)",
+                  boxShadow:
+                    "0 2px 10px rgba(7,80,60,0.08), 0 8px 28px rgba(7,80,60,0.12)",
+                  transition:
+                    "border-color 260ms cubic-bezier(0.32,0.72,0,1), transform 260ms cubic-bezier(0.32,0.72,0,1)",
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor =
+                    "rgba(255,214,0,0.45)";
+                  (e.currentTarget as HTMLElement).style.transform =
+                    "translateY(-4px)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.borderColor =
+                    "rgba(7,80,60,0.14)";
+                  (e.currentTarget as HTMLElement).style.transform =
+                    "translateY(0)";
+                }}
+              >
+                {/* Inner core — image background, left-heavy overlay */}
+                <div
+                  style={{
+                    borderRadius: "17.5px",
+                    minHeight: "300px",
+                    position: "relative",
+                    overflow: "hidden",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    gap: "24px",
+                    padding: "clamp(28px, 3.2vw, 44px)",
+                    boxShadow: "inset 0 1px 1px rgba(255,255,255,0.07)",
+                  }}
+                >
+                  {/* Background photo — team image */}
+                  <img
+                    src="/whoweare-card.png"
+                    alt=""
+                    aria-hidden
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      objectPosition: "center top",
+                      display: "block",
+                    }}
+                  />
+                  {/* Left-heavy overlay — dark for text, fades right to reveal photo */}
+                  <div
+                    aria-hidden
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      background:
+                        "linear-gradient(to right, rgba(6,31,23,0.97) 0%, rgba(7,80,60,0.88) 48%, rgba(7,80,60,0.72) 100%)",
+                      pointerEvents: "none",
+                    }}
+                  />
+                  {/* Bottom fade — ensures text is readable */}
+                  <div
+                    aria-hidden
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      background:
+                        "linear-gradient(to top, rgba(6,31,23,0.92) 0%, transparent 55%)",
+                      pointerEvents: "none",
+                    }}
+                  />
+
+                  {/* Top: badge */}
+                  <span
+                    style={{
+                      display: "inline-flex",
+                      alignSelf: "flex-start",
+                      fontFamily: "var(--font-montserrat)",
+                      fontSize: "8.5px",
+                      fontWeight: 700,
+                      letterSpacing: "0.20em",
+                      textTransform: "uppercase",
+                      color: "rgba(255,255,255,0.55)",
+                      backgroundColor: "rgba(255,255,255,0.07)",
+                      border: "1px solid rgba(255,255,255,0.12)",
+                      padding: "4px 12px",
+                      borderRadius: "100px",
+                      position: "relative",
+                      zIndex: 1,
+                    }}
+                  >
+                    Our Mission
+                  </span>
+
+                  {/* Bottom: headline + body */}
+                  <div
+                    style={{
+                      position: "relative",
+                      zIndex: 1,
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: "12px",
+                    }}
+                  >
+                    <h3
+                      style={{
+                        fontFamily: "var(--font-bebas)",
+                        fontSize: "clamp(26px, 2.8vw, 38px)",
+                        fontWeight: 800,
+                        lineHeight: 1.06,
+                        letterSpacing: "-0.02em",
+                        color: "#ffffff",
+                        margin: 0,
+                      }}
+                    >
+                      Marketing that{" "}
+                      <span style={{ color: "#FFD600" }}>works.</span>
+                      <br />
+                      Every ringgit.
+                    </h3>
+                    <p
+                      style={{
+                        fontFamily: "var(--font-montserrat)",
+                        fontSize: "13px",
+                        lineHeight: 1.8,
+                        color: "rgba(255,255,255,0.50)",
+                        margin: 0,
+                      }}
+                    >
+                      To help Malaysian business owners grow with marketing that
+                      is honest, hands-on, and tied back to business outcomes
+                      they can actually measure.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* ── VALUES SECTION (dark green — intentional contrast) ── */}
       <section
         style={{
@@ -336,6 +672,9 @@ export default function AboutContent() {
       <style>{`
         @media (max-width: 1023px) {
           .about-story-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .vm-grid {
             grid-template-columns: 1fr !important;
           }
         }
