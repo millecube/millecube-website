@@ -560,6 +560,32 @@ export default function AboutContent() {
           overflow: "hidden",
         }}
       >
+        {/* Background photo */}
+        <img
+          src="/hero-bg.png"
+          alt=""
+          aria-hidden
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center",
+            display: "block",
+            pointerEvents: "none",
+          }}
+        />
+        {/* Dark green overlay */}
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "rgba(7,80,60,0.80)",
+            pointerEvents: "none",
+          }}
+        />
         {/* Radial glow */}
         <div
           aria-hidden
@@ -602,9 +628,10 @@ export default function AboutContent() {
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(3, 1fr)",
-              border: "1px solid rgba(255,255,255,0.07)",
+              border: "1px solid rgba(255,255,255,0.12)",
               borderRadius: "20px",
               overflow: "hidden",
+              boxShadow: "0 8px 32px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.08)",
             }}
           >
             {values.map((v, i) => (
@@ -616,11 +643,13 @@ export default function AboutContent() {
                 transition={{ duration: 0.88, delay: i * 0.1, ease }}
                 style={{
                   padding: "clamp(28px, 3.5vw, 44px)",
-                  borderRight: i < 2 ? "1px solid rgba(255,255,255,0.07)" : "none",
+                  borderRight: i < 2 ? "1px solid rgba(255,255,255,0.09)" : "none",
                   display: "flex",
                   flexDirection: "column",
                   gap: "14px",
-                  backgroundColor: "rgba(6,31,23,0.20)",
+                  backgroundColor: "rgba(6,31,23,0.72)",
+                  backdropFilter: "blur(18px)",
+                  WebkitBackdropFilter: "blur(18px)",
                 }}
               >
                 <span

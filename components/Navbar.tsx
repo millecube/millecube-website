@@ -20,7 +20,7 @@ export default function Navbar() {
     <header
       className="fixed top-0 left-0 right-0 z-50"
       style={{
-        backgroundColor: "rgba(6,31,23,0.97)",
+        backgroundColor: "rgba(7,80,60,0.97)",
         backdropFilter: "blur(14px)",
         WebkitBackdropFilter: "blur(14px)",
         borderBottom: "1px solid rgba(255,255,255,0.07)",
@@ -127,7 +127,7 @@ export default function Navbar() {
         <div
           className="md:hidden px-6 pb-6 pt-3 flex flex-col gap-4"
           style={{
-            backgroundColor: "rgba(6,31,23,0.98)",
+            backgroundColor: "rgba(7,80,60,0.98)",
             borderTop: "1px solid rgba(255,255,255,0.07)",
           }}
         >

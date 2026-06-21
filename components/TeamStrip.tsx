@@ -7,19 +7,46 @@ export default function TeamStrip() {
     <section
       style={{
         backgroundColor: "#07503c",
-        paddingTop: "clamp(48px, 6vw, 80px)",
-        paddingBottom: "clamp(48px, 6vw, 80px)",
+        paddingTop: "clamp(36px, 4vw, 56px)",
+        paddingBottom: "clamp(36px, 4vw, 56px)",
         position: "relative",
         overflow: "hidden",
       }}
     >
+      {/* Background image */}
+      <img
+        src="/hero-bg2.png"
+        alt=""
+        aria-hidden
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          objectPosition: "center",
+          display: "block",
+          pointerEvents: "none",
+        }}
+      />
+      {/* Dark overlay so text stays readable */}
+      <div
+        aria-hidden
+        style={{
+          position: "absolute",
+          inset: 0,
+          background: "rgba(7,80,60,0.82)",
+          pointerEvents: "none",
+        }}
+      />
+      {/* Radial glow */}
       <div
         aria-hidden
         style={{
           position: "absolute",
           inset: 0,
           background:
-            "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(50,205,50,0.08) 0%, transparent 70%)",
+            "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(50,205,50,0.10) 0%, transparent 70%)",
           pointerEvents: "none",
         }}
       />
@@ -61,10 +88,12 @@ export default function TeamStrip() {
             letterSpacing: "-0.03em",
             color: "#ffffff",
             margin: 0,
-            maxWidth: "700px",
+            maxWidth: "560px",
           }}
         >
-          Want to know who you&apos;d actually be working with?
+          Want to know the team
+          <br />
+          <span style={{ color: "#FFD600" }}>behind the work?</span>
         </h2>
 
         <p
