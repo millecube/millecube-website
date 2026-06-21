@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     { url: BASE, lastModified: now, changeFrequency: "monthly", priority: 1.0 },
+    { url: `${BASE}/services`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${BASE}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/work`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
@@ -17,5 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/services/website`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/services/content-creative`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/services/branding-strategy`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${BASE}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${BASE}/terms`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
   ];
 }

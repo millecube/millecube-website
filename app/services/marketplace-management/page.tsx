@@ -4,9 +4,23 @@ import ServiceContent from "@/components/ServiceContent";
 import CtaStrip from "@/components/CtaStrip";
 
 export const metadata: Metadata = {
-  title: "Marketplace Management — Millecube Digital",
+  title: "Shopee Lazada TikTok Shop Management Malaysia",
   description:
-    "Shopee, Lazada, and TikTok Shop managed end-to-end. Store setup, listing optimisation, ads, and monthly reporting — one team across all three platforms.",
+    "Shopee, Lazada, and TikTok Shop managed end-to-end. Store setup, listing optimisation, in-platform ads, and monthly reporting — one team, from RM 2,000/month per platform.",
+  keywords: [
+    "Shopee management Malaysia",
+    "Lazada seller management Malaysia",
+    "TikTok Shop management Malaysia",
+    "marketplace management Penang",
+    "e-commerce marketplace agency Malaysia",
+  ],
+  alternates: { canonical: "https://millecube.com/services/marketplace-management" },
+  openGraph: {
+    title: "Shopee, Lazada & TikTok Shop Management Malaysia — Millecube",
+    description: "One team managing Shopee, Lazada, and TikTok Shop: listings, ads, chat, reporting. From RM 2,000/month.",
+    url: "https://millecube.com/services/marketplace-management",
+    images: [{ url: "/logo-3d.png", width: 500, height: 500, alt: "Millecube Digital" }],
+  },
 };
 
 export default function MarketplaceManagementPage() {

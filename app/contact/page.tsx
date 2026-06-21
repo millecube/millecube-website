@@ -3,9 +3,16 @@ import InnerHero from "@/components/InnerHero";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact — Millecube Digital",
+  title: "Contact Millecube Digital",
   description:
-    "Talk to Millecube Digital about your business. We'll look at your current setup and tell you honestly whether we're the right fit.",
+    "Talk to Millecube Digital about your Malaysian business. WhatsApp, email, or fill in the form — we will look at your current setup and tell you honestly whether we are the right fit.",
+  alternates: { canonical: "https://millecube.com/contact" },
+  openGraph: {
+    title: "Contact Millecube Digital — Digital Marketing Agency Malaysia",
+    description: "Get in touch with Millecube. WhatsApp +60 16-496 3875 or fill in our contact form.",
+    url: "https://millecube.com/contact",
+    images: [{ url: "/logo-3d.png", width: 500, height: 500, alt: "Millecube Digital" }],
+  },
 };
 
 function IconCircle({ children }: { children: React.ReactNode }) {

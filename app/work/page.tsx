@@ -5,9 +5,22 @@ import TeamStrip from "@/components/TeamStrip";
 import CtaStrip from "@/components/CtaStrip";
 
 export const metadata: Metadata = {
-  title: "Our Work — Millecube Digital",
+  title: "Client Results & Case Studies",
   description:
-    "Case studies and results from Millecube Digital. Meta Ads, Marketplace Management, SEO, and more — for Malaysian SMEs.",
+    "Real results from Millecube Digital: 3.8x ROAS for e-commerce, 42% CPL reduction, Shopee and Lazada growth for Malaysian SMEs. Meta Ads, Marketplace, SEO case studies.",
+  keywords: [
+    "digital marketing case studies Malaysia",
+    "Meta Ads results Malaysia",
+    "Shopee Lazada success Malaysia",
+    "marketing agency results Penang",
+  ],
+  alternates: { canonical: "https://millecube.com/work" },
+  openGraph: {
+    title: "Client Results & Case Studies — Millecube Digital",
+    description: "Real results: 3.8x ROAS, 42% CPL reduction, marketplace growth for Malaysian SMEs.",
+    url: "https://millecube.com/work",
+    images: [{ url: "/logo-3d.png", width: 500, height: 500, alt: "Millecube Digital" }],
+  },
 };
 
 export default function WorkPage() {

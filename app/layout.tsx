@@ -21,28 +21,27 @@ const jakartaBody = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Digital Marketing Agency Malaysia | Meta Ads & Marketplace Management — Millecube",
+  title: {
+    template: "%s | Millecube Digital",
+    default: "Digital Marketing Agency Malaysia — Millecube",
+  },
   description:
     "Millecube is a technical-first digital marketing agency in Penang, Malaysia. We manage Meta Ads, Google Ads, Shopee, Lazada, and TikTok Shop — tracked to every ringgit, no contract.",
-  keywords: [
-    "digital marketing agency Malaysia",
-    "meta ads agency Penang",
-    "Facebook ads agency Malaysia",
-    "marketplace management Malaysia",
-    "Shopee Lazada management Penang",
-    "Google ads agency Malaysia",
-  ],
   openGraph: {
     title: "Millecube Digital — Strategy built on data. Results measured in revenue.",
     description:
       "Technical-first digital marketing agency from Penang. Meta Ads, Google Ads, Shopee, Lazada, TikTok Shop — no contract.",
     type: "website",
     locale: "en_MY",
-    url: "https://millecube.com",
     siteName: "Millecube Digital",
+    images: [{ url: "/logo-3d.png", width: 500, height: 500, alt: "Millecube Digital" }],
+  },
+  twitter: {
+    card: "summary",
+    site: "@millecubedigital",
+    images: ["/logo-3d.png"],
   },
   metadataBase: new URL("https://millecube.com"),
-  alternates: { canonical: "https://millecube.com" },
 };
 
 /* ── JSON-LD structured data ─────────────────────────────────────────────── */
@@ -97,7 +96,9 @@ const localBizSchema = {
     opens: "09:00",
     closes: "18:00",
   },
-  priceRange: "RM RM",
+  priceRange: "RM 2,000 - RM 10,000",
+  foundingDate: "2024",
+  areaServed: "Malaysia",
 };
 
 export default function RootLayout({

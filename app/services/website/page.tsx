@@ -4,9 +4,23 @@ import ServiceContent from "@/components/ServiceContent";
 import CtaStrip from "@/components/CtaStrip";
 
 export const metadata: Metadata = {
-  title: "Website & Landing Pages — Millecube Digital",
+  title: "Web Design Agency Malaysia",
   description:
-    "Business websites, landing pages, and e-commerce stores built to convert. WordPress, Next.js, and Webflow — designed for the traffic you're paying to send.",
+    "Business websites, landing pages, and e-commerce stores built to convert. WordPress, Next.js, and Webflow — designed for the paid traffic you send, not just to look good.",
+  keywords: [
+    "web design agency Malaysia",
+    "website design Penang",
+    "landing page design Malaysia",
+    "WordPress website Malaysia",
+    "e-commerce website Malaysia",
+  ],
+  alternates: { canonical: "https://millecube.com/services/website" },
+  openGraph: {
+    title: "Web Design Agency Malaysia — Millecube",
+    description: "Conversion-first websites and landing pages for Malaysian businesses. WordPress, Next.js, Webflow.",
+    url: "https://millecube.com/services/website",
+    images: [{ url: "/logo-3d.png", width: 500, height: 500, alt: "Millecube Digital" }],
+  },
 };
 
 export default function WebsitePage() {

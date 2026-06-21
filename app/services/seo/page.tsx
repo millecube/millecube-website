@@ -4,9 +4,24 @@ import ServiceContent from "@/components/ServiceContent";
 import CtaStrip from "@/components/CtaStrip";
 
 export const metadata: Metadata = {
-  title: "SEO & Search — Millecube Digital",
+  title: "SEO Agency Malaysia",
   description:
-    "SEO services for Malaysian businesses. Keyword strategy, on-page optimisation, and organic traffic that compounds over time — no black-hat tactics, no inflated promises.",
+    "SEO services for Malaysian businesses. Keyword strategy, technical SEO, and organic traffic that compounds — first-page rankings within 90-120 days, tracked via Google Search Console.",
+  keywords: [
+    "SEO agency Malaysia",
+    "SEO services Penang",
+    "search engine optimization Malaysia",
+    "Google ranking Malaysia",
+    "organic traffic Malaysia",
+    "local SEO Malaysia",
+  ],
+  alternates: { canonical: "https://millecube.com/services/seo" },
+  openGraph: {
+    title: "SEO Agency Malaysia — Millecube",
+    description: "Technical SEO for Malaysian businesses. First-page rankings tracked monthly in plain language.",
+    url: "https://millecube.com/services/seo",
+    images: [{ url: "/logo-3d.png", width: 500, height: 500, alt: "Millecube Digital" }],
+  },
 };
 
 export default function SeoPage() {

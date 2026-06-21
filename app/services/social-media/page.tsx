@@ -4,9 +4,23 @@ import ServiceContent from "@/components/ServiceContent";
 import CtaStrip from "@/components/CtaStrip";
 
 export const metadata: Metadata = {
-  title: "Social Media Marketing — Millecube Digital",
+  title: "Social Media Management Malaysia",
   description:
-    "Social media management for Malaysian businesses. Meta, TikTok, LinkedIn, Xiaohongshu — content strategy, creative, and community management handled every month.",
+    "Social media management for Malaysian businesses on Meta, TikTok, LinkedIn, and Xiaohongshu — content strategy, creative, and community management on a monthly retainer.",
+  keywords: [
+    "social media management Malaysia",
+    "social media agency Penang",
+    "Facebook page management Malaysia",
+    "TikTok content Malaysia",
+    "Instagram marketing Malaysia",
+  ],
+  alternates: { canonical: "https://millecube.com/services/social-media" },
+  openGraph: {
+    title: "Social Media Management Malaysia — Millecube",
+    description: "Content strategy, creative, and community management for Malaysian brands on Meta, TikTok, LinkedIn, and Xiaohongshu.",
+    url: "https://millecube.com/services/social-media",
+    images: [{ url: "/logo-3d.png", width: 500, height: 500, alt: "Millecube Digital" }],
+  },
 };
 
 export default function SocialMediaPage() {

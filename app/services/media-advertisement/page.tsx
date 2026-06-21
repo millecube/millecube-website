@@ -4,9 +4,25 @@ import ServiceContent from "@/components/ServiceContent";
 import CtaStrip from "@/components/CtaStrip";
 
 export const metadata: Metadata = {
-  title: "Meta & Google Ads — Millecube Digital",
+  title: "Meta & Google Ads Agency Malaysia",
   description:
-    "Performance advertising on Meta, Google, and TikTok — tracked to every ringgit. Millecube Digital runs paid media for Malaysian SMEs who need measurable results.",
+    "Performance advertising on Meta, Google, and TikTok — tracked to every ringgit. Millecube runs paid media for Malaysian SMEs: average 3.8x ROAS, 62% cost-per-sale reduction, month-to-month.",
+  keywords: [
+    "Meta Ads agency Malaysia",
+    "Facebook ads agency Penang",
+    "Google Ads management Malaysia",
+    "TikTok Ads Malaysia",
+    "paid media agency Malaysia",
+    "performance marketing Penang",
+  ],
+  alternates: { canonical: "https://millecube.com/services/media-advertisement" },
+  openGraph: {
+    title: "Meta & Google Ads Agency Malaysia — Millecube",
+    description:
+      "Average 3.8x ROAS across 35+ Malaysian clients. Meta Ads, Google Ads, TikTok Ads — tracked to every ringgit, no contract.",
+    url: "https://millecube.com/services/media-advertisement",
+    images: [{ url: "/logo-3d.png", width: 500, height: 500, alt: "Millecube Digital" }],
+  },
 };
 
 export default function MediaAdvertisementPage() {

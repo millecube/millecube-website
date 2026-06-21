@@ -5,9 +5,21 @@ import Portfolio from "@/components/Portfolio";
 import CtaStrip from "@/components/CtaStrip";
 
 export const metadata: Metadata = {
-  title: "Services — Millecube Digital",
+  title: "Digital Marketing Services Malaysia",
   description:
-    "Meta Ads, Google Ads, Shopee, Lazada, TikTok Shop management, SEO, websites, content, and branding — every channel your revenue depends on.",
+    "Meta Ads, Google Ads, Shopee, Lazada, TikTok Shop management, SEO, websites, content, and branding for Malaysian businesses — every channel your revenue depends on.",
+  keywords: [
+    "digital marketing services Malaysia",
+    "marketing agency services Penang",
+    "paid media SEO marketplace Malaysia",
+  ],
+  alternates: { canonical: "https://millecube.com/services" },
+  openGraph: {
+    title: "Digital Marketing Services Malaysia — Millecube",
+    description: "Meta Ads, Google Ads, Shopee, Lazada, TikTok Shop, SEO, websites, content, branding — full-service digital marketing from Penang.",
+    url: "https://millecube.com/services",
+    images: [{ url: "/logo-3d.png", width: 500, height: 500, alt: "Millecube Digital" }],
+  },
 };
 
 export default function ServicesPage() {

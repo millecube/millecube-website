@@ -4,9 +4,23 @@ import ServiceContent from "@/components/ServiceContent";
 import CtaStrip from "@/components/CtaStrip";
 
 export const metadata: Metadata = {
-  title: "Content & Creative — Millecube Digital",
+  title: "Ad Creative & Content Production Malaysia",
   description:
-    "Ad creative, copywriting, and video production for Malaysian businesses. Built to stop the scroll and drive action across Meta, TikTok, and Google.",
+    "Ad creative, copywriting, and short-form video for Malaysian businesses — built to stop the scroll and drive action on Meta, TikTok, and Google campaigns.",
+  keywords: [
+    "ad creative agency Malaysia",
+    "content production Malaysia",
+    "copywriting Malaysia",
+    "video production Penang",
+    "social media content Malaysia",
+  ],
+  alternates: { canonical: "https://millecube.com/services/content-creative" },
+  openGraph: {
+    title: "Ad Creative & Content Production Malaysia — Millecube",
+    description: "Stop-scroll creative for Malaysian brands: static ads, video, copywriting for Meta, TikTok, and Google.",
+    url: "https://millecube.com/services/content-creative",
+    images: [{ url: "/logo-3d.png", width: 500, height: 500, alt: "Millecube Digital" }],
+  },
 };
 
 export default function ContentCreativePage() {

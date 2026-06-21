@@ -4,9 +4,23 @@ import ServiceContent from "@/components/ServiceContent";
 import CtaStrip from "@/components/CtaStrip";
 
 export const metadata: Metadata = {
-  title: "Branding & Strategy — Millecube Digital",
+  title: "Branding Agency Malaysia",
   description:
-    "Brand positioning, visual identity, and marketing strategy for Malaysian SMEs. Define what you stand for before you spend on ads.",
+    "Brand positioning, visual identity, and 90-day marketing strategy for Malaysian SMEs. Define what you stand for before you spend on ads — based in Penang.",
+  keywords: [
+    "branding agency Malaysia",
+    "brand identity design Penang",
+    "marketing strategy Malaysia",
+    "brand positioning Malaysia",
+    "brand strategy agency Malaysia",
+  ],
+  alternates: { canonical: "https://millecube.com/services/branding-strategy" },
+  openGraph: {
+    title: "Branding Agency Malaysia — Millecube",
+    description: "Brand positioning, visual identity, and 90-day marketing strategy for Malaysian SMEs. Based in Penang.",
+    url: "https://millecube.com/services/branding-strategy",
+    images: [{ url: "/logo-3d.png", width: 500, height: 500, alt: "Millecube Digital" }],
+  },
 };
 
 export default function BrandingStrategyPage() {

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -77,16 +78,12 @@ export default function AboutContent() {
                 }}
               >
                 {/* Photo */}
-                <img
+                <Image
                   src="/aboutus-card1.png"
                   alt="Millecube Digital office and team"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    objectPosition: "center top",
-                    display: "block",
-                  }}
+                  fill
+                  style={{ objectFit: "cover", objectPosition: "center top" }}
+                  sizes="(max-width: 1023px) 100vw, 33vw"
                 />
 
                 {/* Green tint */}
@@ -407,15 +404,18 @@ export default function AboutContent() {
                     }}
                   />
                   {/* Logo watermark */}
-                  <img
+                  <Image
                     src="/logo-3d.png"
                     alt=""
                     aria-hidden
+                    width={200}
+                    height={200}
                     style={{
                       position: "absolute",
                       bottom: "-14%",
                       right: "-5%",
                       width: "clamp(130px, 16vw, 200px)",
+                      height: "auto",
                       opacity: 0.065,
                       pointerEvents: "none",
                       userSelect: "none",
@@ -536,19 +536,13 @@ export default function AboutContent() {
                   }}
                 >
                   {/* Background photo — team image */}
-                  <img
+                  <Image
                     src="/aboutus-card1.png"
                     alt=""
                     aria-hidden
-                    style={{
-                      position: "absolute",
-                      inset: 0,
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      objectPosition: "center top",
-                      display: "block",
-                    }}
+                    fill
+                    style={{ objectFit: "cover", objectPosition: "center top" }}
+                    sizes="(max-width: 1023px) 100vw, 50vw"
                   />
                   {/* Left-heavy overlay — dark for text, fades right to reveal photo */}
                   <div
