@@ -8,23 +8,26 @@ export const metadata: Metadata = {
     "Talk to Millecube Digital about your business. We'll look at your current setup and tell you honestly whether we're the right fit.",
 };
 
-const CONTACT_ITEMS = [
-  {
-    label: "WhatsApp (fastest)",
-    value: "+60 16-496 3875",
-    href: "https://wa.me/60164963875",
-  },
-  {
-    label: "Email",
-    value: "hello@millecube.com",
-    href: "mailto:hello@millecube.com",
-  },
-  {
-    label: "Office",
-    value: "2-5-9, Gat Lebuh Macallum\n10300 George Town\nPulau Pinang, Malaysia",
-    href: null,
-  },
-];
+function IconCircle({ children }: { children: React.ReactNode }) {
+  return (
+    <div
+      style={{
+        width: "36px",
+        height: "36px",
+        borderRadius: "50%",
+        backgroundColor: "rgba(7,80,60,0.08)",
+        border: "1px solid rgba(7,80,60,0.12)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        flexShrink: 0,
+        color: "#07503c",
+      }}
+    >
+      {children}
+    </div>
+  );
+}
 
 export default function ContactPage() {
   return (
@@ -44,122 +47,46 @@ export default function ContactPage() {
         }}
       >
         <div className="max-w-7xl mx-auto">
+          {/* Single container — both columns same height via grid stretch */}
           <div
             className="contact-grid"
             style={{
               display: "grid",
               gridTemplateColumns: "5fr 7fr",
-              gap: "16px",
-              alignItems: "start",
+              alignItems: "stretch",
+              border: "1px solid rgba(7,80,60,0.09)",
+              borderRadius: "20px",
+              overflow: "hidden",
+              boxShadow: "0 2px 16px rgba(7,80,60,0.06), 0 8px 32px rgba(7,80,60,0.07)",
             }}
           >
-            {/* ── LEFT: Info card with map ── */}
+            {/* ── LEFT: Map + contact info ── */}
             <div
               style={{
-                borderRadius: "20px",
-                padding: "2.5px",
-                background: "rgba(7,80,60,0.06)",
-                border: "1px solid rgba(7,80,60,0.12)",
-                boxShadow:
-                  "0 2px 10px rgba(7,80,60,0.08), 0 8px 28px rgba(7,80,60,0.10)",
-                position: "sticky",
-                top: "96px",
+                backgroundColor: "#f4f9f6",
+                borderRight: "1px solid rgba(7,80,60,0.09)",
+                padding: "clamp(32px, 4vw, 52px)",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                gap: "28px",
               }}
             >
-              <div
-                style={{
-                  borderRadius: "17.5px",
-                  background:
-                    "linear-gradient(145deg, #07503c 0%, #064232 60%, #073d2e 100%)",
-                  padding: "clamp(28px, 3.5vw, 44px)",
-                  position: "relative",
-                  overflow: "hidden",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "24px",
-                  boxShadow: "inset 0 1px 1px rgba(255,255,255,0.07)",
-                }}
-              >
-                {/* Logo watermark */}
-                <img
-                  src="/logo-3d.png"
-                  alt=""
-                  aria-hidden
-                  style={{
-                    position: "absolute",
-                    bottom: "-6%",
-                    right: "-5%",
-                    width: "clamp(150px, 18vw, 220px)",
-                    opacity: 0.065,
-                    pointerEvents: "none",
-                    userSelect: "none",
-                  }}
-                />
-                {/* Lime radial glow */}
-                <div
-                  aria-hidden
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "300px",
-                    height: "300px",
-                    borderRadius: "50%",
-                    background:
-                      "radial-gradient(circle, rgba(50,205,50,0.07) 0%, transparent 70%)",
-                    pointerEvents: "none",
-                  }}
-                />
-
-                {/* Heading */}
-                <div style={{ position: "relative", zIndex: 1 }}>
-                  <span
-                    style={{
-                      display: "inline-block",
-                      fontFamily: "var(--font-montserrat)",
-                      fontSize: "8.5px",
-                      fontWeight: 700,
-                      letterSpacing: "0.22em",
-                      textTransform: "uppercase",
-                      color: "#32cd32",
-                      backgroundColor: "rgba(50,205,50,0.08)",
-                      border: "1px solid rgba(50,205,50,0.20)",
-                      padding: "4px 12px",
-                      borderRadius: "100px",
-                      marginBottom: "14px",
-                    }}
-                  >
-                    Millecube Digital
-                  </span>
-                  <h2
-                    style={{
-                      fontFamily: "var(--font-bebas)",
-                      fontSize: "clamp(32px, 3.2vw, 48px)",
-                      fontWeight: 800,
-                      lineHeight: 1.0,
-                      letterSpacing: "-0.02em",
-                      color: "#ffffff",
-                    }}
-                  >
-                    Contact Us
-                  </h2>
-                </div>
-
-                {/* Google Maps embed */}
+              {/* Top content */}
+              <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+                {/* Google Maps */}
                 <div
                   style={{
-                    position: "relative",
-                    zIndex: 1,
                     borderRadius: "12px",
                     overflow: "hidden",
-                    border: "1px solid rgba(255,255,255,0.10)",
+                    border: "1px solid rgba(7,80,60,0.10)",
                     flexShrink: 0,
                   }}
                 >
                   <iframe
                     src="https://maps.google.com/maps?q=2-5-9+Gat+Lebuh+Macallum+10300+George+Town+Pulau+Pinang+Malaysia&output=embed"
                     width="100%"
-                    height="220"
+                    height="240"
                     style={{ border: 0, display: "block" }}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
@@ -167,157 +94,173 @@ export default function ContactPage() {
                   />
                 </div>
 
-                {/* Contact items */}
-                <div
-                  style={{
-                    position: "relative",
-                    zIndex: 1,
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "18px",
-                  }}
-                >
-                  {CONTACT_ITEMS.map((c) => (
-                    <div key={c.label}>
-                      <p
-                        style={{
-                          fontFamily: "var(--font-montserrat)",
-                          fontSize: "9px",
-                          fontWeight: 700,
-                          letterSpacing: "0.18em",
-                          textTransform: "uppercase",
-                          color: "rgba(255,255,255,0.32)",
-                          marginBottom: "4px",
-                        }}
-                      >
-                        {c.label}
-                      </p>
-                      {c.href ? (
-                        <a
-                          href={c.href}
-                          target={c.href.startsWith("http") ? "_blank" : undefined}
-                          rel={
-                            c.href.startsWith("http")
-                              ? "noopener noreferrer"
-                              : undefined
-                          }
-                          style={{
-                            fontFamily: "var(--font-montserrat)",
-                            fontSize: "14px",
-                            fontWeight: 600,
-                            color: "#ffffff",
-                            textDecoration: "none",
-                          }}
-                        >
-                          {c.value}
-                        </a>
-                      ) : (
-                        <p
-                          style={{
-                            fontFamily: "var(--font-montserrat)",
-                            fontSize: "13px",
-                            fontWeight: 500,
-                            color: "rgba(255,255,255,0.75)",
-                            lineHeight: 1.7,
-                            whiteSpace: "pre-line",
-                          }}
-                        >
-                          {c.value}
-                        </p>
-                      )}
-                    </div>
-                  ))}
+                {/* Company name + address */}
+                <div>
+                  <p
+                    style={{
+                      fontFamily: "var(--font-montserrat)",
+                      fontSize: "14px",
+                      fontWeight: 700,
+                      color: "#07503c",
+                      marginBottom: "6px",
+                    }}
+                  >
+                    Millecube Digital
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "var(--font-montserrat)",
+                      fontSize: "13px",
+                      color: "rgba(7,80,60,0.55)",
+                      lineHeight: 1.75,
+                    }}
+                  >
+                    2-5-9, Gat Lebuh Macallum,<br />
+                    10300 George Town,<br />
+                    Pulau Pinang, Malaysia.
+                  </p>
                 </div>
 
-                {/* WhatsApp CTA */}
-                <div style={{ position: "relative", zIndex: 1 }}>
+                {/* Contact rows */}
+                <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+                  {/* Email */}
+                  <a
+                    href="mailto:hello@millecube.com"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "12px",
+                      textDecoration: "none",
+                    }}
+                  >
+                    <IconCircle>
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="2" y="4" width="20" height="16" rx="2" />
+                        <path d="m2 7 10 7 10-7" />
+                      </svg>
+                    </IconCircle>
+                    <span
+                      style={{
+                        fontFamily: "var(--font-montserrat)",
+                        fontSize: "13.5px",
+                        fontWeight: 500,
+                        color: "#07503c",
+                      }}
+                    >
+                      hello@millecube.com
+                    </span>
+                  </a>
+
+                  {/* WhatsApp */}
                   <a
                     href="https://wa.me/60164963875"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
-                      display: "inline-flex",
+                      display: "flex",
                       alignItems: "center",
-                      gap: "7px",
-                      backgroundColor: "#FFD600",
-                      color: "#07503c",
-                      fontFamily: "var(--font-montserrat)",
-                      fontSize: "12.5px",
-                      fontWeight: 700,
-                      padding: "11px 9px 11px 20px",
-                      borderRadius: "100px",
+                      gap: "12px",
                       textDecoration: "none",
-                      transition: "background-color 240ms ease",
                     }}
                   >
-                    WhatsApp Us Now
+                    <IconCircle>
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.99 1.18 2 2 0 013 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                      </svg>
+                    </IconCircle>
                     <span
                       style={{
-                        width: "28px",
-                        height: "28px",
-                        borderRadius: "50%",
-                        backgroundColor: "rgba(6,31,23,0.13)",
-                        display: "inline-flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        fontSize: "13px",
+                        fontFamily: "var(--font-montserrat)",
+                        fontSize: "13.5px",
+                        fontWeight: 500,
+                        color: "#07503c",
                       }}
                     >
-                      →
+                      +60 16-496 3875
                     </span>
                   </a>
                 </div>
               </div>
+
+              {/* WhatsApp CTA — pinned to bottom */}
+              <div>
+                <a
+                  href="https://wa.me/60164963875"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "7px",
+                    backgroundColor: "#07503c",
+                    color: "#FFD600",
+                    fontFamily: "var(--font-montserrat)",
+                    fontSize: "12.5px",
+                    fontWeight: 700,
+                    padding: "11px 9px 11px 20px",
+                    borderRadius: "100px",
+                    textDecoration: "none",
+                    transition: "background-color 240ms ease",
+                  }}
+                >
+                  WhatsApp Us Now
+                  <span
+                    style={{
+                      width: "28px",
+                      height: "28px",
+                      borderRadius: "50%",
+                      backgroundColor: "rgba(255,214,0,0.15)",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: "13px",
+                    }}
+                  >
+                    →
+                  </span>
+                </a>
+              </div>
             </div>
 
-            {/* ── RIGHT: Contact form card ── */}
+            {/* ── RIGHT: Contact form ── */}
             <div
               style={{
-                borderRadius: "20px",
-                padding: "2.5px",
-                background: "rgba(7,80,60,0.03)",
-                border: "1px solid rgba(7,80,60,0.10)",
-                boxShadow:
-                  "0 2px 10px rgba(7,80,60,0.05), 0 8px 28px rgba(7,80,60,0.07)",
+                backgroundColor: "#ffffff",
+                padding: "clamp(32px, 4vw, 52px)",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
               }}
             >
-              <div
+              <span
                 style={{
-                  borderRadius: "17.5px",
-                  backgroundColor: "#ffffff",
-                  padding: "clamp(28px, 3.5vw, 48px)",
+                  display: "inline-block",
+                  fontFamily: "var(--font-montserrat)",
+                  fontSize: "9px",
+                  fontWeight: 700,
+                  letterSpacing: "0.22em",
+                  textTransform: "uppercase",
+                  color: "#32cd32",
+                  marginBottom: "10px",
                 }}
               >
-                <span
-                  style={{
-                    display: "inline-block",
-                    fontFamily: "var(--font-montserrat)",
-                    fontSize: "9px",
-                    fontWeight: 700,
-                    letterSpacing: "0.22em",
-                    textTransform: "uppercase",
-                    color: "#32cd32",
-                    marginBottom: "10px",
-                  }}
-                >
-                  Get in Touch
-                </span>
-                <h2
-                  style={{
-                    fontFamily: "var(--font-bebas)",
-                    fontSize: "clamp(28px, 2.8vw, 40px)",
-                    fontWeight: 800,
-                    lineHeight: 1.04,
-                    letterSpacing: "-0.02em",
-                    color: "#07503c",
-                    marginBottom: "28px",
-                  }}
-                >
-                  Start the conversation.
-                </h2>
+                Get in Touch
+              </span>
+              <h2
+                style={{
+                  fontFamily: "var(--font-bebas)",
+                  fontSize: "clamp(28px, 2.8vw, 40px)",
+                  fontWeight: 800,
+                  lineHeight: 1.04,
+                  letterSpacing: "-0.02em",
+                  color: "#07503c",
+                  marginBottom: "28px",
+                }}
+              >
+                Start the conversation.
+              </h2>
 
-                <ContactForm />
-              </div>
+              <ContactForm />
             </div>
           </div>
         </div>
@@ -327,6 +270,10 @@ export default function ContactPage() {
         @media (max-width: 1023px) {
           .contact-grid {
             grid-template-columns: 1fr !important;
+          }
+          .contact-grid > div:first-child {
+            border-right: none !important;
+            border-bottom: 1px solid rgba(7,80,60,0.09) !important;
           }
         }
       `}</style>
