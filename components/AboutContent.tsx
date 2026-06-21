@@ -448,7 +448,7 @@ export default function AboutContent() {
                 >
                   {/* Background photo — team image */}
                   <img
-                    src="/whoweare-card.png"
+                    src="/aboutus-card1.png"
                     alt=""
                     aria-hidden
                     style={{
