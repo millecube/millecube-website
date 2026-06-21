@@ -26,32 +26,6 @@ const CONTACT_ITEMS = [
   },
 ];
 
-const SOCIALS = [
-  { label: "Instagram", href: "#" },
-  { label: "Facebook", href: "#" },
-  { label: "LinkedIn", href: "#" },
-  { label: "TikTok", href: "#" },
-];
-
-const faqs = [
-  {
-    q: "Do you require a long-term contract?",
-    a: "No. We work on month-to-month retainers. You can stop at any time. We earn your business each month through results.",
-  },
-  {
-    q: "What size of business do you typically work with?",
-    a: "Malaysian SMEs doing RM1 million to RM10 million in revenue, typically with no internal marketing team. Owner-operated businesses where the stakes are real.",
-  },
-  {
-    q: "How quickly can you start?",
-    a: "Typically within 1–2 weeks of onboarding. We do a full audit of your current setup before launching anything.",
-  },
-  {
-    q: "Do you work with businesses outside Penang?",
-    a: "Yes. We work with clients across Malaysia — Penang, KL, Selangor, Johor, and beyond. Everything is managed remotely.",
-  },
-];
-
 export default function ContactPage() {
   return (
     <main>
@@ -79,7 +53,7 @@ export default function ContactPage() {
               alignItems: "start",
             }}
           >
-            {/* ── LEFT: Info card ── */}
+            {/* ── LEFT: Info card with map ── */}
             <div
               style={{
                 borderRadius: "20px",
@@ -100,10 +74,9 @@ export default function ContactPage() {
                   padding: "clamp(28px, 3.5vw, 44px)",
                   position: "relative",
                   overflow: "hidden",
-                  minHeight: "560px",
                   display: "flex",
                   flexDirection: "column",
-                  justifyContent: "space-between",
+                  gap: "24px",
                   boxShadow: "inset 0 1px 1px rgba(255,255,255,0.07)",
                 }}
               >
@@ -138,7 +111,7 @@ export default function ContactPage() {
                   }}
                 />
 
-                {/* Top content */}
+                {/* Heading */}
                 <div style={{ position: "relative", zIndex: 1 }}>
                   <span
                     style={{
@@ -153,128 +126,111 @@ export default function ContactPage() {
                       border: "1px solid rgba(50,205,50,0.20)",
                       padding: "4px 12px",
                       borderRadius: "100px",
-                      marginBottom: "16px",
+                      marginBottom: "14px",
                     }}
                   >
-                    Let&apos;s Talk
+                    Millecube Digital
                   </span>
-
                   <h2
                     style={{
                       fontFamily: "var(--font-bebas)",
-                      fontSize: "clamp(30px, 3vw, 44px)",
+                      fontSize: "clamp(32px, 3.2vw, 48px)",
                       fontWeight: 800,
-                      lineHeight: 1.05,
+                      lineHeight: 1.0,
                       letterSpacing: "-0.02em",
                       color: "#ffffff",
-                      marginBottom: "12px",
                     }}
                   >
-                    Ready to grow your business?
+                    Contact Us
                   </h2>
-                  <p
-                    style={{
-                      fontFamily: "var(--font-montserrat)",
-                      fontSize: "13px",
-                      color: "rgba(255,255,255,0.50)",
-                      lineHeight: 1.78,
-                      maxWidth: "300px",
-                      marginBottom: "32px",
-                    }}
-                  >
-                    No long-term contracts. No guesswork. We track every ringgit
-                    back to revenue.
-                  </p>
+                </div>
 
-                  {/* Contact items */}
-                  <div
-                    style={{ display: "flex", flexDirection: "column", gap: "20px" }}
-                  >
-                    {CONTACT_ITEMS.map((c) => (
-                      <div key={c.label}>
+                {/* Google Maps embed */}
+                <div
+                  style={{
+                    position: "relative",
+                    zIndex: 1,
+                    borderRadius: "12px",
+                    overflow: "hidden",
+                    border: "1px solid rgba(255,255,255,0.10)",
+                    flexShrink: 0,
+                  }}
+                >
+                  <iframe
+                    src="https://maps.google.com/maps?q=2-5-9+Gat+Lebuh+Macallum+10300+George+Town+Pulau+Pinang+Malaysia&output=embed"
+                    width="100%"
+                    height="220"
+                    style={{ border: 0, display: "block" }}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Millecube Digital office location"
+                  />
+                </div>
+
+                {/* Contact items */}
+                <div
+                  style={{
+                    position: "relative",
+                    zIndex: 1,
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "18px",
+                  }}
+                >
+                  {CONTACT_ITEMS.map((c) => (
+                    <div key={c.label}>
+                      <p
+                        style={{
+                          fontFamily: "var(--font-montserrat)",
+                          fontSize: "9px",
+                          fontWeight: 700,
+                          letterSpacing: "0.18em",
+                          textTransform: "uppercase",
+                          color: "rgba(255,255,255,0.32)",
+                          marginBottom: "4px",
+                        }}
+                      >
+                        {c.label}
+                      </p>
+                      {c.href ? (
+                        <a
+                          href={c.href}
+                          target={c.href.startsWith("http") ? "_blank" : undefined}
+                          rel={
+                            c.href.startsWith("http")
+                              ? "noopener noreferrer"
+                              : undefined
+                          }
+                          style={{
+                            fontFamily: "var(--font-montserrat)",
+                            fontSize: "14px",
+                            fontWeight: 600,
+                            color: "#ffffff",
+                            textDecoration: "none",
+                          }}
+                        >
+                          {c.value}
+                        </a>
+                      ) : (
                         <p
                           style={{
                             fontFamily: "var(--font-montserrat)",
-                            fontSize: "9px",
-                            fontWeight: 700,
-                            letterSpacing: "0.18em",
-                            textTransform: "uppercase",
-                            color: "rgba(255,255,255,0.32)",
-                            marginBottom: "4px",
+                            fontSize: "13px",
+                            fontWeight: 500,
+                            color: "rgba(255,255,255,0.75)",
+                            lineHeight: 1.7,
+                            whiteSpace: "pre-line",
                           }}
                         >
-                          {c.label}
+                          {c.value}
                         </p>
-                        {c.href ? (
-                          <a
-                            href={c.href}
-                            target={c.href.startsWith("http") ? "_blank" : undefined}
-                            rel={c.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                            style={{
-                              fontFamily: "var(--font-montserrat)",
-                              fontSize: "14px",
-                              fontWeight: 600,
-                              color: "#ffffff",
-                              textDecoration: "none",
-                            }}
-                          >
-                            {c.value}
-                          </a>
-                        ) : (
-                          <p
-                            style={{
-                              fontFamily: "var(--font-montserrat)",
-                              fontSize: "13px",
-                              fontWeight: 500,
-                              color: "rgba(255,255,255,0.75)",
-                              lineHeight: 1.7,
-                              whiteSpace: "pre-line",
-                            }}
-                          >
-                            {c.value}
-                          </p>
-                        )}
-                      </div>
-                    ))}
-                  </div>
+                      )}
+                    </div>
+                  ))}
                 </div>
 
-                {/* Bottom: socials + CTA */}
-                <div style={{ position: "relative", zIndex: 1, marginTop: "32px" }}>
-                  <div
-                    style={{
-                      display: "flex",
-                      gap: "6px",
-                      flexWrap: "wrap",
-                      marginBottom: "18px",
-                    }}
-                  >
-                    {SOCIALS.map((s) => (
-                      <a
-                        key={s.label}
-                        href={s.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{
-                          fontFamily: "var(--font-montserrat)",
-                          fontSize: "9.5px",
-                          fontWeight: 700,
-                          letterSpacing: "0.09em",
-                          textTransform: "uppercase",
-                          color: "rgba(255,255,255,0.50)",
-                          backgroundColor: "rgba(255,255,255,0.06)",
-                          border: "1px solid rgba(255,255,255,0.10)",
-                          padding: "5px 12px",
-                          borderRadius: "100px",
-                          textDecoration: "none",
-                          transition: "color 200ms ease, border-color 200ms ease",
-                        }}
-                      >
-                        {s.label}
-                      </a>
-                    ))}
-                  </div>
-
+                {/* WhatsApp CTA */}
+                <div style={{ position: "relative", zIndex: 1 }}>
                   <a
                     href="https://wa.me/60164963875"
                     target="_blank"
@@ -367,104 +323,9 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* ── FAQ section ── */}
-      <section
-        style={{
-          backgroundColor: "#f4f9f6",
-          padding: "clamp(52px, 5.5vw, 72px) clamp(20px, 3vw, 40px)",
-          borderTop: "1px solid rgba(7,80,60,0.07)",
-        }}
-      >
-        <div className="max-w-7xl mx-auto">
-          <p
-            style={{
-              fontFamily: "var(--font-montserrat)",
-              fontSize: "9.5px",
-              fontWeight: 700,
-              letterSpacing: "0.26em",
-              textTransform: "uppercase",
-              color: "#32cd32",
-              marginBottom: "10px",
-            }}
-          >
-            Common Questions
-          </p>
-          <h2
-            style={{
-              fontFamily: "var(--font-bebas)",
-              fontSize: "clamp(28px, 3.2vw, 44px)",
-              fontWeight: 800,
-              lineHeight: 1.04,
-              letterSpacing: "-0.02em",
-              color: "#07503c",
-              marginBottom: "clamp(28px, 3vw, 44px)",
-            }}
-          >
-            Things people ask before they reach out.
-          </h2>
-
-          <div
-            className="faq-grid"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "12px",
-            }}
-          >
-            {faqs.map((faq, i) => (
-              <div
-                key={i}
-                style={{
-                  borderRadius: "16px",
-                  padding: "2px",
-                  background: "rgba(7,80,60,0.03)",
-                  border: "1px solid rgba(7,80,60,0.09)",
-                }}
-              >
-                <div
-                  style={{
-                    borderRadius: "14px",
-                    backgroundColor: "#ffffff",
-                    padding: "clamp(20px, 2.5vw, 28px)",
-                  }}
-                >
-                  <h3
-                    style={{
-                      fontFamily: "var(--font-montserrat)",
-                      fontSize: "13.5px",
-                      fontWeight: 700,
-                      color: "#07503c",
-                      marginBottom: "10px",
-                      lineHeight: 1.55,
-                    }}
-                  >
-                    {faq.q}
-                  </h3>
-                  <p
-                    style={{
-                      fontFamily: "var(--font-montserrat)",
-                      fontSize: "13px",
-                      color: "rgba(7,80,60,0.55)",
-                      lineHeight: 1.80,
-                    }}
-                  >
-                    {faq.a}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <style>{`
         @media (max-width: 1023px) {
           .contact-grid {
-            grid-template-columns: 1fr !important;
-          }
-        }
-        @media (max-width: 767px) {
-          .faq-grid {
             grid-template-columns: 1fr !important;
           }
         }
