@@ -58,7 +58,7 @@ export default function Services() {
       id="services"
       style={{
         background:
-          "linear-gradient(to bottom, #020c07 0%, #061f17 15%, #07503c 55%, #1d6b48 82%, #ffffff 100%)",
+          "linear-gradient(to bottom, #07503c 0%, #07503c 50%, #1d6b48 80%, #ffffff 100%)",
         position: "relative",
       }}
     >
@@ -180,6 +180,7 @@ export default function Services() {
 
             <Link
               href="/services"
+              className="services-cta-btn"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -366,6 +367,40 @@ export default function Services() {
             </motion.div>
           ))}
 
+          {/* Mobile-only: View all services link (desktop shows this in the left panel) */}
+          <Link
+            href="/services"
+            className="services-mobile-cta"
+            style={{
+              display: "none",
+              alignItems: "center",
+              gap: "8px",
+              backgroundColor: "#FFD600",
+              color: "#061f17",
+              fontFamily: "var(--font-montserrat)",
+              fontSize: "13px",
+              fontWeight: 700,
+              padding: "11px 10px 11px 20px",
+              borderRadius: "100px",
+              alignSelf: "flex-start",
+              transition:
+                "background-color 260ms cubic-bezier(0.32,0.72,0,1), transform 260ms cubic-bezier(0.32,0.72,0,1), box-shadow 260ms cubic-bezier(0.32,0.72,0,1)",
+            }}
+            onMouseEnter={(e) => {
+              const el = e.currentTarget as HTMLElement;
+              el.style.backgroundColor = "#e6c200";
+              el.style.transform = "translateY(-2px)";
+            }}
+            onMouseLeave={(e) => {
+              const el = e.currentTarget as HTMLElement;
+              el.style.backgroundColor = "#FFD600";
+              el.style.transform = "translateY(0)";
+            }}
+          >
+            View all services
+            <span style={{ width: "32px", height: "32px", borderRadius: "50%", backgroundColor: "rgba(6,31,23,0.14)", display: "inline-flex", alignItems: "center", justifyContent: "center", fontSize: "14px", flexShrink: 0 }}>→</span>
+          </Link>
+
           {/* Bottom CTA card */}
           <motion.div
             initial={{ opacity: 0, y: 28, filter: "blur(6px)" }}
@@ -466,8 +501,13 @@ export default function Services() {
       <style>{`
         @media (max-width: 1023px) {
           .services-split { flex-direction: column !important; }
-          .services-left { position: static !important; width: 100% !important; height: auto !important; padding: 64px 24px 40px !important; }
+          .services-left { position: static !important; width: 100% !important; height: auto !important; padding: 64px 24px 32px !important; }
+          .services-left .services-cta-btn { display: none !important; }
           .services-right { padding: 0 24px 64px !important; }
+          .services-mobile-cta { display: inline-flex !important; }
+        }
+        @media (min-width: 1024px) {
+          .services-mobile-cta { display: none !important; }
         }
       `}</style>
     </section>

@@ -1,184 +1,215 @@
 "use client";
 
-import { useRef } from "react";
-import {
-  motion,
-  useMotionValue,
-  useSpring,
-  useTransform,
-} from "framer-motion";
-import Link from "next/link";
+import { motion } from "framer-motion";
 
-const cases = [
+const ease = [0.22, 1, 0.36, 1] as const;
+
+interface GalleryItem {
+  id: string;
+  category: string;
+  title: string;
+  img: string;
+  tint: string;
+  overlay: string;
+}
+
+const GALLERY: GalleryItem[] = [
   {
-    label: "F&B · Meta Ads",
-    title: "Food & Beverage Brand",
-    stat: "3.8×",
-    statLabel: "ROAS",
-    result: "Meta Ads campaign managed end-to-end. Every ringgit tracked back to a sale — no vanity metrics.",
-    featured: true,
+    id: "c1",
+    category: "Website Design",
+    title: "Conversion-Driven Landing Pages",
+    img: "/ourwork-landingpage_h1.png",
+    tint: "rgba(7,80,60,0.14)",
+    overlay:
+      "linear-gradient(to bottom, rgba(6,31,23,0.0) 0%, rgba(6,31,23,0.22) 30%, rgba(6,31,23,0.94) 76%)",
   },
   {
-    label: "Retail · Marketplace",
-    title: "Retail Product Seller",
-    stat: "2×",
-    statLabel: "Revenue in 60 days",
-    result: "Shopee store revenue doubled through listing optimisation, in-platform ads, and monthly reporting.",
+    id: "c2",
+    category: "E-Commerce Design",
+    title: "Fashion-Forward Storefronts",
+    img: "/ourwork-landingpage_sq1.png",
+    tint: "rgba(50,205,50,0.06)",
+    overlay:
+      "linear-gradient(to bottom, rgba(6,31,23,0.0) 0%, rgba(6,31,23,0.28) 38%, rgba(6,31,23,0.95) 80%)",
   },
   {
-    label: "Services · Google Ads",
-    title: "Professional Services",
-    stat: "−42%",
-    statLabel: "Cost per lead",
-    result: "Google Ads restructured from the ground up. Cost per lead dropped 42% in the first 45 days.",
+    id: "c3",
+    category: "Facebook Ads",
+    title: "Ad Creatives That Convert",
+    img: "/ourwork-fbpost_sq1.png",
+    tint: "rgba(255,214,0,0.06)",
+    overlay:
+      "linear-gradient(to bottom, rgba(6,31,23,0.04) 0%, rgba(6,31,23,0.33) 42%, rgba(6,31,23,0.95) 78%)",
+  },
+  {
+    id: "c4",
+    category: "Meta Campaigns",
+    title: "Campaigns Built for ROAS",
+    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=480&fit=crop&q=80",
+    tint: "rgba(7,80,60,0.20)",
+    overlay:
+      "linear-gradient(to bottom, rgba(6,31,23,0.0) 0%, rgba(6,31,23,0.28) 35%, rgba(6,31,23,0.95) 76%)",
+  },
+  {
+    id: "c5",
+    category: "Instagram Reels",
+    title: "Reels That Stop the Scroll",
+    img: "/ourwork-igreel_sq1.png",
+    tint: "rgba(255,214,0,0.08)",
+    overlay:
+      "linear-gradient(to bottom, rgba(6,31,23,0.0) 0%, rgba(6,31,23,0.30) 40%, rgba(6,31,23,0.95) 78%)",
+  },
+  {
+    id: "c6",
+    category: "Social Media Content",
+    title: "Scroll-Stopping Social Ads",
+    img: "/ourwork-landingpage_h2.png",
+    tint: "rgba(7,80,60,0.14)",
+    overlay:
+      "linear-gradient(to bottom, rgba(6,31,23,0.0) 0%, rgba(6,31,23,0.20) 32%, rgba(6,31,23,0.93) 74%)",
   },
 ];
 
-const ease = [0.32, 0.72, 0, 1] as const;
+const DELAYS: Record<string, number> = {
+  c1: 0,
+  c2: 0.07,
+  c3: 0.13,
+  c4: 0.18,
+  c5: 0.23,
+  c6: 0.28,
+};
 
-function FeaturedCase() {
-  const cardRef = useRef<HTMLDivElement>(null);
-
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  const rotateX = useSpring(useTransform(mouseY, [-1, 1], [10, -10]), {
-    stiffness: 300,
-    damping: 28,
-  });
-  const rotateY = useSpring(useTransform(mouseX, [-1, 1], [-10, 10]), {
-    stiffness: 300,
-    damping: 28,
-  });
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const card = cardRef.current;
-    if (!card) return;
-    const rect = card.getBoundingClientRect();
-    mouseX.set((e.clientX - (rect.left + rect.width / 2)) / (rect.width / 2));
-    mouseY.set((e.clientY - (rect.top + rect.height / 2)) / (rect.height / 2));
-  };
-
-  const handleMouseLeave = () => {
-    mouseX.set(0);
-    mouseY.set(0);
-  };
-
+function GalleryCard({ item }: { item: GalleryItem }) {
   return (
     <motion.div
-      className="md:col-span-2"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, ease }}
+      className={`gallery-card gallery-card--${item.id}`}
+      style={{ height: "100%", display: "flex", flexDirection: "column" }}
+      initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.88, delay: DELAYS[item.id] ?? 0, ease }}
     >
-      {/* Perspective wrapper */}
-      <div style={{ perspective: "1000px" }}>
-        <motion.div
-          ref={cardRef}
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
+      {/* Outer shell — subtle on white */}
+      <div
+        style={{
+          flex: 1,
+          borderRadius: "15px",
+          padding: "2.5px",
+          background: "rgba(7,80,60,0.02)",
+          border: "1px solid rgba(7,80,60,0.09)",
+          boxShadow:
+            "0 1px 4px rgba(0,0,0,0.05), 0 4px 20px rgba(0,0,0,0.07)",
+          transition:
+            "border-color 260ms cubic-bezier(0.32,0.72,0,1), box-shadow 260ms cubic-bezier(0.32,0.72,0,1), transform 260ms cubic-bezier(0.32,0.72,0,1)",
+        }}
+        onMouseEnter={(e) => {
+          const el = e.currentTarget as HTMLElement;
+          el.style.borderColor = "rgba(50,205,50,0.30)";
+          el.style.boxShadow =
+            "0 4px 12px rgba(0,0,0,0.08), 0 12px 40px rgba(7,80,60,0.14)";
+          el.style.transform = "translateY(-4px)";
+        }}
+        onMouseLeave={(e) => {
+          const el = e.currentTarget as HTMLElement;
+          el.style.borderColor = "rgba(7,80,60,0.09)";
+          el.style.boxShadow =
+            "0 1px 4px rgba(0,0,0,0.05), 0 4px 20px rgba(0,0,0,0.07)";
+          el.style.transform = "translateY(0)";
+        }}
+      >
+        {/* Inner core */}
+        <div
           style={{
-            rotateX,
-            rotateY,
-            transformStyle: "preserve-3d",
-            willChange: "transform",
-            borderRadius: "16px",
+            height: "100%",
+            borderRadius: "12px",
             overflow: "hidden",
-            backgroundColor: "#07503c",
-            minHeight: "280px",
-            boxShadow: "0 24px 64px rgba(7,80,60,0.2)",
+            position: "relative",
           }}
         >
-          {/* Gold accent top strip */}
-          <div
+          {/* Photo */}
+          <img
+            src={item.img}
+            alt={item.category}
             style={{
-              height: "3px",
-              background: "linear-gradient(90deg, #FFD600 0%, rgba(255,214,0,0.3) 70%, transparent 100%)",
-              boxShadow: "0 0 12px rgba(255,214,0,0.3)",
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              display: "block",
             }}
           />
 
-          {/* Decorative giant stat */}
+          {/* Brand tint */}
           <div
-            className="absolute select-none pointer-events-none"
+            aria-hidden="true"
             style={{
-              right: "-2%",
-              top: "50%",
-              transform: "translateY(-50%)",
-              fontFamily: "var(--font-bebas)",
-              fontWeight: 800,
-              fontSize: "clamp(120px, 20vw, 280px)",
-              lineHeight: 1,
-              letterSpacing: "-0.05em",
-              color: "rgba(50,205,50,0.07)",
+              position: "absolute",
+              inset: 0,
+              backgroundColor: item.tint,
+              mixBlendMode: "multiply",
+              pointerEvents: "none",
+            }}
+          />
+
+          {/* Gradient overlay */}
+          <div
+            aria-hidden="true"
+            style={{
+              position: "absolute",
+              inset: 0,
+              background: item.overlay,
+              pointerEvents: "none",
+            }}
+          />
+
+          {/* Card content */}
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              padding: "13px 14px 16px",
             }}
           >
-            3.8×
-          </div>
+            {/* Category badge */}
+            <span
+              style={{
+                display: "inline-flex",
+                alignSelf: "flex-start",
+                fontSize: "8px",
+                fontWeight: 700,
+                letterSpacing: "0.20em",
+                textTransform: "uppercase",
+                color: "rgba(255,255,255,0.82)",
+                backgroundColor: "rgba(255,255,255,0.10)",
+                border: "1px solid rgba(255,255,255,0.16)",
+                padding: "3px 9px",
+                borderRadius: "100px",
+                fontFamily: "var(--font-montserrat)",
+              }}
+            >
+              {item.category}
+            </span>
 
-          <div
-            className="relative p-8 lg:p-12 grid grid-cols-1 lg:grid-cols-2 gap-10 items-end"
-            style={{ minHeight: "270px" }}
-          >
-            {/* Left col */}
-            <div className="flex flex-col justify-between h-full" style={{ minHeight: "200px" }}>
-              <span
-                className="text-xs font-bold tracking-widest"
-                style={{ color: "rgba(255,255,255,0.35)", fontFamily: "var(--font-montserrat)" }}
-              >
-                {cases[0].label}
-              </span>
-              <div>
-                <div
-                  style={{
-                    fontFamily: "var(--font-bebas)",
-                    fontWeight: 800,
-                    fontSize: "clamp(64px, 10vw, 128px)",
-                    lineHeight: 1,
-                    letterSpacing: "-0.04em",
-                    color: "#32cd32",
-                    fontVariantNumeric: "tabular-nums",
-                  }}
-                >
-                  {cases[0].stat}
-                </div>
-                <div
-                  className="text-sm font-semibold mt-1"
-                  style={{ color: "rgba(255,255,255,0.4)", fontFamily: "var(--font-montserrat)" }}
-                >
-                  {cases[0].statLabel}
-                </div>
-              </div>
-            </div>
-
-            {/* Right col */}
-            <div className="flex flex-col justify-end gap-4">
-              <h3
-                style={{
-                  fontFamily: "var(--font-bebas)",
-                  fontWeight: 800,
-                  fontSize: "clamp(22px, 2.5vw, 34px)",
-                  lineHeight: 1.1,
-                  letterSpacing: "-0.02em",
-                  color: "#ffffff",
-                }}
-              >
-                {cases[0].title}
-              </h3>
-              <p
-                style={{
-                  color: "rgba(255,255,255,0.45)",
-                  fontFamily: "var(--font-montserrat)",
-                  lineHeight: 1.8,
-                  fontSize: "14px",
-                  maxWidth: "400px",
-                }}
-              >
-                {cases[0].result}
-              </p>
-            </div>
+            {/* Title only — no description */}
+            <h3
+              style={{
+                fontFamily: "var(--font-bebas)",
+                fontSize: "clamp(17px, 1.8vw, 23px)",
+                fontWeight: 800,
+                lineHeight: 1.12,
+                letterSpacing: "-0.02em",
+                color: "#ffffff",
+                margin: 0,
+              }}
+            >
+              {item.title}
+            </h3>
           </div>
-        </motion.div>
+        </div>
       </div>
     </motion.div>
   );
@@ -188,150 +219,127 @@ export default function Portfolio() {
   return (
     <section
       id="work"
-      className="py-24 lg:py-32"
-      style={{ backgroundColor: "#F5F5F5", borderBottom: "1px solid rgba(7,80,60,0.08)" }}
+      style={{
+        backgroundColor: "#ffffff",
+        position: "relative",
+        overflow: "hidden",
+      }}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        {/* Header */}
+      {/* Logo watermark — centered, 3D version for glass texture */}
+      <img
+        src="/logo-3d.png"
+        alt=""
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-35%, -42%)",
+          width: "clamp(300px, 38vw, 500px)",
+          opacity: 0.055,
+          userSelect: "none",
+          pointerEvents: "none",
+          zIndex: 0,
+        }}
+      />
+
+      <div
+        className="max-w-7xl mx-auto"
+        style={{
+          paddingLeft: "clamp(20px, 3vw, 40px)",
+          paddingRight: "clamp(20px, 3vw, 40px)",
+          paddingTop: "clamp(44px, 5vw, 64px)",
+          paddingBottom: "clamp(24px, 3vw, 36px)",
+          position: "relative",
+          zIndex: 1,
+        }}
+      >
+        {/* Section header — minimal */}
         <motion.div
-          className="mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-4"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          style={{ marginBottom: "clamp(20px, 2.4vw, 30px)" }}
+          initial={{ opacity: 0, y: 16, filter: "blur(5px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.82, ease }}
         >
-          <div>
-            <p
-              className="text-xs font-bold tracking-[0.28em] mb-4"
-              style={{ color: "#32cd32", fontFamily: "var(--font-montserrat)" }}
-            >
-              OUR WORK
-            </p>
-            <h2
-              style={{
-                fontFamily: "var(--font-bebas)",
-                fontWeight: 800,
-                fontSize: "clamp(34px, 5vw, 60px)",
-                lineHeight: 1.05,
-                letterSpacing: "-0.03em",
-                color: "#07503c",
-              }}
-            >
-              Results that speak louder than decks.
-            </h2>
-          </div>
-          <Link
-            href="/work"
-            className="text-sm font-bold shrink-0 transition-colors duration-200"
-            style={{ color: "#32cd32", fontFamily: "var(--font-montserrat)" }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "#07503c")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "#32cd32")}
+          <p
+            style={{
+              fontSize: "9.5px",
+              fontWeight: 700,
+              letterSpacing: "0.26em",
+              textTransform: "uppercase",
+              color: "#32cd32",
+              fontFamily: "var(--font-montserrat)",
+              marginBottom: "9px",
+            }}
           >
-            View all work →
-          </Link>
+            Our Work
+          </p>
+
+          <h2
+            style={{
+              fontFamily: "var(--font-bebas)",
+              fontSize: "clamp(32px, 4vw, 54px)",
+              fontWeight: 800,
+              lineHeight: 1.04,
+              letterSpacing: "-0.03em",
+              color: "#07503c",
+              margin: 0,
+            }}
+          >
+            The Creative Side of{" "}
+            <span style={{ color: "#32cd32" }}>Performance</span>
+          </h2>
         </motion.div>
 
-        {/* Bento grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-
-          {/* Featured case — 3D tilt, spans both columns */}
-          <FeaturedCase />
-
-          {/* Cases 2 and 3 — each in one col */}
-          {cases.slice(1).map((item, i) => (
-            <motion.div
-              key={item.title}
-              className="relative rounded-2xl overflow-hidden"
-              style={{
-                backgroundColor: "#ffffff",
-                border: "1px solid rgba(7,80,60,0.1)",
-                minHeight: "240px",
-              }}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 + i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-              whileHover={{
-                y: -4,
-                boxShadow: "0 16px 48px rgba(7,80,60,0.1)",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor = "rgba(50,205,50,0.35)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor = "rgba(7,80,60,0.1)";
-              }}
+        {/* 4-column bento: top row 2+1+1, bottom row 1+1+2 */}
+        <div
+          className="gallery-bento"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr 1fr 1fr",
+            gridTemplateRows: "300px 280px",
+            gridTemplateAreas: `
+              "c1 c1 c2 c3"
+              "c4 c5 c6 c6"
+            `,
+            gap: "10px",
+          }}
+        >
+          {GALLERY.map((item) => (
+            <div
+              key={item.id}
+              style={{ gridArea: item.id, minHeight: 0 }}
             >
-              {/* Decorative background stat */}
-              <div
-                className="absolute select-none pointer-events-none"
-                style={{
-                  right: "12px",
-                  top: "-8px",
-                  fontFamily: "var(--font-bebas)",
-                  fontWeight: 800,
-                  fontSize: "110px",
-                  lineHeight: 1,
-                  letterSpacing: "-0.05em",
-                  color: "rgba(7,80,60,0.04)",
-                }}
-              >
-                {item.stat}
-              </div>
-
-              <div
-                className="relative flex flex-col justify-between p-7"
-                style={{ minHeight: "240px" }}
-              >
-                <span
-                  className="text-xs font-bold tracking-widest"
-                  style={{ color: "#32cd32", fontFamily: "var(--font-montserrat)" }}
-                >
-                  {item.label}
-                </span>
-
-                <div className="mt-auto pt-8">
-                  <div
-                    style={{
-                      fontFamily: "var(--font-bebas)",
-                      fontWeight: 800,
-                      fontSize: "clamp(44px, 7vw, 80px)",
-                      lineHeight: 1,
-                      letterSpacing: "-0.04em",
-                      color: "#07503c",
-                      fontVariantNumeric: "tabular-nums",
-                    }}
-                  >
-                    {item.stat}
-                  </div>
-                  <div
-                    className="text-xs font-bold mt-1 mb-5"
-                    style={{ color: "rgba(7,80,60,0.35)", fontFamily: "var(--font-montserrat)" }}
-                  >
-                    {item.statLabel}
-                  </div>
-                  <h3
-                    className="text-sm font-bold mb-2"
-                    style={{ color: "#07503c", fontFamily: "var(--font-montserrat)" }}
-                  >
-                    {item.title}
-                  </h3>
-                  <p
-                    className="text-xs"
-                    style={{
-                      color: "rgba(7,80,60,0.45)",
-                      fontFamily: "var(--font-montserrat)",
-                      lineHeight: 1.75,
-                    }}
-                  >
-                    {item.result}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
+              <GalleryCard item={item} />
+            </div>
           ))}
         </div>
       </div>
+
+      {/* Responsive */}
+      <style>{`
+        @media (max-width: 1023px) {
+          .gallery-bento {
+            grid-template-columns: 1fr 1fr !important;
+            grid-template-rows: 240px 200px 200px 220px !important;
+            grid-template-areas:
+              "c1 c1"
+              "c2 c3"
+              "c4 c5"
+              "c6 c6" !important;
+          }
+        }
+        @media (max-width: 639px) {
+          .gallery-bento {
+            grid-template-columns: 1fr !important;
+            grid-template-rows: repeat(6, 180px) !important;
+            grid-template-areas:
+              "c1" "c2" "c3" "c4" "c5" "c6" !important;
+          }
+        }
+        .gallery-card { height: 100%; }
+      `}</style>
     </section>
   );
 }

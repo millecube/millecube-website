@@ -79,8 +79,8 @@ export default function TrustCarousel() {
       <div
         className="max-w-7xl mx-auto px-6 lg:px-10"
         style={{
-          paddingTop: "clamp(80px, 10vw, 120px)",
-          paddingBottom: "clamp(80px, 10vw, 120px)",
+          paddingTop: "clamp(40px, 5vw, 60px)",
+          paddingBottom: "clamp(40px, 5vw, 60px)",
         }}
       >
         {/* Section header */}

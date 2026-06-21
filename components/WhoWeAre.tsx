@@ -57,8 +57,8 @@ export default function WhoWeAre() {
       <div
         className="max-w-7xl mx-auto px-6 lg:px-10"
         style={{
-          paddingTop: "clamp(80px, 10vw, 120px)",
-          paddingBottom: "clamp(80px, 10vw, 120px)",
+          paddingTop: "clamp(40px, 5vw, 60px)",
+          paddingBottom: "clamp(40px, 5vw, 60px)",
           position: "relative",
           zIndex: 1,
         }}
@@ -86,6 +86,7 @@ export default function WhoWeAre() {
             >
               {/* Inner core */}
               <div
+                className="who-image-core"
                 style={{
                   borderRadius: "24px",
                   overflow: "hidden",
@@ -96,7 +97,7 @@ export default function WhoWeAre() {
                 }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1582005450386-52b25f82d9bb?w=600&h=800&fit=crop&q=80"
+                  src="/whoweare-card.png"
                   alt="Millecube team at work"
                   style={{
                     width: "100%",
@@ -299,6 +300,22 @@ export default function WhoWeAre() {
               numbers that actually move a business forward.
             </p>
 
+            {/* Mobile-only inline stats — replaces hidden floating badges */}
+            <div
+              className="who-mobile-stats"
+              style={{ display: "none", gap: "0", alignItems: "stretch" }}
+            >
+              <div style={{ flex: 1 }}>
+                <p style={{ fontFamily: "var(--font-bebas)", fontSize: "36px", fontWeight: 800, color: "#07503c", lineHeight: 1, letterSpacing: "-0.02em", margin: 0 }}>35+</p>
+                <p style={{ fontFamily: "var(--font-montserrat)", fontSize: "9px", fontWeight: 700, color: "rgba(7,80,60,0.5)", letterSpacing: "0.14em", textTransform: "uppercase", marginTop: "4px" }}>Brands Served</p>
+              </div>
+              <div style={{ width: "1px", backgroundColor: "rgba(7,80,60,0.12)", margin: "0 20px" }} />
+              <div style={{ flex: 1 }}>
+                <p style={{ fontFamily: "var(--font-bebas)", fontSize: "36px", fontWeight: 800, color: "#07503c", lineHeight: 1, letterSpacing: "-0.02em", margin: 0 }}>RM 2M+</p>
+                <p style={{ fontFamily: "var(--font-montserrat)", fontSize: "9px", fontWeight: 700, color: "rgba(7,80,60,0.5)", letterSpacing: "0.14em", textTransform: "uppercase", marginTop: "4px" }}>Ad Spend Managed</p>
+              </div>
+            </div>
+
             {/* Accent divider */}
             <div
               style={{
@@ -411,6 +428,13 @@ export default function WhoWeAre() {
           #about [style*="bottom: 28px"][style*="left: -18px"],
           #about [style*="top: 28px"][style*="right: -18px"] {
             display: none;
+          }
+          .who-image-core {
+            aspect-ratio: 16/9 !important;
+            max-height: 240px !important;
+          }
+          .who-mobile-stats {
+            display: flex !important;
           }
         }
       `}</style>
