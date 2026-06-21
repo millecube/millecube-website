@@ -26,15 +26,15 @@ export default function Navbar() {
         borderBottom: "1px solid rgba(255,255,255,0.07)",
       }}
     >
-      <nav className="max-w-7xl mx-auto px-6 lg:px-10 h-[68px] flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-6 lg:px-10 h-[80px] flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center" style={{ flexShrink: 0 }}>
           <Image
             src="/logo-horizontal-white.png"
             alt="Millecube Digital"
-            width={160}
-            height={36}
-            className="h-8 w-auto object-contain"
+            width={210}
+            height={48}
+            className="h-11 w-auto object-contain"
             priority
           />
         </Link>

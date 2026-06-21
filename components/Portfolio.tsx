@@ -43,10 +43,10 @@ const GALLERY: GalleryItem[] = [
   },
   {
     id: "c4",
-    category: "Meta Campaigns",
-    title: "Campaigns Built for ROAS",
-    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=480&fit=crop&q=80",
-    tint: "rgba(7,80,60,0.20)",
+    category: "Branding & Identity",
+    title: "Brand Identity That Commands Attention",
+    img: "/ourwork-branding_sq1.png",
+    tint: "rgba(7,80,60,0.15)",
     overlay:
       "linear-gradient(to bottom, rgba(6,31,23,0.0) 0%, rgba(6,31,23,0.28) 35%, rgba(6,31,23,0.95) 76%)",
   },
