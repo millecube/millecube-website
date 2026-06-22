@@ -10,32 +10,27 @@ const CARDS = [
     title: "Tailored Plan",
     desc: "Packages built around your business. No one-size-fits-all.",
     img: "https://images.unsplash.com/photo-1598520106830-8c45c2035460?w=440&h=580&fit=crop&q=80",
-    accent: "#FFD600",
-  },
+    accent: "#FFD600" },
   {
     title: "No Lock-in",
     desc: "Month-to-month. Stay because results show up.",
     img: "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?w=440&h=580&fit=crop&q=80",
-    accent: "#32cd32",
-  },
+    accent: "#32cd32" },
   {
     title: "Expert Strategy",
     desc: "Every solution backed by specialists.",
     img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=440&h=580&fit=crop&q=80",
-    accent: "#EBFFF3",
-  },
+    accent: "#EBFFF3" },
   {
     title: "Built Together",
     desc: "A full team on your account: media, creative, and analytics.",
     img: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=440&h=580&fit=crop&q=80",
-    accent: "#FFD600",
-  },
+    accent: "#FFD600" },
   {
     title: "Data Driven",
     desc: "Every decision backed by real numbers.",
     img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=440&h=580&fit=crop&q=80",
-    accent: "#32cd32",
-  },
+    accent: "#32cd32" },
 ];
 
 const CARD_W = 220;
@@ -80,14 +75,13 @@ export default function TrustCarousel() {
         className="max-w-7xl mx-auto px-6 lg:px-10"
         style={{
           paddingTop: "clamp(40px, 5vw, 60px)",
-          paddingBottom: "clamp(40px, 5vw, 60px)",
-        }}
+          paddingBottom: "clamp(40px, 5vw, 60px)" }}
       >
         {/* Section header */}
         <motion.div
           style={{ textAlign: "center", marginBottom: "56px" }}
-          initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.95, ease: [0.22, 1, 0.36, 1] }}
         >
@@ -105,8 +99,7 @@ export default function TrustCarousel() {
               padding: "5px 12px",
               borderRadius: "100px",
               fontFamily: "var(--font-montserrat)",
-              marginBottom: "20px",
-            }}
+              marginBottom: "20px" }}
           >
             Why Choose Us
           </span>
@@ -119,8 +112,7 @@ export default function TrustCarousel() {
               letterSpacing: "-0.03em",
               lineHeight: 1.06,
               color: "#07503c",
-              marginBottom: "14px",
-            }}
+              marginBottom: "14px" }}
           >
             Why Brands Trust{" "}
             <span style={{ color: "#32cd32" }}>Millecube</span>
@@ -133,8 +125,7 @@ export default function TrustCarousel() {
               color: "rgba(7,80,60,0.65)",
               lineHeight: 1.72,
               maxWidth: "440px",
-              margin: "0 auto",
-            }}
+              margin: "0 auto" }}
           >
             From first campaign to long-term growth. Here&apos;s what makes us
             different.
@@ -171,8 +162,7 @@ export default function TrustCarousel() {
               fontSize: "20px",
               lineHeight: 1,
               transition:
-                "background-color 220ms cubic-bezier(0.32,0.72,0,1), transform 220ms cubic-bezier(0.32,0.72,0,1)",
-            }}
+                "background-color 220ms cubic-bezier(0.32,0.72,0,1), transform 220ms cubic-bezier(0.32,0.72,0,1)" }}
             onMouseEnter={(e) => {
               const el = e.currentTarget as HTMLButtonElement;
               el.style.backgroundColor = "#055c44";
@@ -193,16 +183,14 @@ export default function TrustCarousel() {
               position: "relative",
               height: `${Math.round(CARD_H * 1.2)}px`,
               margin: "0 60px",
-              perspective: "1400px",
-            }}
+              perspective: "1400px" }}
           >
             <div
               style={{
                 position: "relative",
                 width: "100%",
                 height: "100%",
-                transformStyle: "preserve-3d",
-              }}
+                transformStyle: "preserve-3d" }}
             >
               {CARDS.map((card, i) => {
                 let offset = i - active;
@@ -226,8 +214,7 @@ export default function TrustCarousel() {
                       scale: pos.scale,
                       rotateY: ryVal,
                       opacity: pos.opacity,
-                      filter: `blur(${pos.blurPx}px)`,
-                    }}
+                      filter: `blur(${pos.blurPx}px)` }}
                     transition={{ duration: 0.75, ease }}
                     style={{
                       position: "absolute",
@@ -238,8 +225,7 @@ export default function TrustCarousel() {
                       width: CARD_W,
                       height: CARD_H,
                       cursor: abs > 0 ? "pointer" : "default",
-                      zIndex: pos.zIndex,
-                    }}
+                      zIndex: pos.zIndex }}
                   >
                     {/* Card — double-bezel outer shell */}
                     <div
@@ -260,8 +246,7 @@ export default function TrustCarousel() {
                         boxShadow:
                           abs === 0
                             ? "0 4px 8px rgba(7,80,60,0.06), 0 16px 48px rgba(7,80,60,0.2), 0 32px 80px rgba(7,80,60,0.12)"
-                            : "0 4px 20px rgba(7,80,60,0.1)",
-                      }}
+                            : "0 4px 20px rgba(7,80,60,0.1)" }}
                     >
                       {/* Card — inner core */}
                       <div
@@ -271,8 +256,7 @@ export default function TrustCarousel() {
                           borderRadius: "20px",
                           overflow: "hidden",
                           position: "relative",
-                          boxShadow: "inset 0 1px 1px rgba(255,255,255,0.08)",
-                        }}
+                          boxShadow: "inset 0 1px 1px rgba(255,255,255,0.08)" }}
                       >
                         {/* Background image */}
                         <img
@@ -282,8 +266,7 @@ export default function TrustCarousel() {
                             width: "100%",
                             height: "100%",
                             objectFit: "cover",
-                            display: "block",
-                          }}
+                            display: "block" }}
                         />
 
                         {/* Gradient overlay — transparent top → dark bottom */}
@@ -292,8 +275,7 @@ export default function TrustCarousel() {
                             position: "absolute",
                             inset: 0,
                             background:
-                              "linear-gradient(to bottom, rgba(6,31,23,0.08) 0%, rgba(6,31,23,0.5) 42%, rgba(6,31,23,0.97) 72%)",
-                          }}
+                              "linear-gradient(to bottom, rgba(6,31,23,0.08) 0%, rgba(6,31,23,0.5) 42%, rgba(6,31,23,0.97) 72%)" }}
                         />
 
                         {/* Card text */}
@@ -303,8 +285,7 @@ export default function TrustCarousel() {
                             bottom: 0,
                             left: 0,
                             right: 0,
-                            padding: "20px 22px 22px",
-                          }}
+                            padding: "20px 22px 22px" }}
                         >
                           <h3
                             style={{
@@ -314,8 +295,7 @@ export default function TrustCarousel() {
                               letterSpacing: "-0.01em",
                               color: "#ffffff",
                               lineHeight: 1.1,
-                              marginBottom: "7px",
-                            }}
+                              marginBottom: "7px" }}
                           >
                             {card.title}
                           </h3>
@@ -324,8 +304,7 @@ export default function TrustCarousel() {
                               fontFamily: "var(--font-montserrat)",
                               fontSize: "11.5px",
                               lineHeight: 1.55,
-                              color: "rgba(255,255,255,0.72)",
-                            }}
+                              color: "rgba(255,255,255,0.72)" }}
                           >
                             {card.desc}
                           </p>
@@ -362,8 +341,7 @@ export default function TrustCarousel() {
               fontSize: "20px",
               lineHeight: 1,
               transition:
-                "background-color 220ms cubic-bezier(0.32,0.72,0,1), transform 220ms cubic-bezier(0.32,0.72,0,1)",
-            }}
+                "background-color 220ms cubic-bezier(0.32,0.72,0,1), transform 220ms cubic-bezier(0.32,0.72,0,1)" }}
             onMouseEnter={(e) => {
               const el = e.currentTarget as HTMLButtonElement;
               el.style.backgroundColor = "#055c44";
@@ -385,8 +363,7 @@ export default function TrustCarousel() {
             display: "flex",
             justifyContent: "center",
             gap: "8px",
-            marginTop: "36px",
-          }}
+            marginTop: "36px" }}
         >
           {CARDS.map((_, i) => (
             <motion.button
@@ -396,8 +373,7 @@ export default function TrustCarousel() {
               aria-label={`Go to card ${i + 1}`}
               animate={{
                 backgroundColor:
-                  i === active ? "#07503c" : "rgba(7,80,60,0.18)",
-              }}
+                  i === active ? "#07503c" : "rgba(7,80,60,0.18)" }}
               transition={{ duration: 0.32, ease: [0.32, 0.72, 0, 1] }}
               style={{
                 width: i === active ? "28px" : "8px",
@@ -405,8 +381,7 @@ export default function TrustCarousel() {
                 borderRadius: "100px",
                 border: "none",
                 cursor: "pointer",
-                padding: 0,
-              }}
+                padding: 0 }}
             />
           ))}
         </div>

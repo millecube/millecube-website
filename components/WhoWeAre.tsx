@@ -22,8 +22,7 @@ export default function WhoWeAre() {
       style={{
         backgroundColor: "#FFFFFF",
         position: "relative",
-        overflow: "hidden",
-      }}
+        overflow: "hidden" }}
     >
       {/* Decorative SVG curves */}
       <svg
@@ -33,8 +32,7 @@ export default function WhoWeAre() {
           inset: 0,
           width: "100%",
           height: "100%",
-          pointerEvents: "none",
-        }}
+          pointerEvents: "none" }}
         viewBox="0 0 1440 720"
         preserveAspectRatio="xMidYMid slice"
         fill="none"
@@ -61,16 +59,15 @@ export default function WhoWeAre() {
           paddingTop: "clamp(40px, 5vw, 60px)",
           paddingBottom: "clamp(40px, 5vw, 60px)",
           position: "relative",
-          zIndex: 1,
-        }}
+          zIndex: 1 }}
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
           {/* ── LEFT: Image block ── */}
           <motion.div
             style={{ position: "relative" }}
-            initial={{ opacity: 0, x: -28, filter: "blur(6px)" }}
-            whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, x: -28 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.95, ease }}
           >
@@ -82,8 +79,7 @@ export default function WhoWeAre() {
                 background: "rgba(7,80,60,0.03)",
                 border: "1px solid rgba(7,80,60,0.08)",
                 boxShadow:
-                  "0 2px 4px rgba(7,80,60,0.04), 0 8px 24px rgba(7,80,60,0.07), 0 24px 64px rgba(7,80,60,0.09)",
-              }}
+                  "0 2px 4px rgba(7,80,60,0.04), 0 8px 24px rgba(7,80,60,0.07), 0 24px 64px rgba(7,80,60,0.09)" }}
             >
               {/* Inner core */}
               <div
@@ -94,8 +90,7 @@ export default function WhoWeAre() {
                   aspectRatio: "3/4",
                   maxHeight: "568px",
                   position: "relative",
-                  boxShadow: "inset 0 1px 1px rgba(255,255,255,0.15)",
-                }}
+                  boxShadow: "inset 0 1px 1px rgba(255,255,255,0.15)" }}
               >
                 <Image
                   src="/whoweare-card.webp"
@@ -111,8 +106,7 @@ export default function WhoWeAre() {
                     inset: 0,
                     background:
                       "linear-gradient(160deg, rgba(7,80,60,0.08) 0%, transparent 55%)",
-                    pointerEvents: "none",
-                  }}
+                    pointerEvents: "none" }}
                 />
                 {/* Color treatment — unifies photo with brand palette */}
                 <div
@@ -122,8 +116,7 @@ export default function WhoWeAre() {
                     backgroundColor: "#07503c",
                     mixBlendMode: "multiply",
                     opacity: 0.1,
-                    pointerEvents: "none",
-                  }}
+                    pointerEvents: "none" }}
                 />
               </div>
             </div>
@@ -143,16 +136,14 @@ export default function WhoWeAre() {
                 backgroundColor: "rgba(255,214,0,0.18)",
                 border: "1px solid rgba(255,214,0,0.32)",
                 boxShadow:
-                  "0 4px 12px rgba(0,0,0,0.06), 0 12px 36px rgba(7,80,60,0.16)",
-              }}
+                  "0 4px 12px rgba(0,0,0,0.06), 0 12px 36px rgba(7,80,60,0.16)" }}
             >
               <div
                 style={{
                   backgroundColor: "#FFD600",
                   borderRadius: "18px",
                   padding: "18px 24px",
-                  boxShadow: "inset 0 1px 1px rgba(255,255,255,0.55)",
-                }}
+                  boxShadow: "inset 0 1px 1px rgba(255,255,255,0.55)" }}
               >
                 <p
                   style={{
@@ -161,8 +152,7 @@ export default function WhoWeAre() {
                     fontWeight: 800,
                     color: "#07503c",
                     lineHeight: 1,
-                    letterSpacing: "-0.02em",
-                  }}
+                    letterSpacing: "-0.02em" }}
                 >
                   35+
                 </p>
@@ -174,8 +164,7 @@ export default function WhoWeAre() {
                     color: "#07503c",
                     letterSpacing: "0.1em",
                     textTransform: "uppercase",
-                    marginTop: "3px",
-                  }}
+                    marginTop: "3px" }}
                 >
                   Brands Served
                 </p>
@@ -197,16 +186,14 @@ export default function WhoWeAre() {
                 backgroundColor: "rgba(7,80,60,0.3)",
                 border: "1px solid rgba(7,80,60,0.45)",
                 boxShadow:
-                  "0 4px 12px rgba(0,0,0,0.08), 0 12px 32px rgba(7,80,60,0.24)",
-              }}
+                  "0 4px 12px rgba(0,0,0,0.08), 0 12px 32px rgba(7,80,60,0.24)" }}
             >
               <div
                 style={{
                   backgroundColor: "#07503c",
                   borderRadius: "16px",
                   padding: "14px 20px",
-                  boxShadow: "inset 0 1px 1px rgba(255,255,255,0.09)",
-                }}
+                  boxShadow: "inset 0 1px 1px rgba(255,255,255,0.09)" }}
               >
                 <p
                   style={{
@@ -215,8 +202,7 @@ export default function WhoWeAre() {
                     fontWeight: 800,
                     color: "#FFD600",
                     lineHeight: 1,
-                    letterSpacing: "-0.01em",
-                  }}
+                    letterSpacing: "-0.01em" }}
                 >
                   RM 2M+
                 </p>
@@ -228,8 +214,7 @@ export default function WhoWeAre() {
                     color: "rgba(255,255,255,0.55)",
                     letterSpacing: "0.1em",
                     textTransform: "uppercase",
-                    marginTop: "2px",
-                  }}
+                    marginTop: "2px" }}
                 >
                   Ad Spend Managed
                 </p>
@@ -240,8 +225,8 @@ export default function WhoWeAre() {
           {/* ── RIGHT: Content ── */}
           <motion.div
             style={{ display: "flex", flexDirection: "column", gap: "22px" }}
-            initial={{ opacity: 0, x: 28, filter: "blur(6px)" }}
-            whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, x: 28 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.95, delay: 0.1, ease }}
           >
@@ -259,8 +244,7 @@ export default function WhoWeAre() {
                 padding: "5px 12px",
                 borderRadius: "100px",
                 fontFamily: "var(--font-montserrat)",
-                width: "fit-content",
-              }}
+                width: "fit-content" }}
             >
               Who We Are
             </span>
@@ -273,8 +257,7 @@ export default function WhoWeAre() {
                 fontWeight: 800,
                 lineHeight: 1.06,
                 letterSpacing: "-0.03em",
-                color: "#07503c",
-              }}
+                color: "#07503c" }}
             >
               A Penang team.
               <br />
@@ -290,8 +273,7 @@ export default function WhoWeAre() {
                 fontSize: "14px",
                 lineHeight: 1.78,
                 color: "rgba(7,80,60,0.68)",
-                maxWidth: "460px",
-              }}
+                maxWidth: "460px" }}
             >
               Most agencies report on reach and impressions. We report on cost
               per lead, cost per sale, and revenue generated. Those are the
@@ -321,8 +303,7 @@ export default function WhoWeAre() {
                 height: "2px",
                 backgroundColor: "#32cd32",
                 borderRadius: "2px",
-                opacity: 0.5,
-              }}
+                opacity: 0.5 }}
             />
 
             {/* Bullets */}
@@ -347,8 +328,7 @@ export default function WhoWeAre() {
                       alignItems: "center",
                       justifyContent: "center",
                       flexShrink: 0,
-                      marginTop: "1px",
-                    }}
+                      marginTop: "1px" }}
                   >
                     <Check size={12} weight="light" color="#32cd32" />
                   </div>
@@ -358,8 +338,7 @@ export default function WhoWeAre() {
                       fontSize: "13px",
                       lineHeight: 1.65,
                       color: "rgba(7,80,60,0.68)",
-                      fontWeight: 500,
-                    }}
+                      fontWeight: 500 }}
                   >
                     {bullet}
                   </p>
@@ -383,8 +362,7 @@ export default function WhoWeAre() {
                   padding: "11px 10px 11px 20px",
                   borderRadius: "100px",
                   transition:
-                    "background-color 260ms cubic-bezier(0.32,0.72,0,1), transform 260ms cubic-bezier(0.32,0.72,0,1), box-shadow 260ms cubic-bezier(0.32,0.72,0,1)",
-                }}
+                    "background-color 260ms cubic-bezier(0.32,0.72,0,1), transform 260ms cubic-bezier(0.32,0.72,0,1), box-shadow 260ms cubic-bezier(0.32,0.72,0,1)" }}
                 onMouseEnter={(e) => {
                   const el = e.currentTarget as HTMLElement;
                   el.style.backgroundColor = "#055c44";
@@ -409,8 +387,7 @@ export default function WhoWeAre() {
                     alignItems: "center",
                     justifyContent: "center",
                     fontSize: "14px",
-                    flexShrink: 0,
-                  }}
+                    flexShrink: 0 }}
                 >
                   →
                 </span>
