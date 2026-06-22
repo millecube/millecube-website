@@ -114,6 +114,19 @@ export default function RootLayout({
       className={`${jakartaDisplay.variable} ${jakartaBody.variable}`}
     >
       <head>
+        {/* Preload hero image for LCP improvement */}
+        <link
+          rel="preload"
+          as="image"
+          href="/_next/image?url=%2Fhero-bg2.webp&w=828&q=75"
+          media="(max-width: 828px)"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/_next/image?url=%2Fhero-bg2.webp&w=1920&q=75"
+          media="(min-width: 829px)"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Check } from "@phosphor-icons/react";
@@ -96,15 +97,12 @@ export default function WhoWeAre() {
                   boxShadow: "inset 0 1px 1px rgba(255,255,255,0.15)",
                 }}
               >
-                <img
+                <Image
                   src="/whoweare-card.webp"
                   alt="Millecube team at work"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    display: "block",
-                  }}
+                  fill
+                  sizes="(max-width: 1023px) 100vw, 40vw"
+                  style={{ objectFit: "cover" }}
                 />
                 {/* Brand tint overlay */}
                 <div
