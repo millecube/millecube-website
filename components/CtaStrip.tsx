@@ -14,13 +14,12 @@ export default function CtaStrip() {
           "linear-gradient(to bottom, #ffffff 0%, #e8f0eb 28%, #3f8968 58%, #07503c 100%)",
         padding: "clamp(36px, 5vw, 60px) clamp(20px, 3vw, 40px)",
         position: "relative",
-        overflow: "hidden",
-      }}
+        overflow: "hidden" }}
     >
       {/* Outer double-bezel shell */}
       <motion.div
-        initial={{ opacity: 0, y: 48, scale: 0.96, filter: "blur(10px)" }}
-        whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+        initial={{ opacity: 0, y: 48, scale: 0.96 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 1.05, ease }}
         style={{
@@ -31,8 +30,7 @@ export default function CtaStrip() {
           background: "rgba(255,255,255,0.12)",
           border: "1px solid rgba(255,255,255,0.28)",
           boxShadow:
-            "0 8px 32px rgba(0,0,0,0.10), 0 32px 80px rgba(7,80,60,0.18), 0 0 0 1px rgba(255,255,255,0.06) inset",
-        }}
+            "0 8px 32px rgba(0,0,0,0.10), 0 32px 80px rgba(7,80,60,0.18), 0 0 0 1px rgba(255,255,255,0.06) inset" }}
       >
         {/* Inner core — single white box */}
         <div
@@ -44,8 +42,7 @@ export default function CtaStrip() {
             position: "relative",
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
-            minHeight: "280px",
-          }}
+            minHeight: "280px" }}
         >
 
           {/* ── LEFT: text content ── */}
@@ -57,8 +54,7 @@ export default function CtaStrip() {
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-              gap: "14px",
-            }}
+              gap: "14px" }}
           >
 
             {/* Eyebrow */}
@@ -81,16 +77,15 @@ export default function CtaStrip() {
                 borderRadius: "100px",
                 fontFamily: "var(--font-montserrat)",
                 position: "relative",
-                zIndex: 1,
-              }}
+                zIndex: 1 }}
             >
               Let&apos;s Talk
             </motion.span>
 
             {/* Heading — tighter copy */}
             <motion.h2
-              initial={{ opacity: 0, y: 22, filter: "blur(5px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.85, delay: 0.32, ease }}
               style={{
@@ -102,8 +97,7 @@ export default function CtaStrip() {
                 color: "#07503c",
                 margin: 0,
                 position: "relative",
-                zIndex: 1,
-              }}
+                zIndex: 1 }}
             >
               Stop guessing.<br />
               <span style={{ color: "#32cd32" }}>Start growing.</span>
@@ -123,8 +117,7 @@ export default function CtaStrip() {
                 maxWidth: "340px",
                 margin: 0,
                 position: "relative",
-                zIndex: 1,
-              }}
+                zIndex: 1 }}
             >
               One conversation. We&apos;ll show you exactly where you&apos;re
               leaving money on the table.
@@ -152,8 +145,7 @@ export default function CtaStrip() {
                   padding: "11px 10px 11px 22px",
                   borderRadius: "100px",
                   transition:
-                    "background-color 260ms cubic-bezier(0.32,0.72,0,1), transform 260ms cubic-bezier(0.32,0.72,0,1), box-shadow 260ms cubic-bezier(0.32,0.72,0,1)",
-                }}
+                    "background-color 260ms cubic-bezier(0.32,0.72,0,1), transform 260ms cubic-bezier(0.32,0.72,0,1), box-shadow 260ms cubic-bezier(0.32,0.72,0,1)" }}
                 onMouseEnter={(e) => {
                   const el = e.currentTarget as HTMLElement;
                   el.style.backgroundColor = "#e6c200";
@@ -184,8 +176,7 @@ export default function CtaStrip() {
                     alignItems: "center",
                     justifyContent: "center",
                     fontSize: "14px",
-                    flexShrink: 0,
-                  }}
+                    flexShrink: 0 }}
                 >
                   →
                 </span>
@@ -203,8 +194,7 @@ export default function CtaStrip() {
             style={{
               position: "relative",
               overflow: "hidden",
-              minHeight: "280px",
-            }}
+              minHeight: "280px" }}
           >
             {/* Lady — static, anchored bottom, breaks box boundary */}
             <img
@@ -221,8 +211,7 @@ export default function CtaStrip() {
                 display: "block",
                 pointerEvents: "none",
                 userSelect: "none",
-                zIndex: 1,
-              }}
+                zIndex: 1 }}
             />
 
             {/* Left-edge fade into white panel */}
@@ -234,8 +223,7 @@ export default function CtaStrip() {
                 background:
                   "linear-gradient(to right, rgba(255,255,255,0.80) 0%, rgba(255,255,255,0.0) 28%)",
                 pointerEvents: "none",
-                zIndex: 2,
-              }}
+                zIndex: 2 }}
             />
           </motion.div>
 

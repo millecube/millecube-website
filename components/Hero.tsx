@@ -2,18 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-
-const ease = [0.32, 0.72, 0, 1] as const;
-
-const fadeUpBlur = {
-  hidden: { opacity: 0, y: 24 },
-  visible: (delay: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.80, delay, ease },
-  }),
-};
 
 const WhatsAppIcon = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -134,11 +122,7 @@ export default function Hero() {
         }}
       >
         {/* H1 — "Strategy" gold, "Results" lime */}
-        <motion.h1
-          variants={fadeUpBlur}
-          initial="hidden"
-          animate="visible"
-          custom={0}
+        <h1
           style={{
             fontFamily: "var(--font-bebas)",
             fontWeight: 800,
@@ -148,19 +132,16 @@ export default function Hero() {
             color: "#ffffff",
             maxWidth: "1060px",
             textShadow: "0 2px 32px rgba(6,31,23,0.5)",
+            animation: "heroFadeUp 0.70s cubic-bezier(0.32,0.72,0,1) both",
           }}
         >
           <span style={{ color: "#FFD600" }}>Strategy</span> built on data.
           <br />
           <span style={{ color: "#32cd32" }}>Results</span> measured in revenue.
-        </motion.h1>
+        </h1>
 
         {/* Body copy */}
-        <motion.p
-          variants={fadeUpBlur}
-          initial="hidden"
-          animate="visible"
-          custom={0.14}
+        <p
           style={{
             marginTop: "20px",
             fontSize: "clamp(17px, 1.8vw, 24px)",
@@ -169,19 +150,16 @@ export default function Hero() {
             fontFamily: "var(--font-montserrat)",
             lineHeight: 1.65,
             textShadow: "0 1px 12px rgba(6,31,23,0.6)",
+            animation: "heroFadeUp 0.80s 0.12s cubic-bezier(0.32,0.72,0,1) both",
           }}
         >
           Meta, Google & marketplace ads — fully managed.
           <br />
           Every ringgit tracked. No guesswork, no vanity.
-        </motion.p>
+        </p>
 
         {/* CTAs */}
-        <motion.div
-          variants={fadeUpBlur}
-          initial="hidden"
-          animate="visible"
-          custom={0.26}
+        <div
           style={{
             marginTop: "26px",
             display: "flex",
@@ -189,6 +167,7 @@ export default function Hero() {
             alignItems: "center",
             justifyContent: "center",
             gap: "12px",
+            animation: "heroFadeUp 0.80s 0.22s cubic-bezier(0.32,0.72,0,1) both",
           }}
         >
           {/* Primary — WhatsApp */}
@@ -297,9 +276,15 @@ export default function Hero() {
               ↗
             </span>
           </Link>
-        </motion.div>
+        </div>
       </div>
 
+      <style>{`
+        @keyframes heroFadeUp {
+          from { opacity: 0; transform: translateY(24px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
     </section>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -21,8 +22,7 @@ const GALLERY: GalleryItem[] = [
     img: "/ourwork-landingpage_h1.webp",
     tint: "rgba(7,80,60,0.14)",
     overlay:
-      "linear-gradient(to bottom, rgba(6,31,23,0.0) 0%, rgba(6,31,23,0.22) 30%, rgba(6,31,23,0.94) 76%)",
-  },
+      "linear-gradient(to bottom, rgba(6,31,23,0.0) 0%, rgba(6,31,23,0.22) 30%, rgba(6,31,23,0.94) 76%)" },
   {
     id: "c2",
     category: "E-Commerce Design",
@@ -30,8 +30,7 @@ const GALLERY: GalleryItem[] = [
     img: "/ourwork-landingpage_sq1.webp",
     tint: "rgba(50,205,50,0.06)",
     overlay:
-      "linear-gradient(to bottom, rgba(6,31,23,0.0) 0%, rgba(6,31,23,0.28) 38%, rgba(6,31,23,0.95) 80%)",
-  },
+      "linear-gradient(to bottom, rgba(6,31,23,0.0) 0%, rgba(6,31,23,0.28) 38%, rgba(6,31,23,0.95) 80%)" },
   {
     id: "c3",
     category: "Facebook Ads",
@@ -39,8 +38,7 @@ const GALLERY: GalleryItem[] = [
     img: "/ourwork-fbpost_sq1.webp",
     tint: "rgba(255,214,0,0.06)",
     overlay:
-      "linear-gradient(to bottom, rgba(6,31,23,0.04) 0%, rgba(6,31,23,0.33) 42%, rgba(6,31,23,0.95) 78%)",
-  },
+      "linear-gradient(to bottom, rgba(6,31,23,0.04) 0%, rgba(6,31,23,0.33) 42%, rgba(6,31,23,0.95) 78%)" },
   {
     id: "c4",
     category: "Branding & Identity",
@@ -48,8 +46,7 @@ const GALLERY: GalleryItem[] = [
     img: "/ourwork-branding_sq1.webp",
     tint: "rgba(7,80,60,0.15)",
     overlay:
-      "linear-gradient(to bottom, rgba(6,31,23,0.0) 0%, rgba(6,31,23,0.28) 35%, rgba(6,31,23,0.95) 76%)",
-  },
+      "linear-gradient(to bottom, rgba(6,31,23,0.0) 0%, rgba(6,31,23,0.28) 35%, rgba(6,31,23,0.95) 76%)" },
   {
     id: "c5",
     category: "Instagram Reels",
@@ -57,8 +54,7 @@ const GALLERY: GalleryItem[] = [
     img: "/ourwork-igreel_sq1.webp",
     tint: "rgba(255,214,0,0.08)",
     overlay:
-      "linear-gradient(to bottom, rgba(6,31,23,0.0) 0%, rgba(6,31,23,0.30) 40%, rgba(6,31,23,0.95) 78%)",
-  },
+      "linear-gradient(to bottom, rgba(6,31,23,0.0) 0%, rgba(6,31,23,0.30) 40%, rgba(6,31,23,0.95) 78%)" },
   {
     id: "c6",
     category: "Social Media Content",
@@ -66,8 +62,7 @@ const GALLERY: GalleryItem[] = [
     img: "/ourwork-landingpage_h2.webp",
     tint: "rgba(7,80,60,0.14)",
     overlay:
-      "linear-gradient(to bottom, rgba(6,31,23,0.0) 0%, rgba(6,31,23,0.20) 32%, rgba(6,31,23,0.93) 74%)",
-  },
+      "linear-gradient(to bottom, rgba(6,31,23,0.0) 0%, rgba(6,31,23,0.20) 32%, rgba(6,31,23,0.93) 74%)" },
 ];
 
 const DELAYS: Record<string, number> = {
@@ -76,16 +71,15 @@ const DELAYS: Record<string, number> = {
   c3: 0.13,
   c4: 0.18,
   c5: 0.23,
-  c6: 0.28,
-};
+  c6: 0.28 };
 
 function GalleryCard({ item }: { item: GalleryItem }) {
   return (
     <motion.div
       className={`gallery-card gallery-card--${item.id}`}
       style={{ height: "100%", display: "flex", flexDirection: "column" }}
-      initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.88, delay: DELAYS[item.id] ?? 0, ease }}
     >
@@ -100,8 +94,7 @@ function GalleryCard({ item }: { item: GalleryItem }) {
           boxShadow:
             "0 1px 4px rgba(0,0,0,0.05), 0 4px 20px rgba(0,0,0,0.07)",
           transition:
-            "border-color 260ms cubic-bezier(0.32,0.72,0,1), box-shadow 260ms cubic-bezier(0.32,0.72,0,1), transform 260ms cubic-bezier(0.32,0.72,0,1)",
-        }}
+            "border-color 260ms cubic-bezier(0.32,0.72,0,1), box-shadow 260ms cubic-bezier(0.32,0.72,0,1), transform 260ms cubic-bezier(0.32,0.72,0,1)" }}
         onMouseEnter={(e) => {
           const el = e.currentTarget as HTMLElement;
           el.style.borderColor = "rgba(50,205,50,0.30)";
@@ -123,21 +116,15 @@ function GalleryCard({ item }: { item: GalleryItem }) {
             height: "100%",
             borderRadius: "12px",
             overflow: "hidden",
-            position: "relative",
-          }}
+            position: "relative" }}
         >
           {/* Photo */}
-          <img
+          <Image
             src={item.img}
             alt={item.category}
-            style={{
-              position: "absolute",
-              inset: 0,
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              display: "block",
-            }}
+            fill
+            sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw"
+            style={{ objectFit: "cover" }}
           />
 
           {/* Brand tint */}
@@ -148,8 +135,7 @@ function GalleryCard({ item }: { item: GalleryItem }) {
               inset: 0,
               backgroundColor: item.tint,
               mixBlendMode: "multiply",
-              pointerEvents: "none",
-            }}
+              pointerEvents: "none" }}
           />
 
           {/* Gradient overlay */}
@@ -159,8 +145,7 @@ function GalleryCard({ item }: { item: GalleryItem }) {
               position: "absolute",
               inset: 0,
               background: item.overlay,
-              pointerEvents: "none",
-            }}
+              pointerEvents: "none" }}
           />
 
           {/* Card content */}
@@ -171,8 +156,7 @@ function GalleryCard({ item }: { item: GalleryItem }) {
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-between",
-              padding: "13px 14px 16px",
-            }}
+              padding: "13px 14px 16px" }}
           >
             {/* Category badge */}
             <span
@@ -188,8 +172,7 @@ function GalleryCard({ item }: { item: GalleryItem }) {
                 border: "1px solid rgba(255,255,255,0.16)",
                 padding: "3px 9px",
                 borderRadius: "100px",
-                fontFamily: "var(--font-montserrat)",
-              }}
+                fontFamily: "var(--font-montserrat)" }}
             >
               {item.category}
             </span>
@@ -203,8 +186,7 @@ function GalleryCard({ item }: { item: GalleryItem }) {
                 lineHeight: 1.12,
                 letterSpacing: "-0.02em",
                 color: "#ffffff",
-                margin: 0,
-              }}
+                margin: 0 }}
             >
               {item.title}
             </h3>
@@ -222,25 +204,26 @@ export default function Portfolio() {
       style={{
         backgroundColor: "#ffffff",
         position: "relative",
-        overflow: "hidden",
-      }}
+        overflow: "hidden" }}
     >
       {/* Logo watermark — centered, 3D version for glass texture */}
-      <img
+      <Image
         src="/logo-3d.png"
         alt=""
-        aria-hidden="true"
+        aria-hidden={true}
+        width={500}
+        height={500}
         style={{
           position: "absolute",
           top: "50%",
           left: "50%",
           transform: "translate(-35%, -42%)",
           width: "clamp(300px, 38vw, 500px)",
+          height: "auto",
           opacity: 0.055,
           userSelect: "none",
           pointerEvents: "none",
-          zIndex: 0,
-        }}
+          zIndex: 0 }}
       />
 
       <div
@@ -251,14 +234,13 @@ export default function Portfolio() {
           paddingTop: "clamp(44px, 5vw, 64px)",
           paddingBottom: "clamp(24px, 3vw, 36px)",
           position: "relative",
-          zIndex: 1,
-        }}
+          zIndex: 1 }}
       >
         {/* Section header — minimal */}
         <motion.div
           style={{ marginBottom: "clamp(20px, 2.4vw, 30px)" }}
-          initial={{ opacity: 0, y: 16, filter: "blur(5px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.82, ease }}
         >
@@ -270,8 +252,7 @@ export default function Portfolio() {
               textTransform: "uppercase",
               color: "#32cd32",
               fontFamily: "var(--font-montserrat)",
-              marginBottom: "9px",
-            }}
+              marginBottom: "9px" }}
           >
             Our Work
           </p>
@@ -284,8 +265,7 @@ export default function Portfolio() {
               lineHeight: 1.04,
               letterSpacing: "-0.03em",
               color: "#07503c",
-              margin: 0,
-            }}
+              margin: 0 }}
           >
             The Creative Side of{" "}
             <span style={{ color: "#32cd32" }}>Performance</span>
@@ -303,8 +283,7 @@ export default function Portfolio() {
               "c1 c1 c2 c3"
               "c4 c5 c6 c6"
             `,
-            gap: "10px",
-          }}
+            gap: "10px" }}
         >
           {GALLERY.map((item) => (
             <div

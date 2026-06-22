@@ -8,8 +8,7 @@ import {
   Storefront,
   TrendUp,
   Code,
-  PenNib,
-} from "@phosphor-icons/react";
+  PenNib } from "@phosphor-icons/react";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -18,38 +17,32 @@ const SERVICES = [
     Icon: Target,
     title: "Meta & Social Ads",
     subtitle: "Turn Feeds Into Revenue",
-    desc: "Facebook and Instagram campaigns engineered around outcomes — every ringgit traced to a lead, a sale, or a ROAS target your business actually cares about.",
-  },
+    desc: "Facebook and Instagram campaigns engineered around outcomes — every ringgit traced to a lead, a sale, or a ROAS target your business actually cares about." },
   {
     Icon: MagnifyingGlass,
     title: "Google Ads & Search",
     subtitle: "Own the Moment of Intent",
-    desc: "Search, Performance Max, and Shopping campaigns that capture high-intent buyers when they're ready to act — not just when they're scrolling.",
-  },
+    desc: "Search, Performance Max, and Shopping campaigns that capture high-intent buyers when they're ready to act — not just when they're scrolling." },
   {
     Icon: Storefront,
     title: "Marketplace Management",
     subtitle: "Dominate Shopee & Lazada",
-    desc: "Full end-to-end management of your Shopee, Lazada, and TikTok Shop — listings, ads, flash deals, and monthly performance breakdowns.",
-  },
+    desc: "Full end-to-end management of your Shopee, Lazada, and TikTok Shop — listings, ads, flash deals, and monthly performance breakdowns." },
   {
     Icon: TrendUp,
     title: "SEO & Organic Growth",
     subtitle: "Traffic That Never Stops Working",
-    desc: "Keyword strategy, technical SEO, and content built to compound — organic visibility that keeps delivering long after the campaign ends.",
-  },
+    desc: "Keyword strategy, technical SEO, and content built to compound — organic visibility that keeps delivering long after the campaign ends." },
   {
     Icon: Code,
     title: "Website & Landing Pages",
     subtitle: "Convert the Traffic You're Paying For",
-    desc: "High-converting pages built around your funnel — fast, mobile-first, and designed to lower your cost-per-acquisition.",
-  },
+    desc: "High-converting pages built around your funnel — fast, mobile-first, and designed to lower your cost-per-acquisition." },
   {
     Icon: PenNib,
     title: "Content & Creative",
     subtitle: "Stop the Scroll. Start the Sale.",
-    desc: "Ad creatives, copy, and short-form video built for performance — designed to resonate with the algorithm and the customer simultaneously.",
-  },
+    desc: "Ad creatives, copy, and short-form video built for performance — designed to resonate with the algorithm and the customer simultaneously." },
 ];
 
 export default function Services() {
@@ -59,8 +52,7 @@ export default function Services() {
       style={{
         background:
           "linear-gradient(to bottom, #07503c 0%, #07503c 50%, #1d6b48 80%, #ffffff 100%)",
-        position: "relative",
-      }}
+        position: "relative" }}
     >
       {/* ── Layered atmospheric glows ── */}
       <div
@@ -69,8 +61,7 @@ export default function Services() {
           position: "absolute",
           inset: 0,
           pointerEvents: "none",
-          overflow: "hidden",
-        }}
+          overflow: "hidden" }}
       >
         <div
           style={{
@@ -80,8 +71,7 @@ export default function Services() {
             width: "700px",
             height: "700px",
             background:
-              "radial-gradient(circle at top right, rgba(50,205,50,0.08) 0%, transparent 60%)",
-          }}
+              "radial-gradient(circle at top right, rgba(50,205,50,0.08) 0%, transparent 60%)" }}
         />
         <div
           style={{
@@ -91,8 +81,7 @@ export default function Services() {
             width: "500px",
             height: "500px",
             background:
-              "radial-gradient(circle at left, rgba(7,80,60,0.22) 0%, transparent 65%)",
-          }}
+              "radial-gradient(circle at left, rgba(7,80,60,0.22) 0%, transparent 65%)" }}
         />
         <div
           style={{
@@ -103,8 +92,7 @@ export default function Services() {
             width: "640px",
             height: "420px",
             background:
-              "radial-gradient(ellipse, rgba(50,205,50,0.03) 0%, transparent 70%)",
-          }}
+              "radial-gradient(ellipse, rgba(50,205,50,0.03) 0%, transparent 70%)" }}
         />
       </div>
 
@@ -126,8 +114,7 @@ export default function Services() {
             flexDirection: "column",
             justifyContent: "center",
             padding: "60px 48px 60px 40px",
-            overflow: "hidden",
-          }}
+            overflow: "hidden" }}
         >
           {/* Content */}
           <div style={{ position: "relative", zIndex: 1 }}>
@@ -139,8 +126,7 @@ export default function Services() {
                 textTransform: "uppercase",
                 color: "#32cd32",
                 fontFamily: "var(--font-montserrat)",
-                marginBottom: "22px",
-              }}
+                marginBottom: "22px" }}
             >
               What We Do
             </p>
@@ -153,8 +139,7 @@ export default function Services() {
                 lineHeight: 1.06,
                 letterSpacing: "-0.03em",
                 color: "#ffffff",
-                marginBottom: "24px",
-              }}
+                marginBottom: "24px" }}
             >
               Our Range of
               <br />
@@ -170,8 +155,7 @@ export default function Services() {
                 color: "rgba(255,255,255,0.65)",
                 fontFamily: "var(--font-montserrat)",
                 maxWidth: "340px",
-                marginBottom: "36px",
-              }}
+                marginBottom: "36px" }}
             >
               Top brands partner with Millecube for campaigns tied to real
               numbers — cost per lead, cost per sale, revenue generated. No
@@ -193,8 +177,7 @@ export default function Services() {
                 padding: "11px 10px 11px 20px",
                 borderRadius: "100px",
                 transition:
-                  "background-color 260ms cubic-bezier(0.32,0.72,0,1), transform 260ms cubic-bezier(0.32,0.72,0,1), box-shadow 260ms cubic-bezier(0.32,0.72,0,1)",
-              }}
+                  "background-color 260ms cubic-bezier(0.32,0.72,0,1), transform 260ms cubic-bezier(0.32,0.72,0,1), box-shadow 260ms cubic-bezier(0.32,0.72,0,1)" }}
               onMouseEnter={(e) => {
                 const el = e.currentTarget as HTMLElement;
                 el.style.backgroundColor = "#e6c200";
@@ -219,8 +202,7 @@ export default function Services() {
                   alignItems: "center",
                   justifyContent: "center",
                   fontSize: "14px",
-                  flexShrink: 0,
-                }}
+                  flexShrink: 0 }}
               >
                 →
               </span>
@@ -236,14 +218,13 @@ export default function Services() {
             padding: "80px 40px 200px 24px",
             display: "flex",
             flexDirection: "column",
-            gap: "14px",
-          }}
+            gap: "14px" }}
         >
           {SERVICES.map((service, i) => (
             <motion.div
               key={service.title}
-              initial={{ opacity: 0, y: 28, filter: "blur(6px)" }}
-              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.88, delay: i * 0.06, ease }}
             >
@@ -257,8 +238,7 @@ export default function Services() {
                   boxShadow:
                     "0 2px 8px rgba(0,0,0,0.12), 0 8px 24px rgba(0,0,0,0.08)",
                   transition:
-                    "border-color 240ms cubic-bezier(0.32,0.72,0,1), box-shadow 240ms cubic-bezier(0.32,0.72,0,1)",
-                }}
+                    "border-color 240ms cubic-bezier(0.32,0.72,0,1), box-shadow 240ms cubic-bezier(0.32,0.72,0,1)" }}
                 onMouseEnter={(e) => {
                   const shell = e.currentTarget as HTMLElement;
                   shell.style.borderColor = "rgba(50,205,50,0.22)";
@@ -284,15 +264,13 @@ export default function Services() {
                     padding: "26px 28px",
                     boxShadow: "inset 0 1px 1px rgba(255,255,255,0.05)",
                     transition:
-                      "background-color 240ms cubic-bezier(0.32,0.72,0,1)",
-                  }}
+                      "background-color 240ms cubic-bezier(0.32,0.72,0,1)" }}
                 >
                   <div
                     style={{
                       display: "flex",
                       alignItems: "flex-start",
-                      gap: "18px",
-                    }}
+                      gap: "18px" }}
                   >
                     {/* Icon badge — double-bezel outer shell */}
                     <div
@@ -302,8 +280,7 @@ export default function Services() {
                         background: "rgba(50,205,50,0.06)",
                         border: "1px solid rgba(50,205,50,0.13)",
                         flexShrink: 0,
-                        marginTop: "2px",
-                      }}
+                        marginTop: "2px" }}
                     >
                       {/* Icon badge — inner core */}
                       <div
@@ -316,8 +293,7 @@ export default function Services() {
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
-                          color: "#32cd32",
-                        }}
+                          color: "#32cd32" }}
                       >
                         <service.Icon size={17} weight="light" />
                       </div>
@@ -332,8 +308,7 @@ export default function Services() {
                           fontWeight: 700,
                           color: "#ffffff",
                           marginBottom: "4px",
-                          lineHeight: 1.3,
-                        }}
+                          lineHeight: 1.3 }}
                       >
                         {service.title}
                       </h3>
@@ -345,8 +320,7 @@ export default function Services() {
                           fontFamily: "var(--font-montserrat)",
                           letterSpacing: "0.06em",
                           textTransform: "uppercase",
-                          marginBottom: "12px",
-                        }}
+                          marginBottom: "12px" }}
                       >
                         {service.subtitle}
                       </p>
@@ -355,8 +329,7 @@ export default function Services() {
                           fontSize: "13px",
                           lineHeight: 1.72,
                           color: "rgba(255,255,255,0.65)",
-                          fontFamily: "var(--font-montserrat)",
-                        }}
+                          fontFamily: "var(--font-montserrat)" }}
                       >
                         {service.desc}
                       </p>
@@ -384,8 +357,7 @@ export default function Services() {
               borderRadius: "100px",
               alignSelf: "flex-start",
               transition:
-                "background-color 260ms cubic-bezier(0.32,0.72,0,1), transform 260ms cubic-bezier(0.32,0.72,0,1), box-shadow 260ms cubic-bezier(0.32,0.72,0,1)",
-            }}
+                "background-color 260ms cubic-bezier(0.32,0.72,0,1), transform 260ms cubic-bezier(0.32,0.72,0,1), box-shadow 260ms cubic-bezier(0.32,0.72,0,1)" }}
             onMouseEnter={(e) => {
               const el = e.currentTarget as HTMLElement;
               el.style.backgroundColor = "#e6c200";
@@ -403,8 +375,8 @@ export default function Services() {
 
           {/* Bottom CTA card */}
           <motion.div
-            initial={{ opacity: 0, y: 28, filter: "blur(6px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.88, delay: 0.36, ease }}
           >
@@ -418,8 +390,7 @@ export default function Services() {
                 boxShadow:
                   "0 4px 16px rgba(0,0,0,0.14), 0 16px 48px rgba(7,80,60,0.18)",
                 transition:
-                  "border-color 240ms cubic-bezier(0.32,0.72,0,1), box-shadow 240ms cubic-bezier(0.32,0.72,0,1)",
-              }}
+                  "border-color 240ms cubic-bezier(0.32,0.72,0,1), box-shadow 240ms cubic-bezier(0.32,0.72,0,1)" }}
               onMouseEnter={(e) => {
                 const shell = e.currentTarget as HTMLElement;
                 shell.style.borderColor = "rgba(50,205,50,0.38)";
@@ -449,8 +420,7 @@ export default function Services() {
                   padding: "28px",
                   boxShadow: "inset 0 1px 1px rgba(255,255,255,0.07)",
                   transition:
-                    "background-color 240ms cubic-bezier(0.32,0.72,0,1)",
-                }}
+                    "background-color 240ms cubic-bezier(0.32,0.72,0,1)" }}
               >
                 <p
                   style={{
@@ -460,8 +430,7 @@ export default function Services() {
                     textTransform: "uppercase",
                     color: "rgba(255,255,255,0.62)",
                     fontFamily: "var(--font-montserrat)",
-                    marginBottom: "10px",
-                  }}
+                    marginBottom: "10px" }}
                 >
                   Not Sure Where to Start?
                 </p>
@@ -473,8 +442,7 @@ export default function Services() {
                     color: "#ffffff",
                     letterSpacing: "-0.02em",
                     lineHeight: 1.15,
-                    marginBottom: "16px",
-                  }}
+                    marginBottom: "16px" }}
                 >
                   Let&apos;s talk about what your business needs.
                 </p>
@@ -486,8 +454,7 @@ export default function Services() {
                     fontSize: "12px",
                     fontWeight: 700,
                     color: "#32cd32",
-                    fontFamily: "var(--font-montserrat)",
-                  }}
+                    fontFamily: "var(--font-montserrat)" }}
                 >
                   Start a conversation →
                 </span>
