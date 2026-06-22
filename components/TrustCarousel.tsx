@@ -130,7 +130,7 @@ export default function TrustCarousel() {
             style={{
               fontFamily: "var(--font-montserrat)",
               fontSize: "14px",
-              color: "rgba(7,80,60,0.45)",
+              color: "rgba(7,80,60,0.65)",
               lineHeight: 1.72,
               maxWidth: "440px",
               margin: "0 auto",

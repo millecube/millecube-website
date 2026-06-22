@@ -119,7 +119,7 @@ export default function CtaStrip() {
                 fontFamily: "var(--font-montserrat)",
                 fontSize: "13.5px",
                 lineHeight: 1.72,
-                color: "rgba(7,80,60,0.52)",
+                color: "rgba(7,80,60,0.70)",
                 maxWidth: "340px",
                 margin: 0,
                 position: "relative",

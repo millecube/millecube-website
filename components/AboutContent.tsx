@@ -154,7 +154,7 @@ export default function AboutContent() {
                       fontWeight: 700,
                       letterSpacing: "0.22em",
                       textTransform: "uppercase",
-                      color: "rgba(255,255,255,0.50)",
+                      color: "rgba(255,255,255,0.68)",
                       margin: 0,
                       whiteSpace: "nowrap",
                     }}
@@ -224,7 +224,7 @@ export default function AboutContent() {
                   fontFamily: "var(--font-montserrat)",
                   fontSize: "13.5px",
                   lineHeight: 1.82,
-                  color: "rgba(7,80,60,0.55)",
+                  color: "rgba(7,80,60,0.72)",
                   margin: 0,
                 }}
               >
@@ -247,7 +247,7 @@ export default function AboutContent() {
                   fontFamily: "var(--font-montserrat)",
                   fontSize: "13.5px",
                   lineHeight: 1.82,
-                  color: "rgba(7,80,60,0.55)",
+                  color: "rgba(7,80,60,0.72)",
                   margin: 0,
                 }}
               >
@@ -290,7 +290,7 @@ export default function AboutContent() {
                     style={{
                       fontFamily: "var(--font-montserrat)",
                       fontSize: "10.5px",
-                      color: "rgba(7,80,60,0.42)",
+                      color: "rgba(7,80,60,0.65)",
                       textTransform: "uppercase",
                       letterSpacing: "0.10em",
                       fontWeight: 600,
@@ -473,7 +473,7 @@ export default function AboutContent() {
                         fontFamily: "var(--font-montserrat)",
                         fontSize: "13px",
                         lineHeight: 1.8,
-                        color: "rgba(255,255,255,0.50)",
+                        color: "rgba(255,255,255,0.68)",
                         margin: 0,
                       }}
                     >
@@ -618,7 +618,7 @@ export default function AboutContent() {
                         fontFamily: "var(--font-montserrat)",
                         fontSize: "13px",
                         lineHeight: 1.8,
-                        color: "rgba(255,255,255,0.50)",
+                        color: "rgba(255,255,255,0.68)",
                         margin: 0,
                       }}
                     >
@@ -765,7 +765,7 @@ export default function AboutContent() {
                     fontFamily: "var(--font-montserrat)",
                     fontSize: "13.5px",
                     lineHeight: 1.8,
-                    color: "rgba(255,255,255,0.50)",
+                    color: "rgba(255,255,255,0.68)",
                     margin: 0,
                   }}
                 >

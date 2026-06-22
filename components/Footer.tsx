@@ -81,7 +81,7 @@ export default function Footer() {
             <p
               className="text-sm max-w-xs"
               style={{
-                color: "rgba(255,255,255,0.45)",
+                color: "rgba(255,255,255,0.65)",
                 fontFamily: "var(--font-montserrat)",
                 lineHeight: 1.85,
               }}
@@ -132,11 +132,11 @@ export default function Footer() {
                     href={s.href}
                     className="text-xs transition-colors duration-200"
                     style={{
-                      color: "rgba(255,255,255,0.45)",
+                      color: "rgba(255,255,255,0.65)",
                       fontFamily: "var(--font-montserrat)",
                     }}
                     onMouseEnter={(e) => (e.currentTarget.style.color = "#ffffff")}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.45)")}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.65)")}
                   >
                     {s.label}
                   </Link>
@@ -160,11 +160,11 @@ export default function Footer() {
                     href={l.href}
                     className="text-xs transition-colors duration-200"
                     style={{
-                      color: "rgba(255,255,255,0.45)",
+                      color: "rgba(255,255,255,0.65)",
                       fontFamily: "var(--font-montserrat)",
                     }}
                     onMouseEnter={(e) => (e.currentTarget.style.color = "#ffffff")}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.45)")}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.65)")}
                   >
                     {l.label}
                   </Link>
@@ -187,11 +187,11 @@ export default function Footer() {
                   href="mailto:hello@millecube.com"
                   className="text-xs transition-colors duration-200"
                   style={{
-                    color: "rgba(255,255,255,0.45)",
+                    color: "rgba(255,255,255,0.65)",
                     fontFamily: "var(--font-montserrat)",
                   }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = "#ffffff")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.45)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.65)")}
                 >
                   hello@millecube.com
                 </Link>
@@ -203,11 +203,11 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="text-xs transition-colors duration-200"
                   style={{
-                    color: "rgba(255,255,255,0.45)",
+                    color: "rgba(255,255,255,0.65)",
                     fontFamily: "var(--font-montserrat)",
                   }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = "#ffffff")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.45)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.65)")}
                 >
                   +60 16-496 3875
                 </Link>

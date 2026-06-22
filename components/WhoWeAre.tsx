@@ -289,7 +289,7 @@ export default function WhoWeAre() {
                 fontFamily: "var(--font-montserrat)",
                 fontSize: "14px",
                 lineHeight: 1.78,
-                color: "rgba(7,80,60,0.5)",
+                color: "rgba(7,80,60,0.68)",
                 maxWidth: "460px",
               }}
             >
@@ -305,12 +305,12 @@ export default function WhoWeAre() {
             >
               <div style={{ flex: 1 }}>
                 <p style={{ fontFamily: "var(--font-bebas)", fontSize: "36px", fontWeight: 800, color: "#07503c", lineHeight: 1, letterSpacing: "-0.02em", margin: 0 }}>35+</p>
-                <p style={{ fontFamily: "var(--font-montserrat)", fontSize: "9px", fontWeight: 700, color: "rgba(7,80,60,0.5)", letterSpacing: "0.14em", textTransform: "uppercase", marginTop: "4px" }}>Brands Served</p>
+                <p style={{ fontFamily: "var(--font-montserrat)", fontSize: "9px", fontWeight: 700, color: "rgba(7,80,60,0.68)", letterSpacing: "0.14em", textTransform: "uppercase", marginTop: "4px" }}>Brands Served</p>
               </div>
               <div style={{ width: "1px", backgroundColor: "rgba(7,80,60,0.12)", margin: "0 20px" }} />
               <div style={{ flex: 1 }}>
                 <p style={{ fontFamily: "var(--font-bebas)", fontSize: "36px", fontWeight: 800, color: "#07503c", lineHeight: 1, letterSpacing: "-0.02em", margin: 0 }}>RM 2M+</p>
-                <p style={{ fontFamily: "var(--font-montserrat)", fontSize: "9px", fontWeight: 700, color: "rgba(7,80,60,0.5)", letterSpacing: "0.14em", textTransform: "uppercase", marginTop: "4px" }}>Ad Spend Managed</p>
+                <p style={{ fontFamily: "var(--font-montserrat)", fontSize: "9px", fontWeight: 700, color: "rgba(7,80,60,0.68)", letterSpacing: "0.14em", textTransform: "uppercase", marginTop: "4px" }}>Ad Spend Managed</p>
               </div>
             </div>
 
