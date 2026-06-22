@@ -90,7 +90,7 @@ export default function ConsentBanner() {
             borderRadius: "100px",
             border: "1px solid rgba(255,255,255,0.10)",
             backgroundColor: "transparent",
-            color: "rgba(255,255,255,0.40)",
+            color: "rgba(255,255,255,0.62)",
             cursor: "pointer",
             transition: "color 180ms ease, border-color 180ms ease",
             flexShrink: 0,
@@ -100,7 +100,7 @@ export default function ConsentBanner() {
             e.currentTarget.style.borderColor = "rgba(255,255,255,0.22)";
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.color = "rgba(255,255,255,0.40)";
+            e.currentTarget.style.color = "rgba(255,255,255,0.62)";
             e.currentTarget.style.borderColor = "rgba(255,255,255,0.10)";
           }}
         >

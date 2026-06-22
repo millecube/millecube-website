@@ -167,7 +167,7 @@ export default function Services() {
               style={{
                 fontSize: "13.5px",
                 lineHeight: 1.78,
-                color: "rgba(255,255,255,0.48)",
+                color: "rgba(255,255,255,0.65)",
                 fontFamily: "var(--font-montserrat)",
                 maxWidth: "340px",
                 marginBottom: "36px",
@@ -354,7 +354,7 @@ export default function Services() {
                         style={{
                           fontSize: "13px",
                           lineHeight: 1.72,
-                          color: "rgba(255,255,255,0.46)",
+                          color: "rgba(255,255,255,0.65)",
                           fontFamily: "var(--font-montserrat)",
                         }}
                       >
@@ -458,7 +458,7 @@ export default function Services() {
                     fontWeight: 700,
                     letterSpacing: "0.24em",
                     textTransform: "uppercase",
-                    color: "rgba(255,255,255,0.35)",
+                    color: "rgba(255,255,255,0.62)",
                     fontFamily: "var(--font-montserrat)",
                     marginBottom: "10px",
                   }}

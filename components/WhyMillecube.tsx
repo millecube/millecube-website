@@ -114,7 +114,7 @@ export default function WhyMillecube() {
                   fontWeight: 700,
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",
-                  color: "rgba(255,255,255,0.28)",
+                  color: "rgba(255,255,255,0.60)",
                 }}
               >
                 Most agencies
@@ -160,7 +160,7 @@ export default function WhyMillecube() {
                       fontFamily: "var(--font-montserrat)",
                       fontSize: "14px",
                       lineHeight: 1.6,
-                      color: "rgba(255,255,255,0.28)",
+                      color: "rgba(255,255,255,0.60)",
                       textDecoration: "line-through",
                       textDecorationColor: "rgba(255,255,255,0.1)",
                     }}
@@ -294,7 +294,7 @@ export default function WhyMillecube() {
             style={{
               fontFamily: "var(--font-montserrat)",
               fontSize: "13px",
-              color: "rgba(255,255,255,0.35)",
+              color: "rgba(255,255,255,0.62)",
               letterSpacing: "0.02em",
             }}
           >

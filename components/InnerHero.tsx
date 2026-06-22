@@ -94,21 +94,21 @@ export default function InnerHero({ label, title, subtitle, breadcrumbs, bgImage
             <Link
               href="/"
               className="text-xs font-medium transition-colors duration-200"
-              style={{ color: "rgba(255,255,255,0.4)", fontFamily: "var(--font-montserrat)" }}
+              style={{ color: "rgba(255,255,255,0.62)", fontFamily: "var(--font-montserrat)" }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.8)")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.4)")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.62)")}
             >
               Home
             </Link>
             {breadcrumbs.map((crumb) => (
               <span key={crumb.href} className="flex items-center gap-2">
-                <span style={{ color: "rgba(255,255,255,0.2)", fontSize: "10px" }}>›</span>
+                <span style={{ color: "rgba(255,255,255,0.55)", fontSize: "10px" }}>›</span>
                 <Link
                   href={crumb.href}
                   className="text-xs font-medium transition-colors duration-200"
-                  style={{ color: "rgba(255,255,255,0.4)", fontFamily: "var(--font-montserrat)" }}
+                  style={{ color: "rgba(255,255,255,0.62)", fontFamily: "var(--font-montserrat)" }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.8)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.4)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.62)")}
                 >
                   {crumb.label}
                 </Link>

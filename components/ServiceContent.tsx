@@ -138,7 +138,7 @@ export default function ServiceContent({
                 style={{
                   fontFamily: "var(--font-montserrat)",
                   fontSize: "13.5px",
-                  color: "rgba(6,31,23,0.52)",
+                  color: "rgba(6,31,23,0.70)",
                   lineHeight: 1.82,
                   margin: 0,
                   maxWidth: "420px",
@@ -190,7 +190,7 @@ export default function ServiceContent({
                         style={{
                           fontFamily: "var(--font-montserrat)",
                           fontSize: "10px",
-                          color: "rgba(6,31,23,0.38)",
+                          color: "rgba(6,31,23,0.60)",
                           textTransform: "uppercase" as const,
                           letterSpacing: "0.10em",
                           marginTop: 5,
@@ -275,7 +275,7 @@ export default function ServiceContent({
                       style={{
                         fontFamily: "var(--font-montserrat)",
                         fontSize: "13px",
-                        color: "rgba(6,31,23,0.50)",
+                        color: "rgba(6,31,23,0.68)",
                         lineHeight: 1.78,
                         margin: 0,
                       }}
@@ -407,7 +407,7 @@ export default function ServiceContent({
                   style={{
                     fontFamily: "var(--font-montserrat)",
                     fontSize: "13.5px",
-                    color: "rgba(6,31,23,0.50)",
+                    color: "rgba(6,31,23,0.68)",
                     lineHeight: 1.8,
                     margin: 0,
                   }}
@@ -490,7 +490,7 @@ export default function ServiceContent({
                 style={{
                   fontFamily: "var(--font-montserrat)",
                   fontSize: "13.5px",
-                  color: "rgba(6,31,23,0.52)",
+                  color: "rgba(6,31,23,0.70)",
                   lineHeight: 1.82,
                   margin: "0 0 32px 0",
                   maxWidth: "380px",

@@ -154,7 +154,7 @@ export default function ContactForm() {
         </h3>
         <p style={{
           fontFamily: "var(--font-montserrat)", fontSize: "13px",
-          color: "rgba(7,80,60,0.52)", lineHeight: 1.75,
+          color: "rgba(7,80,60,0.70)", lineHeight: 1.75,
         }}>
           Your details were pre-filled. Hit send and we&apos;ll reply within 24 hours.
         </p>
@@ -175,7 +175,7 @@ export default function ContactForm() {
               <motion.span
                 animate={{
                   background: step >= s.num ? "#07503c" : "rgba(7,80,60,0.09)",
-                  color: step > s.num ? "#32cd32" : step === s.num ? "#FFD600" : "rgba(7,80,60,0.28)",
+                  color: step > s.num ? "#32cd32" : step === s.num ? "#FFD600" : "rgba(7,80,60,0.62)",
                 }}
                 transition={{ duration: 0.3 }}
                 style={{
@@ -190,7 +190,7 @@ export default function ContactForm() {
               <span style={{
                 fontSize: "9px", fontFamily: "var(--font-montserrat)", fontWeight: 600,
                 letterSpacing: "0.06em", textTransform: "uppercase",
-                color: step >= s.num ? "#07503c" : "rgba(7,80,60,0.28)",
+                color: step >= s.num ? "#07503c" : "rgba(7,80,60,0.62)",
                 transition: "color 300ms ease",
               }}>
                 {s.label}
@@ -219,7 +219,7 @@ export default function ContactForm() {
           >
             <p style={{
               fontFamily: "var(--font-montserrat)", fontSize: "12.5px",
-              color: "rgba(7,80,60,0.48)", marginBottom: "18px", lineHeight: 1.65,
+              color: "rgba(7,80,60,0.68)", marginBottom: "18px", lineHeight: 1.65,
             }}>
               Tell us who you are — we&apos;ll keep this between us.
             </p>
@@ -255,7 +255,7 @@ export default function ContactForm() {
           >
             <p style={{
               fontFamily: "var(--font-montserrat)", fontSize: "12.5px",
-              color: "rgba(7,80,60,0.48)", marginBottom: "16px", lineHeight: 1.65,
+              color: "rgba(7,80,60,0.68)", marginBottom: "16px", lineHeight: 1.65,
             }}>
               Which services are you looking for? Select all that apply.
             </p>
@@ -297,7 +297,7 @@ export default function ContactForm() {
                 <p style={{
                   fontFamily: "var(--font-montserrat)", fontSize: "9.5px", fontWeight: 700,
                   letterSpacing: "0.14em", textTransform: "uppercase",
-                  color: "rgba(7,80,60,0.45)", marginBottom: "10px",
+                  color: "rgba(7,80,60,0.65)", marginBottom: "10px",
                 }}>
                   Monthly Budget
                 </p>
