@@ -7,12 +7,11 @@ import { motion } from "framer-motion";
 const ease = [0.32, 0.72, 0, 1] as const;
 
 const fadeUpBlur = {
-  hidden: { opacity: 0, y: 32, filter: "blur(10px)" },
+  hidden: { opacity: 0, y: 24 },
   visible: (delay: number) => ({
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
-    transition: { duration: 0.95, delay, ease },
+    transition: { duration: 0.80, delay, ease },
   }),
 };
 
