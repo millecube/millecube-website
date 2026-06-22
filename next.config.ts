@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 31536000,
   },
   compress: true,
+  experimental: {
+    optimizePackageImports: ["framer-motion", "@phosphor-icons/react"],
+  },
 };
 
 export default nextConfig;

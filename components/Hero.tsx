@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 
@@ -34,9 +32,7 @@ export default function Hero() {
         }}
       />
 
-      {/* ── Gradient overlays ──
-          Dark at top (text readability) → transparent in the middle (faces visible) → slight dark at bottom
-      */}
+      {/* Dark gradient overlay — top for text, clears in middle to show faces */}
       <div
         aria-hidden="true"
         style={{
@@ -48,7 +44,7 @@ export default function Hero() {
         }}
       />
 
-      {/* Subtle left vignette — adds depth to the text side */}
+      {/* Left vignette — depth on text side */}
       <div
         aria-hidden="true"
         style={{
@@ -73,7 +69,7 @@ export default function Hero() {
         }}
       />
 
-      {/* Radial lime glow — behind headline */}
+      {/* Radial lime glow */}
       <div
         aria-hidden="true"
         style={{
@@ -90,7 +86,7 @@ export default function Hero() {
         }}
       />
 
-      {/* Radial gold accent — CTA zone */}
+      {/* Radial gold accent */}
       <div
         aria-hidden="true"
         style={{
@@ -107,7 +103,7 @@ export default function Hero() {
         }}
       />
 
-      {/* ── Text content — confined to upper ~42% so it doesn't cover faces ── */}
+      {/* ── Text content ── */}
       <div
         style={{
           position: "relative",
@@ -121,7 +117,6 @@ export default function Hero() {
           paddingRight: "24px",
         }}
       >
-        {/* H1 — "Strategy" gold, "Results" lime */}
         <h1
           style={{
             fontFamily: "var(--font-bebas)",
@@ -140,7 +135,6 @@ export default function Hero() {
           <span style={{ color: "#32cd32" }}>Results</span> measured in revenue.
         </h1>
 
-        {/* Body copy */}
         <p
           style={{
             marginTop: "20px",
@@ -175,106 +169,18 @@ export default function Hero() {
             href="https://wa.me/60164963875"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2.5 pr-5 pl-1.5 py-1.5 rounded-full"
-            style={{
-              backgroundColor: "#25D366",
-              color: "#ffffff",
-              fontFamily: "var(--font-montserrat)",
-              fontSize: "14px",
-              fontWeight: 700,
-              transition:
-                "background-color 320ms cubic-bezier(0.32,0.72,0,1), transform 320ms cubic-bezier(0.32,0.72,0,1), box-shadow 320ms cubic-bezier(0.32,0.72,0,1)",
-            }}
-            onMouseEnter={(e) => {
-              const el = e.currentTarget as HTMLElement;
-              el.style.backgroundColor = "#1eb350";
-              el.style.transform = "translateY(-2px)";
-              el.style.boxShadow = "0 14px 36px rgba(37,211,102,0.38)";
-            }}
-            onMouseLeave={(e) => {
-              const el = e.currentTarget as HTMLElement;
-              el.style.backgroundColor = "#25D366";
-              el.style.transform = "translateY(0)";
-              el.style.boxShadow = "none";
-            }}
-            onMouseDown={(e) => {
-              (e.currentTarget as HTMLElement).style.transform = "scale(0.97)";
-            }}
-            onMouseUp={(e) => {
-              (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
-            }}
+            className="hero-btn-wa"
           >
-            <span
-              className="group-hover:scale-110"
-              style={{
-                width: "36px",
-                height: "36px",
-                borderRadius: "50%",
-                backgroundColor: "rgba(255,255,255,0.22)",
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexShrink: 0,
-                transition: "transform 320ms cubic-bezier(0.32,0.72,0,1)",
-              }}
-            >
+            <span className="hero-btn-icon-wa">
               <WhatsAppIcon />
             </span>
             WhatsApp Us
           </Link>
 
           {/* Secondary — Explore Services */}
-          <Link
-            href="/services"
-            className="group inline-flex items-center gap-2.5 pl-5 pr-1.5 py-1.5 rounded-full"
-            style={{
-              border: "1.5px solid rgba(255,255,255,0.18)",
-              color: "rgba(255,255,255,0.8)",
-              fontFamily: "var(--font-montserrat)",
-              fontSize: "14px",
-              fontWeight: 600,
-              backdropFilter: "blur(4px)",
-              WebkitBackdropFilter: "blur(4px)",
-              transition:
-                "border-color 320ms cubic-bezier(0.32,0.72,0,1), color 320ms cubic-bezier(0.32,0.72,0,1), transform 320ms cubic-bezier(0.32,0.72,0,1)",
-            }}
-            onMouseEnter={(e) => {
-              const el = e.currentTarget as HTMLElement;
-              el.style.borderColor = "rgba(255,255,255,0.45)";
-              el.style.color = "#ffffff";
-              el.style.transform = "translateY(-2px)";
-            }}
-            onMouseLeave={(e) => {
-              const el = e.currentTarget as HTMLElement;
-              el.style.borderColor = "rgba(255,255,255,0.18)";
-              el.style.color = "rgba(255,255,255,0.8)";
-              el.style.transform = "translateY(0)";
-            }}
-            onMouseDown={(e) => {
-              (e.currentTarget as HTMLElement).style.transform = "scale(0.97)";
-            }}
-            onMouseUp={(e) => {
-              (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
-            }}
-          >
+          <Link href="/services" className="hero-btn-explore">
             Explore Services
-            <span
-              className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              style={{
-                width: "36px",
-                height: "36px",
-                borderRadius: "50%",
-                backgroundColor: "rgba(255,255,255,0.1)",
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexShrink: 0,
-                fontSize: "15px",
-                transition: "transform 320ms cubic-bezier(0.32,0.72,0,1)",
-              }}
-            >
-              ↗
-            </span>
+            <span className="hero-btn-icon-arrow">↗</span>
           </Link>
         </div>
       </div>
@@ -284,6 +190,87 @@ export default function Hero() {
           from { opacity: 0; transform: translateY(24px); }
           to   { opacity: 1; transform: translateY(0); }
         }
+
+        /* WhatsApp button */
+        .hero-btn-wa {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          padding: 6px 20px 6px 6px;
+          border-radius: 100px;
+          background-color: #25D366;
+          color: #ffffff;
+          font-family: var(--font-montserrat);
+          font-size: 14px;
+          font-weight: 700;
+          text-decoration: none;
+          transition: background-color 320ms cubic-bezier(0.32,0.72,0,1),
+                      transform 320ms cubic-bezier(0.32,0.72,0,1),
+                      box-shadow 320ms cubic-bezier(0.32,0.72,0,1);
+        }
+        .hero-btn-icon-wa {
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          background-color: rgba(255,255,255,0.22);
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          transition: transform 320ms cubic-bezier(0.32,0.72,0,1);
+        }
+        @media (hover: hover) {
+          .hero-btn-wa:hover {
+            background-color: #1eb350;
+            transform: translateY(-2px);
+            box-shadow: 0 14px 36px rgba(37,211,102,0.38);
+          }
+          .hero-btn-wa:hover .hero-btn-icon-wa { transform: scale(1.1); }
+        }
+        .hero-btn-wa:active { transform: scale(0.97); }
+
+        /* Explore Services button */
+        .hero-btn-explore {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          padding: 6px 6px 6px 20px;
+          border-radius: 100px;
+          border: 1.5px solid rgba(255,255,255,0.18);
+          color: rgba(255,255,255,0.8);
+          font-family: var(--font-montserrat);
+          font-size: 14px;
+          font-weight: 600;
+          text-decoration: none;
+          backdrop-filter: blur(4px);
+          -webkit-backdrop-filter: blur(4px);
+          transition: border-color 320ms cubic-bezier(0.32,0.72,0,1),
+                      color 320ms cubic-bezier(0.32,0.72,0,1),
+                      transform 320ms cubic-bezier(0.32,0.72,0,1);
+        }
+        .hero-btn-icon-arrow {
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          background-color: rgba(255,255,255,0.1);
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          font-size: 15px;
+          transition: transform 320ms cubic-bezier(0.32,0.72,0,1);
+        }
+        @media (hover: hover) {
+          .hero-btn-explore:hover {
+            border-color: rgba(255,255,255,0.45);
+            color: #ffffff;
+            transform: translateY(-2px);
+          }
+          .hero-btn-explore:hover .hero-btn-icon-arrow {
+            transform: translateX(2px) translateY(-2px);
+          }
+        }
+        .hero-btn-explore:active { transform: scale(0.97); }
       `}</style>
     </section>
   );

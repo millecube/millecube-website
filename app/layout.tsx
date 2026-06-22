@@ -14,7 +14,7 @@ const jakartaDisplay = Plus_Jakarta_Sans({
 });
 
 const jakartaBody = Plus_Jakarta_Sans({
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-montserrat",
   subsets: ["latin"],
   display: "swap",
