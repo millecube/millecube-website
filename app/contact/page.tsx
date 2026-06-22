@@ -43,7 +43,7 @@ export default function ContactPage() {
         label="GET IN TOUCH"
         title="Talk to us about your business."
         subtitle="We'll look at what you're currently running, identify where you're losing money, and tell you honestly whether we're the right fit."
-        bgImage="/contactus-bg1.png"
+        bgImage="/contactus-bg1.webp"
       />
 
       {/* ── Two-column contact section ── */}

@@ -27,7 +27,7 @@ export default function ContentCreativePage() {
   return (
     <main>
       <InnerHero
-        bgImage="/hero-bg.png"
+        bgImage="/hero-bg.webp"
         label="CONTENT & CREATIVE"
         title="Creative that earns attention."
         subtitle="We produce ad creative, social content, and copywriting for brands that can't afford to be forgettable — platform-native, tested, and built for performance."

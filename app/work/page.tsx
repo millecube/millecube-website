@@ -30,7 +30,7 @@ export default function WorkPage() {
         label="OUR WORK"
         title="Results that speak louder than decks."
         subtitle="A selection of what we've driven for our clients — measured in business outcomes, not social metrics."
-        bgImage="/work-bg1.png"
+        bgImage="/work-bg1.webp"
       />
       <WorkCases />
       <TeamStrip />

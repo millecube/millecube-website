@@ -27,7 +27,7 @@ export default function MarketplaceManagementPage() {
   return (
     <main>
       <InnerHero
-        bgImage="/hero-bg2.png"
+        bgImage="/hero-bg2.webp"
         label="MARKETPLACE MANAGEMENT"
         title="More sales on Shopee, Lazada, and TikTok Shop."
         subtitle="We manage your entire marketplace presence — listings, campaigns, chat, and fulfilment coordination — so you can focus on your product."

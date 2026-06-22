@@ -27,7 +27,7 @@ export default function SocialMediaPage() {
   return (
     <main>
       <InnerHero
-        bgImage="/hero-bg.png"
+        bgImage="/hero-bg.webp"
         label="SOCIAL MEDIA"
         title="A feed that works while you sleep."
         subtitle="We manage your brand's presence across Meta, TikTok, LinkedIn, and Xiaohongshu — consistent, on-brand, and strategically directed every month."

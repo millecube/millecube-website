@@ -27,7 +27,7 @@ export default function BrandingStrategyPage() {
   return (
     <main>
       <InnerHero
-        bgImage="/hero-bg.png"
+        bgImage="/hero-bg.webp"
         label="BRANDING & STRATEGY"
         title="Know what you stand for before you spend on ads."
         subtitle="We build brand positioning, visual identity, and go-to-market strategy for Malaysian businesses ready to grow with clarity — not guesswork."

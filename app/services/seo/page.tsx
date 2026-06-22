@@ -28,7 +28,7 @@ export default function SeoPage() {
   return (
     <main>
       <InnerHero
-        bgImage="/hero-bg.png"
+        bgImage="/hero-bg.webp"
         label="SEO & SEARCH"
         title="Traffic that pays you back."
         subtitle="We grow your Google rankings for keywords your customers actually search — no black-hat tactics, no lock-in, and no promises we can't keep."

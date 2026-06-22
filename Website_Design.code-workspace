@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../millecube_ads_hub"
+		},
+		{
+			"path": "../../Meta-Ads-Report"
+		},
+		{
+			"path": "../../Millecube-SEO"
+		},
+		{
+			"path": "../../google-ads-agent"
+		}
+	],
+	"settings": {
+		"claudeCode.allowDangerouslySkipPermissions": true
+	}
+}

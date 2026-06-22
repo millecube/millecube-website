@@ -18,7 +18,7 @@ const GALLERY: GalleryItem[] = [
     id: "c1",
     category: "Website Design",
     title: "Conversion-Driven Landing Pages",
-    img: "/ourwork-landingpage_h1.png",
+    img: "/ourwork-landingpage_h1.webp",
     tint: "rgba(7,80,60,0.14)",
     overlay:
       "linear-gradient(to bottom, rgba(6,31,23,0.0) 0%, rgba(6,31,23,0.22) 30%, rgba(6,31,23,0.94) 76%)",
@@ -27,7 +27,7 @@ const GALLERY: GalleryItem[] = [
     id: "c2",
     category: "E-Commerce Design",
     title: "Fashion-Forward Storefronts",
-    img: "/ourwork-landingpage_sq1.png",
+    img: "/ourwork-landingpage_sq1.webp",
     tint: "rgba(50,205,50,0.06)",
     overlay:
       "linear-gradient(to bottom, rgba(6,31,23,0.0) 0%, rgba(6,31,23,0.28) 38%, rgba(6,31,23,0.95) 80%)",
@@ -36,7 +36,7 @@ const GALLERY: GalleryItem[] = [
     id: "c3",
     category: "Facebook Ads",
     title: "Ad Creatives That Convert",
-    img: "/ourwork-fbpost_sq1.png",
+    img: "/ourwork-fbpost_sq1.webp",
     tint: "rgba(255,214,0,0.06)",
     overlay:
       "linear-gradient(to bottom, rgba(6,31,23,0.04) 0%, rgba(6,31,23,0.33) 42%, rgba(6,31,23,0.95) 78%)",
@@ -45,7 +45,7 @@ const GALLERY: GalleryItem[] = [
     id: "c4",
     category: "Branding & Identity",
     title: "Brand Identity That Commands Attention",
-    img: "/ourwork-branding_sq1.png",
+    img: "/ourwork-branding_sq1.webp",
     tint: "rgba(7,80,60,0.15)",
     overlay:
       "linear-gradient(to bottom, rgba(6,31,23,0.0) 0%, rgba(6,31,23,0.28) 35%, rgba(6,31,23,0.95) 76%)",
@@ -54,7 +54,7 @@ const GALLERY: GalleryItem[] = [
     id: "c5",
     category: "Instagram Reels",
     title: "Reels That Stop the Scroll",
-    img: "/ourwork-igreel_sq1.png",
+    img: "/ourwork-igreel_sq1.webp",
     tint: "rgba(255,214,0,0.08)",
     overlay:
       "linear-gradient(to bottom, rgba(6,31,23,0.0) 0%, rgba(6,31,23,0.30) 40%, rgba(6,31,23,0.95) 78%)",
@@ -63,7 +63,7 @@ const GALLERY: GalleryItem[] = [
     id: "c6",
     category: "Social Media Content",
     title: "Scroll-Stopping Social Ads",
-    img: "/ourwork-landingpage_h2.png",
+    img: "/ourwork-landingpage_h2.webp",
     tint: "rgba(7,80,60,0.14)",
     overlay:
       "linear-gradient(to bottom, rgba(6,31,23,0.0) 0%, rgba(6,31,23,0.20) 32%, rgba(6,31,23,0.93) 74%)",
