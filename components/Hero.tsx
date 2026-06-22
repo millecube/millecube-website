@@ -38,7 +38,8 @@ export default function Hero() {
         src="/hero-bg2.webp"
         fill
         priority
-        quality={90}
+        quality={75}
+        sizes="100vw"
         alt="Millecube team collaborating at Penang office"
         style={{
           objectFit: "cover",
