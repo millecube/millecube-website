@@ -29,7 +29,7 @@ export default function MediaAdvertisementPage() {
   return (
     <main>
       <InnerHero
-        bgImage="/hero-bg2.png"
+        bgImage="/hero-bg2.webp"
         label="PERFORMANCE MARKETING"
         title="Ad spend you can trace to a sale."
         subtitle="We run Meta Ads, Google Ads, and TikTok Ads for Malaysian SMEs who need every ringgit to count — measured in leads, sales, and ROAS, not impressions."

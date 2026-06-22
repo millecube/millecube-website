@@ -15,7 +15,7 @@ export default function TeamStrip() {
     >
       {/* Background image */}
       <img
-        src="/hero-bg2.png"
+        src="/hero-bg2.webp"
         alt=""
         aria-hidden
         style={{

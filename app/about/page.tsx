@@ -30,7 +30,7 @@ export default function AboutPage() {
         label="ABOUT US"
         title="Built by people who've been on your side of the table."
         subtitle="We started Millecube because we got tired of agencies that couldn't explain what our money was doing."
-        bgImage="/aboutus-bg1.png"
+        bgImage="/aboutus-bg1.webp"
       />
       <AboutContent />
       <Portfolio />

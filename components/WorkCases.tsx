@@ -21,7 +21,7 @@ const CASES: CaseItem[] = [
     metric: "3.8×",
     detail: "ROAS on Meta Ads",
     desc: "Created high-converting ad creatives for D'Haifa Global, a Penang-based brand manufacturer. Restructured audience targeting and cut cost per sale by 62% over 90 days.",
-    img: "/ourwork-fbpost_sq1.png",
+    img: "/ourwork-fbpost_sq1.webp",
     overlay:
       "linear-gradient(to bottom, rgba(6,31,23,0.0) 0%, rgba(6,31,23,0.32) 40%, rgba(6,31,23,0.96) 78%)",
   },
@@ -31,7 +31,7 @@ const CASES: CaseItem[] = [
     metric: "2×",
     detail: "E-commerce conversions",
     desc: "Designed and built Maison Elle's fashion e-commerce site. UX built around the modern female buyer to maximise product-to-checkout conversion.",
-    img: "/ourwork-landingpage_sq1.png",
+    img: "/ourwork-landingpage_sq1.webp",
     overlay:
       "linear-gradient(to bottom, rgba(6,31,23,0.0) 0%, rgba(6,31,23,0.28) 38%, rgba(6,31,23,0.95) 76%)",
   },
@@ -41,7 +41,7 @@ const CASES: CaseItem[] = [
     metric: "−42%",
     detail: "Cost per lead",
     desc: "Built Norsen's premium furniture landing page. Drove paid traffic to a conversion-focused design that cut cost per lead by 42%.",
-    img: "/ourwork-landingpage_h1.png",
+    img: "/ourwork-landingpage_h1.webp",
     overlay:
       "linear-gradient(to bottom, rgba(6,31,23,0.04) 0%, rgba(6,31,23,0.33) 42%, rgba(6,31,23,0.95) 78%)",
   },
@@ -51,7 +51,7 @@ const CASES: CaseItem[] = [
     metric: "4×",
     detail: "Organic reach in 3 months",
     desc: "Managed Wocohwood's social presence across Meta and TikTok. Lifestyle-driven content grew organic reach 4× in 90 days.",
-    img: "/ourwork-igreel_sq1.png",
+    img: "/ourwork-igreel_sq1.webp",
     overlay:
       "linear-gradient(to bottom, rgba(6,31,23,0.0) 0%, rgba(6,31,23,0.30) 40%, rgba(6,31,23,0.95) 78%)",
   },
@@ -61,7 +61,7 @@ const CASES: CaseItem[] = [
     metric: "#1",
     detail: "Category ranking",
     desc: "Ran bilingual paid campaigns for Razak City fitness centre. Localised ad creatives drove top category ranking and consistent member sign-ups.",
-    img: "/ourwork-landingpage_h2.png",
+    img: "/ourwork-landingpage_h2.webp",
     overlay:
       "linear-gradient(to bottom, rgba(6,31,23,0.0) 0%, rgba(6,31,23,0.28) 38%, rgba(6,31,23,0.94) 76%)",
   },
@@ -71,7 +71,7 @@ const CASES: CaseItem[] = [
     metric: "22",
     detail: "Business inquiries — first month",
     desc: "Complete brand identity for Crispytoo, a Penang biscuit brand — logo, packaging, and retail collateral. 22 wholesale inquiries came in within 30 days of launch.",
-    img: "/ourwork-branding_sq1.png",
+    img: "/ourwork-branding_sq1.webp",
     overlay:
       "linear-gradient(to bottom, rgba(6,31,23,0.0) 0%, rgba(6,31,23,0.30) 38%, rgba(6,31,23,0.95) 78%)",
   },

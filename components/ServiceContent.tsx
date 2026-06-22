@@ -311,7 +311,7 @@ export default function ServiceContent({
           }}
         >
           <Image
-            src="/service-bg1.png"
+            src="/service-bg1.webp"
             alt=""
             fill
             style={{ objectFit: "cover", opacity: 0.04 }}

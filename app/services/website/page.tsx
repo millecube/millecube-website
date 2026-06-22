@@ -27,7 +27,7 @@ export default function WebsitePage() {
   return (
     <main>
       <InnerHero
-        bgImage="/hero-bg2.png"
+        bgImage="/hero-bg2.webp"
         label="WEBSITE & LANDING PAGES"
         title="Pages that convert the traffic you're paying for."
         subtitle="We design and build business websites, landing pages, and e-commerce stores on WordPress, Next.js, and Webflow — fast, mobile-first, and built to rank."

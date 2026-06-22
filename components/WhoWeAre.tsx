@@ -97,7 +97,7 @@ export default function WhoWeAre() {
                 }}
               >
                 <img
-                  src="/whoweare-card.png"
+                  src="/whoweare-card.webp"
                   alt="Millecube team at work"
                   style={{
                     width: "100%",

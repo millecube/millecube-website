@@ -208,7 +208,7 @@ export default function CtaStrip() {
           >
             {/* Lady — static, anchored bottom, breaks box boundary */}
             <img
-              src="/cta-box.png"
+              src="/cta-box.webp"
               alt="Millecube team"
               style={{
                 position: "absolute",

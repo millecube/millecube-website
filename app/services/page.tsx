@@ -29,7 +29,7 @@ export default function ServicesPage() {
         label="WHAT WE DO"
         title="Every channel your revenue depends on."
         subtitle="We manage paid media, marketplace stores, SEO, websites, and creative — each tracked back to business outcomes."
-        bgImage="/service-bg1.png"
+        bgImage="/service-bg1.webp"
       />
       <ServicesGrid />
       <Portfolio />

@@ -79,7 +79,7 @@ export default function AboutContent() {
               >
                 {/* Photo */}
                 <Image
-                  src="/aboutus-card1.png"
+                  src="/aboutus-card1.webp"
                   alt="Millecube Digital office and team"
                   fill
                   style={{ objectFit: "cover", objectPosition: "center top" }}
@@ -537,7 +537,7 @@ export default function AboutContent() {
                 >
                   {/* Background photo — team image */}
                   <Image
-                    src="/aboutus-card1.png"
+                    src="/aboutus-card1.webp"
                     alt=""
                     aria-hidden
                     fill
@@ -645,7 +645,7 @@ export default function AboutContent() {
       >
         {/* Background photo */}
         <img
-          src="/hero-bg.png"
+          src="/hero-bg.webp"
           alt=""
           aria-hidden
           style={{
