@@ -2,6 +2,12 @@ import { MetadataRoute } from "next";
 
 const BASE = "https://millecube.com";
 
+// Without this, Next statically generates the sitemap once at build time
+// and `lastModified` freezes at that build's date until the next deploy
+// (confirmed in the 2026-09 GSC audit — all entries were stuck on
+// 2026-06-22, the last deploy date). Revalidate daily instead.
+export const revalidate = 86400;
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 

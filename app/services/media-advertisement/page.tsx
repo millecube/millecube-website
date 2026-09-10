@@ -4,22 +4,29 @@ import ServiceContent from "@/components/ServiceContent";
 import CtaStrip from "@/components/CtaStrip";
 
 export const metadata: Metadata = {
-  title: "Meta & Google Ads Agency Malaysia",
+  title: "Meta Ads & Facebook Ads Agency Malaysia",
   description:
-    "Performance advertising on Meta, Google, and TikTok — tracked to every ringgit. Millecube runs paid media for Malaysian SMEs: average 3.8x ROAS, 62% cost-per-sale reduction, month-to-month.",
+    "Meta Ads (Facebook & Instagram), Google Ads, and TikTok Ads for Malaysian SMEs — tracked to every ringgit. Average 3.8x ROAS, 62% cost-per-sale reduction, month-to-month. Serving businesses across Malaysia, including Penang, Petaling Jaya, Kuala Lumpur, and Johor Bahru.",
   keywords: [
     "Meta Ads agency Malaysia",
+    "Facebook ads agency Malaysia",
     "Facebook ads agency Penang",
+    "Facebook ads agency PJ",
+    "Instagram ads Malaysia",
+    "Instagram advertising Malaysia",
     "Google Ads management Malaysia",
+    "Google Ads agency Penang",
+    "Google Ads agency JB",
+    "performance ads agency Malaysia",
+    "performance marketing Malaysia",
     "TikTok Ads Malaysia",
     "paid media agency Malaysia",
-    "performance marketing Penang",
   ],
   alternates: { canonical: "https://millecube.com/services/media-advertisement" },
   openGraph: {
-    title: "Meta & Google Ads Agency Malaysia — Millecube",
+    title: "Meta Ads & Facebook Ads Agency Malaysia — Millecube",
     description:
-      "Average 3.8x ROAS across 35+ Malaysian clients. Meta Ads, Google Ads, TikTok Ads — tracked to every ringgit, no contract.",
+      "Average 3.8x ROAS across 35+ Malaysian clients. Meta Ads (Facebook & Instagram), Google Ads, TikTok Ads — tracked to every ringgit, no contract.",
     url: "https://millecube.com/services/media-advertisement",
     images: [{ url: "/logo-3d.png", width: 500, height: 500, alt: "Millecube Digital" }],
   },
@@ -30,9 +37,9 @@ export default function MediaAdvertisementPage() {
     <main>
       <InnerHero
         bgImage="/hero-bg2.webp"
-        label="PERFORMANCE MARKETING"
+        label="META ADS · FACEBOOK ADS · GOOGLE ADS"
         title="Ad spend you can trace to a sale."
-        subtitle="We run Meta Ads, Google Ads, and TikTok Ads for Malaysian SMEs who need every ringgit to count — measured in leads, sales, and ROAS, not impressions."
+        subtitle="A Meta Ads and Facebook Ads agency for Malaysian SMEs — Meta Ads (Facebook & Instagram), Google Ads, and TikTok Ads managed for businesses across Malaysia, including Penang, Petaling Jaya, Kuala Lumpur, and Johor Bahru, who need every ringgit to count, measured in leads, sales, and ROAS, not impressions."
       />
       <ServiceContent
         slug="media-advertisement"
@@ -43,15 +50,15 @@ export default function MediaAdvertisementPage() {
         ]}
         featuresLabel="WHAT WE DO"
         featuresHeadline="Full-funnel paid advertising, not just campaign setup."
-        featuresBody="We build and manage paid advertising campaigns across Meta, Google, and TikTok — targeting the right audience, with creative that converts, tracked to every ringgit. No set-and-forget. We're in the account daily."
+        featuresBody="As a Meta Ads and Google Ads agency for Malaysian SMEs, we build and manage paid advertising campaigns on Facebook, Instagram, Google, and TikTok — targeting the right audience, with creative that converts, tracked to every ringgit. No set-and-forget. We're in the account daily, for clients across Malaysia, including Penang, Petaling Jaya, Kuala Lumpur, and Johor Bahru."
         features={[
           {
             name: "Meta Ads (Facebook & Instagram)",
-            desc: "Cold audience prospecting, retargeting sequences, and lookalike scaling. Every ad set built around your cost-per-lead or ROAS target.",
+            desc: "Facebook Ads and Instagram Ads — cold audience prospecting, retargeting sequences, and lookalike scaling. Every ad set built around your cost-per-lead or ROAS target.",
           },
           {
             name: "Google Ads",
-            desc: "Search, Shopping, and Display campaigns for buyers who are already looking. Full keyword architecture and negative list management.",
+            desc: "Search, Shopping, and Display campaigns for buyers who are already looking, across Malaysia including Penang, Petaling Jaya, Kuala Lumpur, and Johor Bahru. Full keyword architecture and negative list management.",
           },
           {
             name: "TikTok Ads",
