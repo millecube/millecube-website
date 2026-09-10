@@ -4,20 +4,25 @@ import ServiceContent from "@/components/ServiceContent";
 import CtaStrip from "@/components/CtaStrip";
 
 export const metadata: Metadata = {
-  title: "Branding Agency Malaysia",
+  title: "Branding & Brand Strategy Malaysia",
   description:
-    "Brand positioning, visual identity, and 90-day marketing strategy for Malaysian SMEs. Define what you stand for before you spend on ads — based in Penang.",
+    "Brand strategy consulting, positioning, visual identity, and 90-day marketing strategy for Malaysian SMEs across Malaysia, including Penang and Kuala Lumpur. Define what you stand for before you spend on ads.",
   keywords: [
     "branding agency Malaysia",
+    "brand strategy agency Malaysia",
+    "brand strategy consulting Malaysia",
+    "brand strategy Malaysia",
+    "branding consultant Malaysia",
     "brand identity design Penang",
+    "brand positioning agency",
+    "corporate branding Malaysia",
     "marketing strategy Malaysia",
     "brand positioning Malaysia",
-    "brand strategy agency Malaysia",
   ],
   alternates: { canonical: "https://millecube.com/services/branding-strategy" },
   openGraph: {
-    title: "Branding Agency Malaysia — Millecube",
-    description: "Brand positioning, visual identity, and 90-day marketing strategy for Malaysian SMEs. Based in Penang.",
+    title: "Branding & Brand Strategy Malaysia — Millecube",
+    description: "Brand strategy consulting, positioning, visual identity, and 90-day marketing strategy for Malaysian SMEs. Penang, Kuala Lumpur, and nationwide.",
     url: "https://millecube.com/services/branding-strategy",
     images: [{ url: "/logo-3d.png", width: 500, height: 500, alt: "Millecube Digital" }],
   },
@@ -28,9 +33,9 @@ export default function BrandingStrategyPage() {
     <main>
       <InnerHero
         bgImage="/hero-bg.webp"
-        label="BRANDING & STRATEGY"
+        label="BRANDING AGENCY MALAYSIA"
         title="Know what you stand for before you spend on ads."
-        subtitle="We build brand positioning, visual identity, and go-to-market strategy for Malaysian businesses ready to grow with clarity — not guesswork."
+        subtitle="A branding agency and brand strategy consultancy for businesses across Malaysia, including Penang and Kuala Lumpur — we build brand positioning, visual identity, and go-to-market strategy for companies ready to grow with clarity, not guesswork."
       />
       <ServiceContent
         slug="branding-strategy"
@@ -41,11 +46,11 @@ export default function BrandingStrategyPage() {
         ]}
         featuresLabel="WHAT WE BUILD"
         featuresHeadline="A brand that earns trust before you say a word."
-        featuresBody="Great brands don't happen by accident. We research your market, define your positioning, and design the identity that makes your business recognisable, credible, and worth paying a premium for."
+        featuresBody="As a brand strategy agency for Malaysian SMEs, we don't believe great brands happen by accident. We research your market, define your positioning, and design the identity that makes your business recognisable, credible, and worth paying a premium for — for businesses across Malaysia, including Penang and Kuala Lumpur."
         features={[
           {
             name: "Brand positioning",
-            desc: "We define your target audience, competitive differentiation, and brand promise — the strategic layer everything else is built on.",
+            desc: "Brand positioning agency work: we define your target audience, competitive differentiation, and brand promise — the strategic layer everything else is built on.",
           },
           {
             name: "Brand identity design",

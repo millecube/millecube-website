@@ -4,21 +4,27 @@ import ServiceContent from "@/components/ServiceContent";
 import CtaStrip from "@/components/CtaStrip";
 
 export const metadata: Metadata = {
-  title: "SEO Agency Malaysia",
+  title: "SEO Agency Malaysia & Penang",
   description:
-    "SEO services for Malaysian businesses. Keyword strategy, technical SEO, and organic traffic that compounds — first-page rankings within 90-120 days, tracked via Google Search Console.",
+    "SEO agency for businesses across Malaysia, including Penang, Kedah, and Kuching. Keyword strategy, technical SEO, and organic traffic that compounds — first-page rankings within 90-120 days, tracked via Google Search Console.",
   keywords: [
     "SEO agency Malaysia",
+    "SEO agency Penang",
+    "Penang SEO agency",
     "SEO services Penang",
+    "SEO company Penang",
+    "SEO agency Kedah",
+    "SEO Kuching",
     "search engine optimization Malaysia",
+    "technical SEO Malaysia",
     "Google ranking Malaysia",
     "organic traffic Malaysia",
     "local SEO Malaysia",
   ],
   alternates: { canonical: "https://millecube.com/services/seo" },
   openGraph: {
-    title: "SEO Agency Malaysia — Millecube",
-    description: "Technical SEO for Malaysian businesses. First-page rankings tracked monthly in plain language.",
+    title: "SEO Agency Malaysia & Penang — Millecube",
+    description: "Technical SEO for businesses in Penang and across Malaysia. First-page rankings tracked monthly in plain language.",
     url: "https://millecube.com/services/seo",
     images: [{ url: "/logo-3d.png", width: 500, height: 500, alt: "Millecube Digital" }],
   },
@@ -29,9 +35,9 @@ export default function SeoPage() {
     <main>
       <InnerHero
         bgImage="/hero-bg.webp"
-        label="SEO & SEARCH"
+        label="SEO AGENCY MALAYSIA"
         title="Traffic that pays you back."
-        subtitle="We grow your Google rankings for keywords your customers actually search — no black-hat tactics, no lock-in, and no promises we can't keep."
+        subtitle="An SEO agency for businesses across Malaysia, including Penang, Kedah, and Kuching — we grow your Google rankings for keywords your customers actually search, no black-hat tactics, no lock-in, and no promises we can't keep."
       />
       <ServiceContent
         slug="seo"
@@ -42,7 +48,7 @@ export default function SeoPage() {
         ]}
         featuresLabel="WHAT WE DO"
         featuresHeadline="Technical SEO and content that builds lasting visibility."
-        featuresBody="We fix what's broken under the hood, research the keywords your buyers use, and build the content that earns your way to page 1 — and keeps you there. SEO done right is the lowest cost-per-lead channel you'll ever have."
+        featuresBody="As an SEO agency serving businesses across Malaysia, including Penang, Kedah, and Kuching, we fix what's broken under the hood, research the keywords your buyers use, and build the content that earns your way to page 1 — and keeps you there. SEO done right is the lowest cost-per-lead channel you'll ever have."
         features={[
           {
             name: "Technical SEO",
@@ -50,7 +56,7 @@ export default function SeoPage() {
           },
           {
             name: "Keyword strategy",
-            desc: "Research-backed keyword mapping aligned to your services, products, and buyer intent — from awareness-stage queries to conversion-ready searches.",
+            desc: "Research-backed keyword mapping for Penang and Malaysia-wide search visibility, aligned to your services, products, and buyer intent — from awareness-stage queries to conversion-ready searches.",
           },
           {
             name: "On-page optimisation",

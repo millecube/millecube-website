@@ -4,20 +4,25 @@ import ServiceContent from "@/components/ServiceContent";
 import CtaStrip from "@/components/CtaStrip";
 
 export const metadata: Metadata = {
-  title: "Social Media Management Malaysia",
+  title: "Social Media Management Agency Malaysia",
   description:
-    "Social media management for Malaysian businesses on Meta, TikTok, LinkedIn, and Xiaohongshu — content strategy, creative, and community management on a monthly retainer.",
+    "Social media management for Malaysian businesses on Facebook, Instagram, TikTok, LinkedIn, and Xiaohongshu — content strategy, creative, and community management on a monthly retainer. Serving businesses across Malaysia, including Penang, Petaling Jaya, Kuala Lumpur, and Johor Bahru.",
   keywords: [
     "social media management Malaysia",
+    "social media management agency Malaysia",
+    "social media marketing Malaysia",
+    "social media management Penang",
+    "social media marketing Penang",
     "social media agency Penang",
     "Facebook page management Malaysia",
-    "TikTok content Malaysia",
+    "Facebook marketing agency Malaysia",
     "Instagram marketing Malaysia",
+    "TikTok content Malaysia",
   ],
   alternates: { canonical: "https://millecube.com/services/social-media" },
   openGraph: {
-    title: "Social Media Management Malaysia — Millecube",
-    description: "Content strategy, creative, and community management for Malaysian brands on Meta, TikTok, LinkedIn, and Xiaohongshu.",
+    title: "Social Media Management Agency Malaysia — Millecube",
+    description: "Content strategy, creative, and community management for Malaysian brands on Facebook, Instagram, TikTok, LinkedIn, and Xiaohongshu.",
     url: "https://millecube.com/services/social-media",
     images: [{ url: "/logo-3d.png", width: 500, height: 500, alt: "Millecube Digital" }],
   },
@@ -28,9 +33,9 @@ export default function SocialMediaPage() {
     <main>
       <InnerHero
         bgImage="/hero-bg.webp"
-        label="SOCIAL MEDIA"
+        label="SOCIAL MEDIA MANAGEMENT MALAYSIA"
         title="A feed that works while you sleep."
-        subtitle="We manage your brand's presence across Meta, TikTok, LinkedIn, and Xiaohongshu — consistent, on-brand, and strategically directed every month."
+        subtitle="A social media management agency for Malaysian businesses on Facebook, Instagram, TikTok, LinkedIn, and Xiaohongshu — serving brands across Malaysia, including Penang, Petaling Jaya, Kuala Lumpur, and Johor Bahru, with consistent, on-brand, strategically directed content every month."
       />
       <ServiceContent
         slug="social-media"
@@ -41,15 +46,15 @@ export default function SocialMediaPage() {
         ]}
         featuresLabel="WHAT WE DO"
         featuresHeadline="Social media that builds equity, not just posts."
-        featuresBody="Consistent, strategic content across every channel your audience uses — planned a month ahead, designed to your brand, and tracked to real business outcomes. Not random posts. A managed presence."
+        featuresBody="As a social media management agency for Malaysian SMEs, we run consistent, strategic content across Facebook, Instagram, TikTok, LinkedIn, and Xiaohongshu — planned a month ahead, designed to your brand, and tracked to real business outcomes for clients across Malaysia, including Penang, Petaling Jaya, Kuala Lumpur, and Johor Bahru. Not random posts. A managed presence."
         features={[
           {
             name: "Content strategy & calendar",
-            desc: "Monthly editorial calendar planned around your promotions, product launches, and seasonal moments — approved before anything is posted.",
+            desc: "Monthly editorial calendar for Facebook and Instagram planned around your promotions, product launches, and seasonal moments — approved before anything is posted.",
           },
           {
             name: "Copywriting & caption writing",
-            desc: "Platform-native copy — Instagram captions, TikTok hooks, LinkedIn thought leadership, and Xiaohongshu review-style posts.",
+            desc: "Platform-native copy — Facebook and Instagram captions, TikTok hooks, LinkedIn thought leadership, and Xiaohongshu review-style posts.",
           },
           {
             name: "Creative direction",
