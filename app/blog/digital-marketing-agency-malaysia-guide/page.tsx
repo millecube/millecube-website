@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import InnerHero from "@/components/InnerHero";
 import BlogContent, { BlogBlock, BlogFaq } from "@/components/BlogContent";
 import CtaStrip from "@/components/CtaStrip";
@@ -10,9 +11,14 @@ import {
   Code,
   PenNib,
   Compass,
+  Clock,
 } from "@phosphor-icons/react/dist/ssr";
 
 const PUBLISHED = "2026-10-07";
+const PUBLISHED_DISPLAY = "7 Oct 2026";
+const READ_TIME = "9 min read";
+const AUTHOR_NAME = "Zack Kho";
+const AUTHOR_ROLE = "Head of Marketing";
 
 export const metadata: Metadata = {
   title: "What Does a Digital Marketing Agency in Malaysia Do?",
@@ -32,7 +38,14 @@ export const metadata: Metadata = {
       "A data-backed guide: what agencies actually do, what to pay, and how to verify one is legitimate before you sign anything.",
     url: "https://millecube.com/blog/digital-marketing-agency-malaysia-guide",
     type: "article",
-    images: [{ url: "/logo-3d.png", width: 500, height: 500, alt: "Millecube Digital" }],
+    images: [{ url: "/blog-digital-marketing-agency-malaysia-hero.png", width: 1672, height: 941, alt: "What Does a Digital Marketing Agency in Malaysia Do?" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "What Does a Digital Marketing Agency in Malaysia Do?",
+    description:
+      "A data-backed guide: what agencies actually do, what to pay, and how to verify one is legitimate before you sign anything.",
+    images: ["/blog-digital-marketing-agency-malaysia-hero.png"],
   },
 };
 
@@ -229,7 +242,8 @@ const articleSchema = {
     "A data-backed guide to what digital marketing agencies in Malaysia actually do, what to pay, and how to verify one is legitimate before you sign anything.",
   datePublished: PUBLISHED,
   dateModified: PUBLISHED,
-  author: { "@type": "Organization", name: "Millecube Digital", url: "https://millecube.com" },
+  image: "https://millecube.com/blog-digital-marketing-agency-malaysia-hero.png",
+  author: { "@type": "Person", name: AUTHOR_NAME, jobTitle: AUTHOR_ROLE, worksFor: { "@type": "Organization", name: "Millecube Digital" } },
   publisher: {
     "@type": "Organization",
     name: "Millecube Digital",
@@ -239,6 +253,16 @@ const articleSchema = {
     "@type": "WebPage",
     "@id": "https://millecube.com/blog/digital-marketing-agency-malaysia-guide",
   },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://millecube.com" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://millecube.com/blog" },
+    { "@type": "ListItem", position: 3, name: "What Does a Digital Marketing Agency in Malaysia Do?", item: "https://millecube.com/blog/digital-marketing-agency-malaysia-guide" },
+  ],
 };
 
 const faqSchema = {
@@ -256,25 +280,43 @@ export default function DigitalMarketingAgencyMalaysiaGuide() {
     <main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <InnerHero
         label="GUIDE · UPDATED OCTOBER 2026"
         title="What Does a Digital Marketing Agency in Malaysia Do?"
         subtitle="The seven disciplines it actually covers, real DOSM figures on Malaysia's digital economy, and how to verify an agency is legitimate before you sign anything."
         breadcrumbs={[{ label: "Blog", href: "/blog" }]}
+        bgImage="/blog-digital-marketing-agency-malaysia-hero.png"
       />
       <div
         className="max-w-3xl mx-auto"
         style={{ padding: "28px clamp(20px,3vw,40px) 0" }}
       >
-        <p
-          style={{
-            fontFamily: "var(--font-montserrat)",
-            fontSize: "12px",
-            color: "rgba(6,31,23,0.5)",
-          }}
-        >
-          By the Millecube Digital Team · Published October 2026
-        </p>
+        <div style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
+          <Image
+            src="/author-zack-kho.png"
+            alt={AUTHOR_NAME}
+            width={40}
+            height={40}
+            style={{ borderRadius: "50%", objectFit: "cover" }}
+          />
+          <div>
+            <p style={{ fontFamily: "var(--font-montserrat)", fontSize: "13px", fontWeight: 700, color: "#061f17", margin: 0, lineHeight: 1.3 }}>
+              {AUTHOR_NAME}
+            </p>
+            <p style={{ fontFamily: "var(--font-montserrat)", fontSize: "12px", color: "rgba(6,31,23,0.55)", margin: 0, lineHeight: 1.3 }}>
+              {AUTHOR_ROLE}
+            </p>
+          </div>
+          <span style={{ color: "rgba(6,31,23,0.3)" }}>·</span>
+          <span style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-montserrat)", fontSize: "12.5px", color: "rgba(6,31,23,0.55)" }}>
+            <Clock size={14} /> {READ_TIME}
+          </span>
+          <span style={{ color: "rgba(6,31,23,0.3)" }}>·</span>
+          <span style={{ fontFamily: "var(--font-montserrat)", fontSize: "12.5px", color: "rgba(6,31,23,0.55)" }}>
+            Updated {PUBLISHED_DISPLAY}
+          </span>
+        </div>
       </div>
       <BlogContent blocks={blocks} faqs={faqs} />
       <CtaStrip />

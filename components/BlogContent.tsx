@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { CaretDown, Check, Warning } from "@phosphor-icons/react";
@@ -147,6 +147,46 @@ export default function BlogContent({ blocks, faqs }: BlogContentProps) {
     .filter((b): b is { type: "h2"; text: string; id?: string } => b.type === "h2")
     .map((b) => ({ text: b.text, id: b.id || slugify(b.text) }));
 
+  const [activeId, setActiveId] = useState<string>(toc[0]?.id ?? "");
+  const tocIdsRef = useRef<string[]>([]);
+  tocIdsRef.current = toc.map((t) => t.id);
+
+  useEffect(() => {
+    const ids = tocIdsRef.current;
+    if (ids.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Pick the entry closest to the top of the "active band" that's intersecting
+        const visible = entries.filter((e) => e.isIntersecting);
+        if (visible.length > 0) {
+          const topMost = visible.reduce((a, b) =>
+            a.boundingClientRect.top < b.boundingClientRect.top ? a : b
+          );
+          setActiveId(topMost.target.id);
+        }
+      },
+      { rootMargin: "-110px 0px -65% 0px", threshold: 0 }
+    );
+
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  function handleTocClick(e: React.MouseEvent<HTMLAnchorElement>, id: string) {
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      setActiveId(id);
+      history.replaceState(null, "", `#${id}`);
+    }
+  }
+
   return (
     <article style={{ background: "#ffffff", position: "relative" }}>
       {/* ── Quick Answer — full width, direct answer-first box ── */}
@@ -226,27 +266,38 @@ export default function BlogContent({ blocks, faqs }: BlogContentProps) {
               >
                 In this guide
               </p>
-              <nav style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                {toc.map((item, i) => (
-                  <a
-                    key={item.id}
-                    href={`#${item.id}`}
-                    style={{
-                      display: "flex",
-                      gap: 10,
-                      textDecoration: "none",
-                      fontFamily: "var(--font-montserrat)",
-                      fontSize: "12.5px",
-                      color: "rgba(6,31,23,0.65)",
-                      lineHeight: 1.4,
-                    }}
-                  >
-                    <span style={{ color: "rgba(7,80,60,0.45)", fontWeight: 700, flexShrink: 0 }}>
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span>{item.text}</span>
-                  </a>
-                ))}
+              <nav style={{ display: "flex", flexDirection: "column", gap: 2 }}>
+                {toc.map((item, i) => {
+                  const isActive = activeId === item.id;
+                  return (
+                    <a
+                      key={item.id}
+                      href={`#${item.id}`}
+                      onClick={(e) => handleTocClick(e, item.id)}
+                      style={{
+                        display: "flex",
+                        gap: 10,
+                        textDecoration: "none",
+                        fontFamily: "var(--font-montserrat)",
+                        fontSize: "12.5px",
+                        lineHeight: 1.4,
+                        padding: "7px 8px",
+                        borderRadius: 8,
+                        marginLeft: -8,
+                        color: isActive ? "#07503c" : "rgba(6,31,23,0.6)",
+                        fontWeight: isActive ? 700 : 400,
+                        background: isActive ? "rgba(50,205,50,0.12)" : "transparent",
+                        borderLeft: isActive ? "2px solid #32cd32" : "2px solid transparent",
+                        transition: "background-color 200ms ease, color 200ms ease",
+                      }}
+                    >
+                      <span style={{ color: isActive ? "#07503c" : "rgba(7,80,60,0.45)", fontWeight: 700, flexShrink: 0 }}>
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span>{item.text}</span>
+                    </a>
+                  );
+                })}
               </nav>
             </div>
           </aside>
@@ -416,7 +467,7 @@ export default function BlogContent({ blocks, faqs }: BlogContentProps) {
                     transition={{ duration: 0.6, ease: EASE_SMOOTH }}
                     style={{ margin: "12px 0 32px 0" }}
                   >
-                    <div style={{ display: "grid", gridTemplateColumns: `repeat(${block.items.length}, 1fr)`, gap: 12 }}>
+                    <div className="blog-stats-grid" style={{ display: "grid", gap: 12 }}>
                       {block.items.map((stat, j) => (
                         <div key={j} style={{ borderRadius: "14px", border: "1px solid rgba(7,80,60,0.12)", background: "#ffffff", padding: "clamp(14px,2vw,20px)", textAlign: "center" }}>
                           <div style={{ fontFamily: "var(--font-bebas)", fontSize: "clamp(26px,3vw,38px)", color: "#07503c", lineHeight: 1 }}>{stat.value}</div>
@@ -435,7 +486,7 @@ export default function BlogContent({ blocks, faqs }: BlogContentProps) {
 
               case "pillars":
                 return (
-                  <div key={i} style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 10, margin: "8px 0 32px 0" }}>
+                  <div key={i} className="blog-pillars-grid" style={{ display: "grid", gap: 10, margin: "8px 0 32px 0" }}>
                     {block.items.map((pillar, j) => (
                       <Link key={j} href={pillar.href} style={{ textDecoration: "none" }} className="blog-pillar-card">
                         <div style={{ borderRadius: "14px", border: "1px solid rgba(7,80,60,0.12)", background: "#f4f9f6", padding: "16px", height: "100%", transition: "border-color 200ms ease, background-color 200ms ease" }}>
@@ -604,11 +655,22 @@ export default function BlogContent({ blocks, faqs }: BlogContentProps) {
         }
         .blog-body {
           max-width: 760px;
+          min-width: 0;
+        }
+        .blog-pillars-grid {
+          grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        }
+        .blog-stats-grid {
+          grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        }
+        @media (max-width: 1023px) {
+          .blog-toc {
+            margin-bottom: 8px;
+          }
         }
         @media (min-width: 1024px) {
           .blog-grid {
             grid-template-columns: 220px 1fr;
-            align-items: start;
           }
           .blog-toc-sticky {
             position: sticky;

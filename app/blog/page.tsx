@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import InnerHero from "@/components/InnerHero";
 import BlogIndex from "@/components/BlogIndex";
 import CtaStrip from "@/components/CtaStrip";
 
@@ -26,11 +25,6 @@ export const metadata: Metadata = {
 export default function BlogIndexPage() {
   return (
     <main>
-      <InnerHero
-        label="BLOG"
-        title="Resources, not filler."
-        subtitle="Guides we'd actually want to read before hiring an agency ourselves — grounded in real data, not vendor claims."
-      />
       <BlogIndex />
       <CtaStrip />
     </main>
