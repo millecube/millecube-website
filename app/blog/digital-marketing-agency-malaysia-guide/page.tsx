@@ -287,9 +287,10 @@ export default function DigitalMarketingAgencyMalaysiaGuide() {
         subtitle="The seven disciplines it actually covers, real DOSM figures on Malaysia's digital economy, and how to verify an agency is legitimate before you sign anything."
         breadcrumbs={[{ label: "Blog", href: "/blog" }]}
       />
+      <div style={{ background: "#ffffff" }}>
       <div
         className="max-w-3xl mx-auto"
-        style={{ background: "#ffffff", padding: "28px clamp(20px,3vw,40px) 0" }}
+        style={{ padding: "28px clamp(20px,3vw,40px) 0" }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
           <Image
@@ -334,6 +335,7 @@ export default function DigitalMarketingAgencyMalaysiaGuide() {
             style={{ objectFit: "cover" }}
           />
         </div>
+      </div>
       </div>
       <BlogContent blocks={blocks} faqs={faqs} />
       <CtaStrip />
