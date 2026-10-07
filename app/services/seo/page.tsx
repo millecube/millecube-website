@@ -3,6 +3,42 @@ import InnerHero from "@/components/InnerHero";
 import ServiceContent from "@/components/ServiceContent";
 import CtaStrip from "@/components/CtaStrip";
 
+const faqs = [
+  {
+    q: "How long does SEO take to show results in Malaysia?",
+    a: "Most clients see initial movement in rankings and impressions within 60-90 days, with first-page rankings for priority keywords within 90-120 days. We track this directly through Google Search Console data, not vanity metrics, so you see the real trend as it happens.",
+  },
+  {
+    q: "Do you guarantee page 1 rankings?",
+    a: "No — and any agency that promises a specific ranking position is making a claim they don't control. Google's algorithm decides where a page lands, not any agency. What we commit to is a documented process (technical fixes, keyword research, content, on-page work) and transparent monthly reporting so you can see exactly what's being done and what's moving.",
+  },
+  {
+    q: "What's actually included in Millecube's SEO service?",
+    a: "A technical SEO audit, keyword research and mapping, on-page optimisation across your priority pages, SEO content production, Google Search Console management, and a monthly rank-tracking report. See the full list below.",
+  },
+  {
+    q: "How much does SEO cost in Malaysia?",
+    a: "It depends on your site's current state, your competition, and your goals — a site with major technical issues needs different work than one that's already indexed well. We run an initial audit first, then quote based on what your specific site actually needs. WhatsApp us for a custom quote.",
+  },
+  {
+    q: "Should I do SEO or Meta Ads first?",
+    a: "They solve different problems and work best together, not as a choice. Meta Ads gets you leads immediately while SEO is compounding in the background; SEO becomes your lowest cost-per-lead channel once it matures, typically 3-6 months in. Most of our clients run both, with SEO gradually reducing reliance on paid spend over time.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
+
 export const metadata: Metadata = {
   title: "SEO Agency Malaysia & Penang",
   description:
@@ -33,6 +69,10 @@ export const metadata: Metadata = {
 export default function SeoPage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <InnerHero
         bgImage="/hero-bg.webp"
         label="SEO AGENCY MALAYSIA"
@@ -52,15 +92,15 @@ export default function SeoPage() {
         features={[
           {
             name: "Technical SEO",
-            desc: "Site crawl, Core Web Vitals, page speed, indexability, structured data, and mobile usability — the foundations before any content work.",
+            desc: "Full site crawl, Core Web Vitals (LCP, INP, CLS), page speed, crawlability and indexability checks, structured data (Organization, LocalBusiness, FAQPage schema), and mobile usability — the foundations before any content work.",
           },
           {
             name: "Keyword strategy",
-            desc: "Research-backed keyword mapping for Penang and Malaysia-wide search visibility, aligned to your services, products, and buyer intent — from awareness-stage queries to conversion-ready searches.",
+            desc: "Research-backed keyword mapping for Penang and Malaysia-wide search visibility, aligned to your services, products, and buyer intent — from awareness-stage queries to conversion-ready searches, cross-checked against what's already ranking in Google Search Console.",
           },
           {
             name: "On-page optimisation",
-            desc: "Title tags, meta descriptions, H-tag structure, internal linking, and schema markup across your priority pages.",
+            desc: "Title tags, meta descriptions, H-tag structure, internal linking, and schema markup across your priority pages — rewritten to match the exact language your customers search, not just brand copy.",
           },
           {
             name: "Content production",
@@ -102,6 +142,7 @@ export default function SeoPage() {
           "Monthly rank tracking report",
         ]}
         ctaText="Grow my search traffic"
+        faqs={faqs}
       />
       <CtaStrip />
     </main>
