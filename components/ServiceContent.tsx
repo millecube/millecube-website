@@ -21,6 +21,11 @@ interface ServiceStep {
   body: string;
 }
 
+interface ServiceFaq {
+  q: string;
+  a: string;
+}
+
 interface ServiceContentProps {
   slug: string;
   stats: ServiceStat[];
@@ -34,6 +39,7 @@ interface ServiceContentProps {
   deliverablesBody: string;
   deliverables: string[];
   ctaText: string;
+  faqs?: ServiceFaq[];
 }
 
 const EASE_SHARP: [number, number, number, number] = [0.32, 0.72, 0, 1];
@@ -52,6 +58,7 @@ export default function ServiceContent({
   deliverablesBody,
   deliverables,
   ctaText,
+  faqs,
 }: ServiceContentProps) {
   return (
     <>
@@ -616,6 +623,118 @@ export default function ServiceContent({
           </div>
         </div>
       </section>
+
+      {/* ─────────────────────────────────────────────
+          SECTION 4 — FAQ (optional — only rendered when faqs is passed)
+          Light mint background
+      ───────────────────────────────────────────── */}
+      {faqs && faqs.length > 0 && (
+        <section
+          style={{
+            background: "#f4f9f6",
+            position: "relative" as const,
+            overflow: "hidden",
+            borderTop: "1px solid rgba(7,80,60,0.08)",
+          }}
+        >
+          <div
+            className="max-w-7xl mx-auto"
+            style={{
+              padding: "clamp(52px,6.5vw,88px) clamp(20px,3vw,40px)",
+              position: "relative" as const,
+              zIndex: 1,
+            }}
+          >
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.55, ease: EASE_SMOOTH }}
+              style={{
+                fontFamily: "var(--font-montserrat)",
+                fontSize: "9.5px",
+                fontWeight: 700,
+                letterSpacing: "0.28em",
+                color: "#07503c",
+                textTransform: "uppercase" as const,
+                marginBottom: 18,
+              }}
+            >
+              FAQ
+            </motion.p>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
+              whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.85, ease: EASE_SHARP, delay: 0.06 }}
+              style={{
+                fontFamily: "var(--font-bebas)",
+                fontSize: "clamp(32px,4vw,50px)",
+                color: "#061f17",
+                lineHeight: 1.05,
+                letterSpacing: "-0.03em",
+                margin: "0 0 36px 0",
+                maxWidth: 560,
+              }}
+            >
+              Questions worth answering properly.
+            </motion.h2>
+
+            <div style={{ display: "flex", flexDirection: "column" as const, gap: 10, maxWidth: 760 }}>
+              {faqs.map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
+                  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  viewport={{ once: true, margin: "-30px" }}
+                  transition={{ duration: 0.7, ease: EASE_SHARP, delay: i * 0.06 }}
+                  style={{
+                    borderRadius: "18px",
+                    padding: "3px",
+                    background: "rgba(7,80,60,0.02)",
+                    border: "1px solid rgba(7,80,60,0.10)",
+                    boxShadow: "0 2px 8px rgba(7,80,60,0.05)",
+                  }}
+                >
+                  <div
+                    style={{
+                      backgroundColor: "#ffffff",
+                      borderRadius: "14px",
+                      padding: "clamp(18px,2.2vw,26px)",
+                      boxShadow: "inset 0 1px 1px rgba(7,80,60,0.04)",
+                    }}
+                  >
+                    <h3
+                      style={{
+                        fontFamily: "var(--font-montserrat)",
+                        fontSize: "14.5px",
+                        fontWeight: 700,
+                        color: "#061f17",
+                        margin: "0 0 8px 0",
+                        lineHeight: 1.4,
+                      }}
+                    >
+                      {item.q}
+                    </h3>
+                    <p
+                      style={{
+                        fontFamily: "var(--font-montserrat)",
+                        fontSize: "13.5px",
+                        color: "rgba(6,31,23,0.70)",
+                        lineHeight: 1.8,
+                        margin: 0,
+                      }}
+                    >
+                      {item.a}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* SERVICE CAROUSEL */}
       <ServiceCarousel currentSlug={slug} />
