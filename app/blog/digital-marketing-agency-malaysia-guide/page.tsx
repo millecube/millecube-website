@@ -61,10 +61,12 @@ const faqs: BlogFaq[] = [
 
 const blocks: BlogBlock[] = [
   {
-    type: "callout",
-    title: "Key takeaways",
-    text:
-      "A full-service digital marketing agency in Malaysia typically covers seven distinct areas: paid ads, SEO, social media management, marketplace management, website, content, and branding. That's not just \"running ads.\" 72.7% of Malaysian businesses now have a web presence (DOSM, 2023), leaving roughly 1 in 4 with none. There's no published, verifiable benchmark for agency pricing in Malaysia, so treat any specific number you see as one vendor's rate, not an industry standard. And every Malaysian business can be checked for free at ssm-einfo.my before you sign anything.",
+    type: "quickAnswer",
+    paragraphs: [
+      "A full-service digital marketing agency in Malaysia typically covers seven distinct areas: paid ads (Meta, Google, TikTok), SEO, social media management, marketplace management, website and landing pages, content and creative, and branding. That's not just \"running ads.\"",
+      "Before signing with any agency, confirm who will actually manage your account day-to-day, what the report will measure (real outcomes vs. vanity metrics), and whether you can verify their SSM registration. There's no published, verifiable benchmark for pricing in Malaysia, so treat any specific number you see, including on this page, as one vendor's rate, not an industry standard.",
+      "72.7% of Malaysian businesses now have a web presence (DOSM, 2023), leaving roughly 1 in 4 with none. The rest of this guide covers what to ask, what to realistically expect, and when it might make sense to wait.",
+    ],
   },
   {
     type: "p",
@@ -95,6 +97,12 @@ const blocks: BlogBlock[] = [
       { icon: <Compass size={20} color="#07503c" weight="bold" />, title: "Branding & Strategy", desc: "Positioning and identity: the layer that decides what every other channel is actually saying.", href: "/services/branding-strategy" },
     ],
   },
+  {
+    type: "ctaBanner",
+    text: "Still comparing agencies in Penang, KL, or Johor Bahru?",
+    buttonText: "Talk to Millecube",
+    href: "/contact",
+  },
 
   { type: "h2", text: "Why this matters more in Malaysia right now" },
   {
@@ -118,20 +126,45 @@ const blocks: BlogBlock[] = [
       "That 72.7% figure is up only 1.3 points from the year before, which cuts both ways: roughly a quarter of Malaysian businesses still have no web presence of any kind. If your direct competitors fall into that remaining quarter, visibility alone is a real advantage. If they don't, the competition for the same searches and the same ad auctions only gets more crowded from here.",
   },
 
-  { type: "h2", text: "How to tell a legitimate agency from a risky one" },
+  { type: "h2", text: "Questions to ask before you sign" },
   {
     type: "p",
     text:
-      "This is the part most agency content skips, because it's not flattering to the industry. A real buyer-protection checklist, not a sales pitch:",
+      "This is the part most agency content skips, because it's not flattering to the industry. Ask these directly, and listen for the difference between an answer and a dodge:",
   },
   {
-    type: "list",
+    type: "questions",
     items: [
-      "**Verify SSM registration.** A legitimate Malaysian business has a Companies Commission (SSM) number, checkable for free at [ssm-einfo.my](https://www.ssm-einfo.my). An agency that avoids giving you this isn't one to work with.",
-      "**Check the domain on invoices and emails.** A personal Gmail or Yahoo address instead of a business domain is a common signal of a one-person operation presenting itself as a full agency.",
-      "**Ask for verifiable results, not just logos.** A real client portfolio should include actual before/after data, or a reference you can contact directly. A client-logo wall with no numbers behind it doesn't count.",
-      "**Be skeptical of \"guaranteed #1 ranking\" claims.** No agency controls Google's algorithm. Anyone promising a specific ranking position is either overselling or planning tactics that risk your site getting penalized later.",
-      "**Confirm what's actually in the report.** Real performance data (clicks, conversions, cost-per-result) is a different thing from vanity metrics like \"reach\" with no tie to an outcome you care about.",
+      {
+        q: "Who will actually manage my account day-to-day?",
+        good: "Names a specific person or small team, and explains their role and how often they'll check in.",
+        bad: "\"Our team\" with no names, or the person who pitched you disappears right after signing.",
+      },
+      {
+        q: "Who owns the ad accounts and data once we stop working together?",
+        good: "You do. The agency builds inside accounts you own and can hand over access anytime.",
+        bad: "The agency insists on keeping ownership of your ad accounts or pixel data \"for consistency.\"",
+      },
+      {
+        q: "What exactly will I see in my monthly report?",
+        good: "Real outcomes, leads, sales, or cost-per-result, tied to an actual number you care about.",
+        bad: "Vague \"brand awareness\" or \"reach\" metrics with no connection to a business outcome.",
+      },
+      {
+        q: "Can I see a case study from a business with a similar sales process to mine?",
+        good: "A specific example with real before/after numbers, or an offer to connect you with the actual client.",
+        bad: "A generic results slide with logos and percentages that don't trace back to a named client.",
+      },
+      {
+        q: "Is this agency registered, and can I verify it myself?",
+        good: "They give you their SSM number without hesitation, checkable for free at [ssm-einfo.my](https://www.ssm-einfo.my).",
+        bad: "Any hesitation, or an invoice that comes from a personal name instead of a registered business.",
+      },
+      {
+        q: "What happens if results fall short?",
+        good: "A clear explanation of what they'll change, and openness to discuss it monthly since there's no lock-in.",
+        bad: "A long-term contract that locks you in regardless of performance.",
+      },
     ],
   },
 
@@ -145,6 +178,39 @@ const blocks: BlogBlock[] = [
     type: "p",
     text:
       "What genuinely drives the cost of a retainer: the breadth of scope (one channel vs. seven), contract length (month-to-month typically costs more per month than a 12-month lock-in, because the agency is taking on more risk), and whether ad spend is bundled into the fee or billed separately. Bundled pricing usually means less transparency into where your money actually goes.",
+  },
+
+  { type: "h2", text: "What to realistically expect, month by month" },
+  {
+    type: "p",
+    text:
+      "Results across these seven areas don't arrive on the same clock. A rough, honest timeline:",
+  },
+  {
+    type: "list",
+    ordered: false,
+    items: [
+      "**Days 1-30.** Paid ad accounts (Meta, Google) go live and start generating real data. Tracking setup (pixel, conversions API, Search Console) happens in this window too, since nothing after this point means much without it.",
+      "**Month 2-3.** Paid campaigns move past the initial learning phase and cost-per-result starts to stabilise. Technical SEO fixes go live. Social content calendars find a rhythm.",
+      "**Month 3-6.** SEO and content begin showing real ranking movement, assuming the technical foundation was fixed first. Marketplace listings and ads get optimised based on actual sales data, not guesses.",
+      "**Month 6 onward.** Organic channels (SEO, social, content) start compounding and gradually reduce how much you need to rely on paid spend to stay visible.",
+    ],
+  },
+
+  { type: "h2", text: "When it may make sense to wait" },
+  {
+    type: "p",
+    text:
+      "Hiring an agency too early is a common way to waste a marketing budget, not a lack of ambition. A few situations where fixing the fundamentals first is the better call:",
+  },
+  {
+    type: "list",
+    items: [
+      "**No one on your team can respond to leads quickly.** Paid traffic generating enquiries nobody answers within hours is money spent on nothing.",
+      "**Basic tracking isn't in place yet.** An agency can set this up, but if you can't independently verify their reporting afterward, you're trusting numbers you have no way to check.",
+      "**Your offer or pricing hasn't been validated with real customers.** Marketing amplifies what's already working. It doesn't fix a product or pricing mismatch.",
+      "**Cash flow can't sustain both ad spend and a management fee for at least three months.** Paid channels need a runway to get past the learning phase; stopping early wastes the money already spent getting there.",
+    ],
   },
 
   { type: "h2", text: "Before you sign anything" },
