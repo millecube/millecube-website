@@ -59,7 +59,8 @@ export type BlogBlock =
   | { type: "stats"; items: { value: string; label: string }[]; sourceLabel: string; sourceHref: string }
   | { type: "pillars"; items: { icon: ReactNode; title: string; desc: string; href: string }[] }
   | { type: "questions"; items: { q: string; good: string; bad: string }[] }
-  | { type: "ctaBanner"; text: string; buttonText: string; href: string };
+  | { type: "ctaBanner"; text: string; buttonText: string; href: string }
+  | { type: "table"; headers: [string, string]; rows: [string, string][] };
 
 interface BlogContentProps {
   blocks: BlogBlock[];
@@ -591,6 +592,72 @@ export default function BlogContent({ blocks, faqs }: BlogContentProps) {
                         {block.buttonText}
                       </span>
                     </Link>
+                  </motion.div>
+                );
+
+              case "table":
+                return (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, ease: EASE_SMOOTH }}
+                    style={{
+                      margin: "8px 0 28px 0",
+                      borderRadius: "14px",
+                      border: "1px solid rgba(7,80,60,0.12)",
+                      overflowX: "auto",
+                    }}
+                  >
+                    <table style={{ width: "100%", minWidth: 480, borderCollapse: "collapse" }}>
+                      <thead>
+                        <tr>
+                          {block.headers.map((h, hi) => (
+                            <th
+                              key={hi}
+                              style={{
+                                background: "#07503c",
+                                color: "#ffffff",
+                                textAlign: "left",
+                                fontFamily: "var(--font-montserrat)",
+                                fontSize: "12.5px",
+                                fontWeight: 700,
+                                letterSpacing: "0.03em",
+                                textTransform: "uppercase",
+                                padding: "12px 16px",
+                                width: hi === 0 ? "30%" : "70%",
+                              }}
+                            >
+                              {h}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {block.rows.map((row, ri) => (
+                          <tr key={ri} style={{ background: ri % 2 === 1 ? "#f4f9f6" : "#ffffff" }}>
+                            {row.map((cell, ci) => (
+                              <td
+                                key={ci}
+                                style={{
+                                  padding: "14px 16px",
+                                  borderTop: "1px solid rgba(7,80,60,0.08)",
+                                  fontFamily: "var(--font-montserrat)",
+                                  fontSize: ci === 0 ? "13.5px" : "13.5px",
+                                  fontWeight: ci === 0 ? 700 : 400,
+                                  color: ci === 0 ? "#07503c" : "rgba(6,31,23,0.76)",
+                                  lineHeight: 1.6,
+                                  verticalAlign: "top",
+                                }}
+                              >
+                                {renderInline(cell)}
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
                   </motion.div>
                 );
 

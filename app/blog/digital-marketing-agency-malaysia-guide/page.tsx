@@ -200,13 +200,13 @@ const blocks: BlogBlock[] = [
       "Results across these seven areas don't arrive on the same clock. A rough, honest timeline:",
   },
   {
-    type: "list",
-    ordered: false,
-    items: [
-      "**Days 1-30.** Paid ad accounts (Meta, Google) go live and start generating real data. Tracking setup (pixel, conversions API, Search Console) happens in this window too, since nothing after this point means much without it.",
-      "**Month 2-3.** Paid campaigns move past the initial learning phase and cost-per-result starts to stabilise. Technical SEO fixes go live. Social content calendars find a rhythm.",
-      "**Month 3-6.** SEO and content begin showing real ranking movement, assuming the technical foundation was fixed first. Marketplace listings and ads get optimised based on actual sales data, not guesses.",
-      "**Month 6 onward.** Organic channels (SEO, social, content) start compounding and gradually reduce how much you need to rely on paid spend to stay visible.",
+    type: "table",
+    headers: ["Timeline", "What's happening"],
+    rows: [
+      ["Days 1-30", "Paid ad accounts (Meta, Google) go live and start generating real data. Tracking setup (pixel, conversions API, Search Console) happens in this window too, since nothing after this point means much without it."],
+      ["Month 2-3", "Paid campaigns move past the initial learning phase and cost-per-result starts to stabilise. Technical SEO fixes go live. Social content calendars find a rhythm."],
+      ["Month 3-6", "SEO and content begin showing real ranking movement, assuming the technical foundation was fixed first. Marketplace listings and ads get optimised based on actual sales data, not guesses."],
+      ["Month 6 onward", "Organic channels (SEO, social, content) start compounding and gradually reduce how much you need to rely on paid spend to stay visible."],
     ],
   },
 
@@ -286,11 +286,10 @@ export default function DigitalMarketingAgencyMalaysiaGuide() {
         title="What Does a Digital Marketing Agency in Malaysia Do?"
         subtitle="The seven disciplines it actually covers, real DOSM figures on Malaysia's digital economy, and how to verify an agency is legitimate before you sign anything."
         breadcrumbs={[{ label: "Blog", href: "/blog" }]}
-        bgImage="/blog-digital-marketing-agency-malaysia-hero.png"
       />
       <div
         className="max-w-3xl mx-auto"
-        style={{ padding: "28px clamp(20px,3vw,40px) 0" }}
+        style={{ background: "#ffffff", padding: "28px clamp(20px,3vw,40px) 0" }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
           <Image
@@ -316,6 +315,24 @@ export default function DigitalMarketingAgencyMalaysiaGuide() {
           <span style={{ fontFamily: "var(--font-montserrat)", fontSize: "12.5px", color: "rgba(6,31,23,0.55)" }}>
             Updated {PUBLISHED_DISPLAY}
           </span>
+        </div>
+        <div
+          style={{
+            position: "relative",
+            width: "100%",
+            aspectRatio: "16 / 9",
+            borderRadius: "16px",
+            overflow: "hidden",
+            marginTop: "24px",
+          }}
+        >
+          <Image
+            src="/blog-digital-marketing-agency-malaysia-hero.png"
+            alt="What Does a Digital Marketing Agency in Malaysia Do?"
+            fill
+            priority
+            style={{ objectFit: "cover" }}
+          />
         </div>
       </div>
       <BlogContent blocks={blocks} faqs={faqs} />
