@@ -21,6 +21,11 @@ const nextConfig: NextConfig = {
       { source: "/other-services", destination: "/services", permanent: true },
       { source: "/projects", destination: "/work", permanent: true },
       { source: "/category/uncategorized", destination: "/", permanent: true },
+      // Found via GA4 (Sept 2026): real visits still landing on this dead
+      // legacy slug (currently 404s) — some external link (old ad/bio/
+      // backlink) still points here. Recover that traffic instead of
+      // dropping it.
+      { source: "/contact-us", destination: "/contact", permanent: true },
     ];
   },
 };
