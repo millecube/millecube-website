@@ -92,6 +92,7 @@ export default function Navbar() {
 
   const otherLinks = [
     { label: "Work", href: "/work" },
+    { label: "Blog", href: "/blog" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ];
