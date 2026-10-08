@@ -199,7 +199,7 @@ export default function Hero() {
           padding: 6px 20px 6px 6px;
           border-radius: 100px;
           background-color: #25D366;
-          color: #ffffff;
+          color: #061f17;
           font-family: var(--font-montserrat);
           font-size: 14px;
           font-weight: 700;

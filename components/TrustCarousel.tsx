@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const ease = [0.32, 0.72, 0, 1] as const;
 
@@ -9,27 +10,27 @@ const CARDS = [
   {
     title: "Tailored Plan",
     desc: "Packages built around your business. No one-size-fits-all.",
-    img: "https://images.unsplash.com/photo-1598520106830-8c45c2035460?w=440&h=580&fit=crop&q=80",
+    img: "https://images.unsplash.com/photo-1598520106830-8c45c2035460?w=280&h=400&fit=crop&q=80&auto=format",
     accent: "#FFD600" },
   {
     title: "No Lock-in",
     desc: "Month-to-month. Stay because results show up.",
-    img: "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?w=440&h=580&fit=crop&q=80",
+    img: "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?w=280&h=400&fit=crop&q=80&auto=format",
     accent: "#32cd32" },
   {
     title: "Expert Strategy",
     desc: "Every solution backed by specialists.",
-    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=440&h=580&fit=crop&q=80",
+    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=280&h=400&fit=crop&q=80&auto=format",
     accent: "#EBFFF3" },
   {
     title: "Built Together",
     desc: "A full team on your account: media, creative, and analytics.",
-    img: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=440&h=580&fit=crop&q=80",
+    img: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=280&h=400&fit=crop&q=80&auto=format",
     accent: "#FFD600" },
   {
     title: "Data Driven",
     desc: "Every decision backed by real numbers.",
-    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=440&h=580&fit=crop&q=80",
+    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=280&h=400&fit=crop&q=80&auto=format",
     accent: "#32cd32" },
 ];
 
@@ -259,14 +260,13 @@ export default function TrustCarousel() {
                           boxShadow: "inset 0 1px 1px rgba(255,255,255,0.08)" }}
                       >
                         {/* Background image */}
-                        <img
+                        <Image
                           src={card.img}
                           alt={card.title}
-                          style={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover",
-                            display: "block" }}
+                          fill
+                          sizes="280px"
+                          loading={abs === 0 && i === active ? "eager" : "lazy"}
+                          style={{ objectFit: "cover" }}
                         />
 
                         {/* Gradient overlay — transparent top → dark bottom */}
@@ -357,32 +357,43 @@ export default function TrustCarousel() {
           </button>
         </div>
 
-        {/* Dot indicators — layout-animated via Framer Motion (GPU-safe, no width transition) */}
+        {/* Dot indicators — 24px tap target with an 8px visual pill centered inside */}
         <div
           style={{
             display: "flex",
             justifyContent: "center",
-            gap: "8px",
+            gap: "4px",
             marginTop: "36px" }}
         >
           {CARDS.map((_, i) => (
-            <motion.button
+            <button
               key={i}
-              layout
               onClick={() => setActive(i)}
               aria-label={`Go to card ${i + 1}`}
-              animate={{
-                backgroundColor:
-                  i === active ? "#07503c" : "rgba(7,80,60,0.18)" }}
-              transition={{ duration: 0.32, ease: [0.32, 0.72, 0, 1] }}
               style={{
-                width: i === active ? "28px" : "8px",
-                height: "8px",
-                borderRadius: "100px",
+                minWidth: "24px",
+                minHeight: "24px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
                 border: "none",
+                background: "transparent",
                 cursor: "pointer",
                 padding: 0 }}
-            />
+            >
+              <motion.span
+                layout
+                animate={{
+                  backgroundColor:
+                    i === active ? "#07503c" : "rgba(7,80,60,0.18)" }}
+                transition={{ duration: 0.32, ease: [0.32, 0.72, 0, 1] }}
+                style={{
+                  display: "block",
+                  width: i === active ? "28px" : "8px",
+                  height: "8px",
+                  borderRadius: "100px" }}
+              />
+            </button>
           ))}
         </div>
       </div>

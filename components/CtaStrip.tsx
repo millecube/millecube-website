@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -197,18 +198,15 @@ export default function CtaStrip() {
               minHeight: "280px" }}
           >
             {/* Lady — static, anchored bottom, breaks box boundary */}
-            <img
+            <Image
               src="/cta-box.webp"
               alt="Millecube team"
+              fill
+              sizes="(max-width: 1023px) 100vw, 480px"
               style={{
-                position: "absolute",
-                inset: 0,
-                width: "100%",
-                height: "100%",
                 objectFit: "cover",
                 objectPosition: "center top",
                 mixBlendMode: "multiply",
-                display: "block",
                 pointerEvents: "none",
                 userSelect: "none",
                 zIndex: 1 }}
