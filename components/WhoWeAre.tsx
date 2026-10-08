@@ -96,7 +96,7 @@ export default function WhoWeAre() {
                   src="/whoweare-card.webp"
                   alt="Millecube team at work"
                   fill
-                  sizes="(max-width: 1023px) 100vw, 40vw"
+                  sizes="(max-width: 1023px) calc(100vw - 60px), 40vw"
                   style={{ objectFit: "cover" }}
                 />
                 {/* Brand tint overlay */}

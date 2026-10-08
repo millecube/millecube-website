@@ -121,7 +121,7 @@ export default function Footer() {
           <div className="lg:col-span-3">
             <p
               className="text-xs font-bold tracking-widest mb-5"
-              style={{ color: "#32cd32", fontFamily: "var(--font-montserrat)" }}
+              style={{ color: "#3ddb3d", fontFamily: "var(--font-montserrat)" }}
             >
               SERVICES
             </p>
@@ -149,7 +149,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <p
               className="text-xs font-bold tracking-widest mb-5"
-              style={{ color: "#32cd32", fontFamily: "var(--font-montserrat)" }}
+              style={{ color: "#3ddb3d", fontFamily: "var(--font-montserrat)" }}
             >
               COMPANY
             </p>
@@ -177,7 +177,7 @@ export default function Footer() {
           <div className="col-span-2 lg:col-span-3">
             <p
               className="text-xs font-bold tracking-widest mb-5"
-              style={{ color: "#32cd32", fontFamily: "var(--font-montserrat)" }}
+              style={{ color: "#3ddb3d", fontFamily: "var(--font-montserrat)" }}
             >
               GET IN TOUCH
             </p>
@@ -216,7 +216,7 @@ export default function Footer() {
                 <p
                   className="text-xs"
                   style={{
-                    color: "rgba(255,255,255,0.3)",
+                    color: "rgba(255,255,255,0.65)",
                     fontFamily: "var(--font-montserrat)",
                     lineHeight: 1.7,
                   }}
@@ -233,7 +233,7 @@ export default function Footer() {
           <p
             className="text-xs"
             style={{
-              color: "rgba(255,255,255,0.2)",
+              color: "rgba(255,255,255,0.65)",
               fontFamily: "var(--font-montserrat)",
             }}
           >
@@ -246,11 +246,11 @@ export default function Footer() {
                 href={l.href}
                 className="text-xs transition-colors duration-200"
                 style={{
-                  color: "rgba(255,255,255,0.2)",
+                  color: "rgba(255,255,255,0.65)",
                   fontFamily: "var(--font-montserrat)",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.5)")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.2)")}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#ffffff")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.65)")}
               >
                 {l.label}
               </Link>
