@@ -61,9 +61,9 @@ const orgSchema = {
     availableLanguage: ["English", "Malay"],
   },
   sameAs: [
-    "https://www.facebook.com/millecubedigital",
-    "https://www.instagram.com/millecubedigital",
-    "https://www.linkedin.com/company/millecube",
+    "https://www.facebook.com/millecube.digital",
+    "https://www.instagram.com/millecube.digital",
+    "https://www.linkedin.com/company/millecube-digital",
   ],
 };
 
