@@ -26,6 +26,10 @@ const nextConfig: NextConfig = {
       // backlink) still points here. Recover that traffic instead of
       // dropping it.
       { source: "/contact-us", destination: "/contact", permanent: true },
+      // Found via GSC (Oct 2026): legacy WordPress careers page, still
+      // indexed with real impressions, currently 404s. No careers page
+      // exists on the new site — route to contact instead of dropping it.
+      { source: "/careers", destination: "/contact", permanent: true },
     ];
   },
 };
