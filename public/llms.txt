@@ -1,23 +1,20 @@
-# Millecube Digital — AI Discovery File
-# https://millecube.com
-# Last updated: 2026-06-21
+# Millecube Digital
 
-Millecube Digital is a technical-first digital marketing agency based in Penang, Malaysia.
-Legal entity: Cadoo Venture Sdn. Bhd.
+> Technical-first digital marketing agency based in Penang, Malaysia.
+> Legal entity: Cadoo Venture Sdn. Bhd. Last updated: 2026-10-08.
 
 We specialise in paid media, marketplace management, and measurable digital marketing for
 Malaysian SMEs and growing brands. All work is tracked to revenue, not just impressions.
 
 ## Services
 
-- Meta Ads (Facebook & Instagram): full-funnel campaign strategy, creative, and reporting
-- Google Ads: search, display, Performance Max, and Shopping campaigns
-- Marketplace Management: Shopee, Lazada, and TikTok Shop — listings, ads, and chat
-- Social Media Marketing: organic strategy, content calendar, and community management
-- SEO: technical SEO, on-page optimisation, and local search (Google Business Profile)
-- Website & Landing Pages: Next.js, WordPress, and Webflow — built for conversion
-- Content & Creative: ad creatives, copywriting, short-form video, and campaign concepts
-- Branding & Strategy: brand positioning, identity design, and 90-day marketing strategy
+- [Media Advertisement](https://millecube.com/services/media-advertisement): Meta Ads (Facebook & Instagram) and Google Ads — full-funnel campaign strategy, creative, and reporting
+- [Marketplace Management](https://millecube.com/services/marketplace-management): Shopee, Lazada, and TikTok Shop — listings, ads, and chat
+- [Social Media Marketing](https://millecube.com/services/social-media): organic strategy, content calendar, and community management
+- [SEO](https://millecube.com/services/seo): technical SEO, on-page optimisation, and local search (Google Business Profile)
+- [Website & Landing Pages](https://millecube.com/services/website): Next.js, WordPress, and Webflow — built for conversion
+- [Content & Creative](https://millecube.com/services/content-creative): ad creatives, copywriting, short-form video, and campaign concepts
+- [Branding & Strategy](https://millecube.com/services/branding-strategy): brand positioning, identity design, and 90-day marketing strategy
 
 ## Who We Serve
 
@@ -47,9 +44,16 @@ Malaysian SMEs who are serious about measurable growth. Typical clients:
 
 ## Contact
 
-Email: hello@millecube.com
-WhatsApp: +60 16-496 3875
-Web: https://millecube.com/contact
+- [Contact page](https://millecube.com/contact): email, WhatsApp, and enquiry form
+- Email: hello@millecube.com
+- WhatsApp: +60 16-496 3875
+
+## Optional
+
+- [About](https://millecube.com/about): company background and team
+- [Our Work](https://millecube.com/work): case studies and client results
+- [Blog](https://millecube.com/blog): guides on digital marketing in Malaysia
+- [All Services](https://millecube.com/services): full service list
 
 ## Frequently Asked Questions
 
