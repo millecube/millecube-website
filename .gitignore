@@ -45,3 +45,8 @@ next-env.d.ts
 screenshot.mjs
 screenshot-full.mjs
 SKILL.md
+
+# backups / exports — may contain embedded credentials, never commit
+/Wordpress backup/
+*.sql
+*.sql.gz
