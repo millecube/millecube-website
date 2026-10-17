@@ -19,6 +19,15 @@ interface BlogPostSummary {
 
 const POSTS: BlogPostSummary[] = [
   {
+    slug: "facebook-ads-malaysia-sme-guide",
+    title: "Facebook Ads for Malaysian SMEs: A 2026 Starter Guide",
+    excerpt:
+      "How to move from boosting posts to real campaigns in Ads Manager: objectives, MYR budgets, WhatsApp lead tracking, and the rules worth knowing this year.",
+    image: "/blog-facebook-ads-malaysia-hero.png",
+    tag: "Meta Ads",
+    readTime: "10 min read",
+  },
+  {
     slug: "digital-marketing-agency-malaysia-guide",
     title: "What Does a Digital Marketing Agency in Malaysia Do?",
     excerpt:

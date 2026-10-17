@@ -60,7 +60,7 @@ export type BlogBlock =
   | { type: "pillars"; items: { icon: ReactNode; title: string; desc: string; href: string }[] }
   | { type: "questions"; items: { q: string; good: string; bad: string }[] }
   | { type: "ctaBanner"; text: string; buttonText: string; href: string }
-  | { type: "table"; headers: [string, string]; rows: [string, string][] };
+  | { type: "table"; headers: string[]; rows: string[][] };
 
 interface BlogContentProps {
   blocks: BlogBlock[];
@@ -568,12 +568,16 @@ export default function BlogContent({ blocks, faqs }: BlogContentProps) {
                         fontSize: "16px",
                         fontWeight: 700,
                         color: "#ffffff",
-                        maxWidth: 420,
+                        maxWidth: 520,
                       }}
                     >
                       {block.text}
                     </span>
-                    <Link href={block.href} style={{ textDecoration: "none", flexShrink: 0 }}>
+                    <Link
+                      href={block.href}
+                      style={{ textDecoration: "none", flexShrink: 0 }}
+                      {...(block.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    >
                       <span
                         style={{
                           display: "inline-flex",
@@ -626,7 +630,10 @@ export default function BlogContent({ blocks, faqs }: BlogContentProps) {
                                 letterSpacing: "0.03em",
                                 textTransform: "uppercase",
                                 padding: "12px 16px",
-                                width: hi === 0 ? "30%" : "70%",
+                                width:
+                                  block.headers.length === 2
+                                    ? hi === 0 ? "30%" : "70%"
+                                    : hi === 0 ? "22%" : `${78 / (block.headers.length - 1)}%`,
                               }}
                             >
                               {h}
