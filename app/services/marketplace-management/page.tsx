@@ -3,16 +3,53 @@ import InnerHero from "@/components/InnerHero";
 import ServiceContent from "@/components/ServiceContent";
 import CtaStrip from "@/components/CtaStrip";
 
+const faqs = [
+  {
+    q: "How much does Shopee, Lazada, or TikTok Shop management cost in Malaysia?",
+    a: "From RM 2,000 per month per platform. That covers listing optimisation, in-platform ads management, and chat support — WhatsApp us for a quote based on how many platforms and SKUs you need managed.",
+  },
+  {
+    q: "Can you help me become a TikTok Shop seller or set up TikTok Shop affiliate?",
+    a: "Yes — store setup, listing optimisation, and affiliate outreach coordination are part of our TikTok Shop management service, alongside shoppable video and campaign management.",
+  },
+  {
+    q: "Do you manage Shopee Ads and LazAds, or just the listings?",
+    a: "Both. Listing optimisation on its own doesn't move GMV without in-platform ads behind it, so campaign setup and daily budget management for Shopee Ads and LazAds are included, not an add-on.",
+  },
+  {
+    q: "Do I need to be selling on all three platforms — Shopee, Lazada, and TikTok Shop?",
+    a: "No. Most clients start on one or two platforms and we expand once that's performing. We'll tell you honestly if a platform isn't worth your budget yet rather than pushing all three from day one.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
+
 export const metadata: Metadata = {
   title: "Shopee Lazada TikTok Shop Management Malaysia",
   description:
-    "Shopee, Lazada, and TikTok Shop managed end-to-end. Store setup, listing optimisation, in-platform ads, and monthly reporting — one team, from RM 2,000/month per platform.",
+    "Shopee, Lazada, and TikTok Shop managed end-to-end for Malaysian sellers. Store setup, listing optimisation, in-platform ads, TikTok Shop affiliate coordination, and monthly reporting — one team, from RM 2,000/month per platform.",
   keywords: [
     "Shopee management Malaysia",
     "Lazada seller management Malaysia",
     "TikTok Shop management Malaysia",
+    "marketplace management Malaysia",
     "marketplace management Penang",
     "e-commerce marketplace agency Malaysia",
+    "ecommerce enabler Malaysia",
+    "TikTok marketing agency Malaysia",
+    "TikTok Shop seller Malaysia",
+    "Shopee Ads management Malaysia",
   ],
   alternates: { canonical: "https://millecube.com/services/marketplace-management" },
   openGraph: {
@@ -26,6 +63,10 @@ export const metadata: Metadata = {
 export default function MarketplaceManagementPage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <InnerHero
         bgImage="/hero-bg2.webp"
         label="MARKETPLACE MANAGEMENT"
@@ -105,6 +146,7 @@ export default function MarketplaceManagementPage() {
           "Monthly GMV & ads report",
         ]}
         ctaText="Manage my marketplace"
+        faqs={faqs}
       />
       <CtaStrip />
     </main>

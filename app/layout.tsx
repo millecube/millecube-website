@@ -65,6 +65,14 @@ const orgSchema = {
     "https://www.instagram.com/millecube.digital",
     "https://www.linkedin.com/company/millecube-digital",
   ],
+  knowsAbout: [
+    "SEO Malaysia",
+    "Social Media Management Malaysia",
+    "Marketplace Management (Shopee, Lazada, TikTok Shop)",
+    "Meta Ads (Facebook & Instagram)",
+    "Google Ads",
+    "TikTok Ads",
+  ],
 };
 
 const localBizSchema = {
@@ -99,6 +107,14 @@ const localBizSchema = {
   priceRange: "RM 2,000 - RM 10,000",
   foundingDate: "2024",
   areaServed: "Malaysia",
+  knowsAbout: [
+    "SEO Malaysia",
+    "Social Media Management Malaysia",
+    "Marketplace Management (Shopee, Lazada, TikTok Shop)",
+    "Meta Ads (Facebook & Instagram)",
+    "Google Ads",
+    "TikTok Ads",
+  ],
 };
 
 export default function RootLayout({

@@ -9,21 +9,28 @@ import Portfolio from "@/components/Portfolio";
 import CtaStrip from "@/components/CtaStrip";
 
 export const metadata: Metadata = {
-  title: { absolute: "Digital Marketing Agency Malaysia — Millecube" },
+  title: { absolute: "Meta Ads & Social Media Agency Malaysia — Millecube" },
   description:
-    "Millecube is a technical-first digital marketing agency in Penang, Malaysia. We manage Meta Ads, Google Ads, Shopee, Lazada, and TikTok Shop — tracked to every ringgit, no contract.",
+    "Millecube is a technical-first Meta Ads and social media agency in Penang, Malaysia. We manage Facebook & Instagram Ads, social media, Google Ads, Shopee, Lazada, and TikTok Shop — tracked to every ringgit, no contract.",
   keywords: [
+    "Meta Ads agency Malaysia",
+    "Facebook ads agency Malaysia",
+    "social media agency Malaysia",
+    "social media management Malaysia",
     "digital marketing agency Malaysia",
+    "digital marketing Malaysia",
+    "top digital marketing agency in Malaysia",
+    "SEO agency Malaysia",
+    "marketplace management Malaysia",
     "performance marketing agency Penang",
     "digital marketing Penang",
-    "Meta Ads Google Ads Malaysia",
     "e-commerce marketing Malaysia",
   ],
   alternates: { canonical: "https://millecube.com" },
   openGraph: {
-    title: "Digital Marketing Agency Malaysia — Millecube",
+    title: "Meta Ads & Social Media Agency Malaysia — Millecube",
     description:
-      "Technical-first digital marketing agency from Penang. Meta Ads, Google Ads, Shopee, Lazada, TikTok Shop — tracked to every ringgit, no contract.",
+      "Technical-first Meta Ads and social media agency from Penang. Facebook & Instagram Ads, social media, Google Ads, Shopee, Lazada, TikTok Shop — tracked to every ringgit, no contract.",
     url: "https://millecube.com",
     images: [{ url: "/logo-3d.png", width: 500, height: 500, alt: "Millecube Digital" }],
   },
@@ -71,6 +78,14 @@ const faqSchema = {
       acceptedAnswer: {
         "@type": "Answer",
         text: "Millecube tracks every conversion to a specific action — lead, sale, or WhatsApp click — not impressions or reach. We use server-side tracking (Meta CAPI) for accurate attribution, operate on month-to-month contracts, and report in plain language every month.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do I choose the best digital marketing agency in Malaysia?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Look for three things: whether they track conversions to an actual lead or sale (not just impressions), whether they lock you into a long contract, and whether they report in plain language you can act on. Millecube uses server-side tracking, runs month-to-month with no lock-in, and reports monthly in plain language — the same standard we'd want from any agency we hired.",
       },
     },
   ],

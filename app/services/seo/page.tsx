@@ -24,6 +24,10 @@ const faqs = [
     q: "Should I do SEO or Meta Ads first?",
     a: "They solve different problems and work best together, not as a choice. Meta Ads gets you leads immediately while SEO is compounding in the background; SEO becomes your lowest cost-per-lead channel once it matures, typically 3-6 months in. Most of our clients run both, with SEO gradually reducing reliance on paid spend over time.",
   },
+  {
+    q: "Do you do local SEO and Google Business Profile optimisation?",
+    a: "Yes — for businesses that serve customers in a specific city or region, we scope local SEO and Google Business Profile optimisation alongside the core technical and on-page SEO work as part of your package. WhatsApp us and we'll confirm exactly what's included for your situation.",
+  },
 ];
 
 const faqSchema = {
@@ -42,9 +46,13 @@ const faqSchema = {
 export const metadata: Metadata = {
   title: "SEO Agency Malaysia & Penang",
   description:
-    "SEO agency for businesses across Malaysia, including Penang, Kedah, and Kuching. Keyword strategy, technical SEO, and organic traffic that compounds — first-page rankings within 90-120 days, tracked via Google Search Console.",
+    "SEO agency and SEO services for businesses across Malaysia, including Penang, Kedah, and Kuching. SEO packages with keyword strategy, technical SEO, local SEO, and organic traffic that compounds — first-page rankings within 90-120 days, tracked via Google Search Console.",
   keywords: [
     "SEO agency Malaysia",
+    "SEO services Malaysia",
+    "SEO company Malaysia",
+    "SEO consultant Malaysia",
+    "SEO package Malaysia",
     "SEO agency Penang",
     "Penang SEO agency",
     "SEO services Penang",

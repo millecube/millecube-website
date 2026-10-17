@@ -3,6 +3,38 @@ import InnerHero from "@/components/InnerHero";
 import ServiceContent from "@/components/ServiceContent";
 import CtaStrip from "@/components/CtaStrip";
 
+const faqs = [
+  {
+    q: "How much do Facebook and Meta Ads cost in Malaysia?",
+    a: "Ad spend and management fees are separate. Management starts from RM 2,000 per month per channel; ad spend is budgeted based on your goals and the platform's minimum daily budgets. WhatsApp us for a quote based on your target cost-per-lead or ROAS.",
+  },
+  {
+    q: "Do you manage Instagram ads as well as Facebook ads?",
+    a: "Yes — Meta Ads covers both Facebook and Instagram under one campaign structure, with cold prospecting, retargeting, and lookalike audiences built across both placements.",
+  },
+  {
+    q: "Should I run Meta Ads, Google Ads, or both?",
+    a: "They catch different buyers. Google Ads reaches people already searching for what you sell; Meta Ads reaches people who aren't searching yet but match your best customer profile. Most of our clients run both once budget allows, because they fill different parts of the funnel.",
+  },
+  {
+    q: "How is Millecube different from other Facebook/Meta Ads agencies in Malaysia?",
+    a: "We track every conversion to a specific lead or sale using server-side tracking (Meta CAPI), not just impressions or reach, and we operate month-to-month with no lock-in contract. You see the same numbers we see.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
+
 export const metadata: Metadata = {
   title: "Meta Ads & Facebook Ads Agency Malaysia",
   description:
@@ -35,6 +67,10 @@ export const metadata: Metadata = {
 export default function MediaAdvertisementPage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <InnerHero
         bgImage="/hero-bg2.webp"
         label="META ADS · FACEBOOK ADS · GOOGLE ADS"
@@ -113,6 +149,7 @@ export default function MediaAdvertisementPage() {
           "Weekly budget pacing review",
         ]}
         ctaText="Start your ads"
+        faqs={faqs}
       />
       <CtaStrip />
     </main>

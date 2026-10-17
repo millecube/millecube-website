@@ -147,7 +147,7 @@ export default function Hero() {
             animation: "heroFadeUp 0.80s 0.12s cubic-bezier(0.32,0.72,0,1) both",
           }}
         >
-          Meta, Google & marketplace ads — fully managed.
+          Meta Ads, social media, Google & marketplace — fully managed.
           <br />
           Every ringgit tracked. No guesswork, no vanity.
         </p>

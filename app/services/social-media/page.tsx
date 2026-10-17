@@ -3,14 +3,48 @@ import InnerHero from "@/components/InnerHero";
 import ServiceContent from "@/components/ServiceContent";
 import CtaStrip from "@/components/CtaStrip";
 
+const faqs = [
+  {
+    q: "How much does social media management cost in Malaysia?",
+    a: "It depends on the number of platforms and content volume you need. As a starting point, social media management begins from RM 2,000 per month per platform — WhatsApp us for a quote based on your specific channels and goals.",
+  },
+  {
+    q: "Which platforms does Millecube manage?",
+    a: "Facebook, Instagram, TikTok, LinkedIn, and Xiaohongshu (RED). We pick the right mix for your audience rather than running every platform by default — a B2B brand and a consumer F&B brand need very different channel strategies.",
+  },
+  {
+    q: "Do you only post content, or do you also run strategy?",
+    a: "Strategy first. Every retainer starts with a platform audit and content pillars before a single post goes out, and every month includes a performance review that adjusts the plan — not just a content calendar on autopilot.",
+  },
+  {
+    q: "Can you help with influencer or KOL collaborations?",
+    a: "Social media management covers your own channels end-to-end. Influencer and KOL campaigns are handled on a project basis — talk to us about your goals and we'll scope it separately.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
+
 export const metadata: Metadata = {
-  title: "Social Media Management Agency Malaysia",
+  title: "Social Media Agency Malaysia",
   description:
-    "Social media management for Malaysian businesses on Facebook, Instagram, TikTok, LinkedIn, and Xiaohongshu — content strategy, creative, and community management on a monthly retainer. Serving businesses across Malaysia, including Penang, Petaling Jaya, Kuala Lumpur, and Johor Bahru.",
+    "Social media agency for Malaysian businesses on Facebook, Instagram, TikTok, LinkedIn, and Xiaohongshu — content strategy, creative, and community management on a monthly retainer. Serving businesses across Malaysia, including Penang, Petaling Jaya, Kuala Lumpur, and Johor Bahru.",
   keywords: [
+    "social media agency Malaysia",
     "social media management Malaysia",
     "social media management agency Malaysia",
     "social media marketing Malaysia",
+    "social media marketing agency Malaysia",
     "social media management Penang",
     "social media marketing Penang",
     "social media agency Penang",
@@ -21,7 +55,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://millecube.com/services/social-media" },
   openGraph: {
-    title: "Social Media Management Agency Malaysia — Millecube",
+    title: "Social Media Agency Malaysia — Millecube",
     description: "Content strategy, creative, and community management for Malaysian brands on Facebook, Instagram, TikTok, LinkedIn, and Xiaohongshu.",
     url: "https://millecube.com/services/social-media",
     images: [{ url: "/logo-3d.png", width: 500, height: 500, alt: "Millecube Digital" }],
@@ -31,6 +65,10 @@ export const metadata: Metadata = {
 export default function SocialMediaPage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <InnerHero
         bgImage="/hero-bg.webp"
         label="SOCIAL MEDIA MANAGEMENT MALAYSIA"
@@ -113,6 +151,7 @@ export default function SocialMediaPage() {
           "Platform profile optimisation",
         ]}
         ctaText="Manage my social"
+        faqs={faqs}
       />
       <CtaStrip />
     </main>
